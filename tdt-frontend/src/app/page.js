@@ -5,11 +5,12 @@ import * as React from 'react';
 
 export default function Home() {
   const [data, setData] = useState([])
+  const [that, setThat] = useState([])
   const [isLoading, setLoading] = useState(true)
   const [check, setCheck] = useState(0)
 
   async function fetchName(){
-    const res = await fetch(`/api//name`)
+    const res = await fetch(`/api/name`)
     const payload = await res.json() 
      setData(payload.data)
     //  debugger
@@ -25,6 +26,27 @@ export default function Home() {
               }, 3000);
   return () => clearInterval(id);            
   },[check]) 
+
+
+ async function fetchThat(){
+  const res = await fetch(`/api/that`)
+  const payload = await res.json() 
+   setThat(payload.that)
+  //  debugger
+   typeof that.word == "undefined"? isLoading : setLoading(false)
+    
+}
+
+ useEffect(() => {  
+    
+  const id = setInterval(() => {
+                fetchThat()
+                setCheck(check + 1)
+              }, 3000);
+  return () => clearInterval(id);            
+  },[check]) 
+
+
 
 
   return (
@@ -67,7 +89,7 @@ export default function Home() {
         <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">
           <div className="">
             <div className="m-5 place-content-center place-items-center text-5xl">
-              <p>THAT</p>
+            <p>{that.word}</p>
             </div>
             <div className="place-content-center place-items-center">
               <form className="place-content-center place-items-center">
