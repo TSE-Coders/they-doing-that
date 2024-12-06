@@ -4,12 +4,15 @@ import (
 	"database/sql"
 	"encoding/json"
 	"log"
-	// "math/rand"
 	"net/http"
-	// "time"
+	"os"
 
 	"github.com/gorilla/mux"
-	_ "github.com/go-sql-driver/mysql"
+	sqltrace "gopkg.in/DataDog/dd-trace-go.v1/contrib/database/sql"
+	httptrace "gopkg.in/DataDog/dd-trace-go.v1/contrib/net/http"
+	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
+
+	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
 )
 
 // Word represents the data structure for input/output
@@ -24,11 +27,12 @@ type Response struct {
 
 var db *sql.DB
 
-// Initialize database connection
 func initDB() {
 	var err error
-	dsn := "that-user:password@tcp(localhost:3306)/that-db" // Update with your MySQL credentials
-	db, err = sql.Open("mysql", dsn)
+
+	// Use sqltrace.Open to instrument the MySQL connection
+	dsn := "that-user:password@tcp(localhost:3306)/that-db"
+	db, err = sqltrace.Open("mysql", dsn, sqltrace.WithServiceName("mysql-db"))
 	if err != nil {
 		log.Fatalf("Error connecting to the database: %v", err)
 	}
@@ -42,32 +46,56 @@ func initDB() {
 	log.Println("Database connection established.")
 }
 
-// RandomWordHandler handles the /random route
 func RandomWordHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	// Query a random word from the database
+	span, ctx := tracer.StartSpanFromContext(r.Context(), "handler.random_word")
+	defer span.Finish()
+
 	query := `SELECT word FROM words ORDER BY RAND() LIMIT 1`
 	var word string
-	err := db.QueryRow(query).Scan(&word)
+	err := db.QueryRowContext(ctx, query).Scan(&word)
 	if err != nil {
 		http.Error(w, "Error fetching random word", http.StatusInternalServerError)
 		log.Printf("Error executing query: %v", err)
+		span.SetTag("error", err.Error())
 		return
 	}
 
-	// Send the random word as a response
 	json.NewEncoder(w).Encode(Word{Word: word})
 }
 
+func setupLogging() {
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatalf("Failed to open log file: %v", err)
+	}
+	log.SetOutput(file)
+	log.Println("Logging started...")
+}
+
+func initDDTracer() {
+	tracer.Start(
+		tracer.WithEnv("dev"),
+		tracer.WithService("that-api"),
+		tracer.WithServiceVersion("v1"),
+		tracer.WithAgentAddr("localhost:8136"),
+	)
+	log.Println("Datadog tracer started")
+}
+
 func main() {
-	// Initialize the database
+	setupLogging()
+	log.Println("Application is starting...")
+
 	initDB()
 	defer db.Close()
 
+	initDDTracer()
+	defer tracer.Stop()
+
 	r := mux.NewRouter()
 
-	// Define routes
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(Response{Message: "Welcome to my API!"})
@@ -76,14 +104,12 @@ func main() {
 	r.HandleFunc("/words", func(w http.ResponseWriter, r *http.Request) {
 		var word Word
 
-		// Decode JSON payload
 		err := json.NewDecoder(r.Body).Decode(&word)
 		if err != nil {
 			http.Error(w, "Invalid request payload", http.StatusBadRequest)
 			return
 		}
 
-		// Insert word into the database
 		query := "INSERT INTO words (word) VALUES (?)"
 		_, err = db.Exec(query, word.Word)
 		if err != nil {
@@ -91,16 +117,14 @@ func main() {
 			return
 		}
 
-		// Respond to the client
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(Response{Message: "Word added successfully"})
 	}).Methods("POST")
 
-	// Add the new random endpoint
 	r.HandleFunc("/random", RandomWordHandler).Methods("GET")
 
-	// Start the server
-	log.Println("Starting server on :8080...")
-	log.Fatal(http.ListenAndServe(":8080", r))
-}
+	wrappedRouter := httptrace.WrapHandler(r, "that-api", "http.router")
 
+	log.Println("Starting server on :8080...")
+	log.Fatal(http.ListenAndServe(":8080", wrappedRouter))
+}

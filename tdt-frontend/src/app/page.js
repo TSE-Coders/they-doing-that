@@ -9,14 +9,29 @@ export default function Home() {
   const [isLoading, setLoading] = useState(true)
   const [check, setCheck] = useState(0)
 
-  async function fetchName(){
-    const res = await fetch(`/api/name`)
-    const payload = await res.json() 
-     setData(payload.data)
-    //  debugger
-     typeof data.name == "undefined"? isLoading : setLoading(false)
-      
- }
+
+  //FETCH NAME 
+  async function fetchName() {
+    try {
+      const res = await fetch(`/api/name`);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+      }
+  
+      const payload = await res.json();
+      if (payload && payload.data) {
+        setData(payload.data);
+        setLoading(false);
+      } else {
+        setData({ name: "no data available" });
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error fetching name:", error);
+      setData({ name: "no data available" });
+      setLoading(false);
+    }
+  }
 
  useEffect(() => {  
     
@@ -28,14 +43,29 @@ export default function Home() {
   },[check]) 
 
 
- async function fetchThat(){
-  const res = await fetch(`/api/that`)
-  const payload = await res.json() 
-   setThat(payload.that)
-  //  debugger
-   typeof that.word == "undefined"? isLoading : setLoading(false)
-    
-}
+  //FETCH THAT 
+  async function fetchThat() {
+    try {
+      const res = await fetch(`/api/that`);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+      }
+  
+      const payload = await res.json();
+      if (payload && payload.that) {
+        setThat(payload.that);
+        setLoading(false);
+      } else {
+        setThat({ word: "no data" });
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error fetching that:", error);
+      setThat({ word: "no data available" });
+      setLoading(false);
+    }
+  }
+  
 
  useEffect(() => {  
     
@@ -45,8 +75,6 @@ export default function Home() {
               }, 3000);
   return () => clearInterval(id);            
   },[check]) 
-
-
 
 
   return (
