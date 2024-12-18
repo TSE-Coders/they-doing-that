@@ -1,0 +1,51 @@
+
+> tdt-frontend@0.1.0 dev
+> NODE_OPTIONS='--require dd-trace/init' DD_SERVICE='frontend' DD_TRACE_AGENT_PORT=8136 next dev -p 3001
+
+   ▲ Next.js 15.0.3
+   - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 1091ms
+ ✓ Compiled /api/that in 348ms (366 modules)
+ GET /api/that 200 in 449ms
+ GET /api/name 200 in 746ms
+ GET /api/that 200 in 7ms
+ GET /api/name 200 in 34ms
+ GET /api/that 200 in 12ms
+ GET /api/name 200 in 26ms
+ GET /api/that 200 in 11ms
+ GET /api/name 200 in 34ms
+
+🌼   daisyUI 4.12.14
+├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
+
+ ○ Compiling / ...
+ ✓ Compiled / in 657ms (655 modules)
+ GET / 200 in 805ms
+ ✓ Compiled in 64ms (284 modules)
+ ✓ Compiled /favicon.ico in 59ms (373 modules)
+ GET /favicon.ico 200 in 82ms
+ GET /api/that 200 in 16ms
+ GET /api/name 200 in 31ms
+ GET /api/that 200 in 8ms
+ GET /api/name 200 in 27ms
+ GET /api/that 200 in 14ms
+ GET /api/name 200 in 29ms
+ GET /api/that 200 in 8ms
+ GET /api/name 200 in 25ms
+ GET /api/that 200 in 16ms
+ GET /api/name 200 in 29ms
+ GET /api/that 200 in 11ms
+ GET /api/name 200 in 27ms
+ GET /api/that 200 in 17ms
+ GET /api/name 200 in 45ms
+ GET /api/that 200 in 10ms
+ GET /api/name 200 in 21ms
+ GET /api/that 200 in 10ms
+ GET /api/name 200 in 21ms
+ GET /api/that 200 in 8ms
+ GET /api/name 200 in 16ms
+ GET /api/that 200 in 8ms
+ GET /api/name 200 in 32ms

@@ -1,0 +1,149 @@
+=> Booting Puma
+=> Rails 8.0.0 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 6.5.0 ("Sky's Version")
+* Ruby version: ruby 3.3.6 (2024-11-05 revision 75015d4c1f) +YJIT [arm64-darwin23]
+*  Min threads: 3
+*  Max threads: 3
+*  Environment: development
+*          PID: 94441
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:42 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby]   [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='They'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby]   [1m[36mName Load (27.5ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby]   [1m[36mName Load (1.2ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 7 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=1752266714590592867 dd.span_id=1355128697623918457 ddsource=ruby] Completed 202 Accepted in 70ms (Views: 1.0ms | ActiveRecord: 45.4ms (2 queries, 0 cached) | GC: 8.8ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:42 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby]   [1m[36mName Load (0.9ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby]   [1m[36mName Load (0.9ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 5 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=2180240314233247352 dd.span_id=2833078272166537778 ddsource=ruby] Completed 202 Accepted in 11ms (Views: 0.2ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 4.8ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:45 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby]   [1m[36mName Load (0.9ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby]   [1m[36mName Load (0.9ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 1 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=1078639089380806651 dd.span_id=298161558108909957 ddsource=ruby] Completed 202 Accepted in 6ms (Views: 0.4ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:46 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby]   [1m[36mName Load (6.5ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby]   [1m[36mName Load (1.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 6 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=4738043927932540182 dd.span_id=692519868673194263 ddsource=ruby] Completed 202 Accepted in 14ms (Views: 0.2ms | ActiveRecord: 8.6ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:49 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby]   [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby]   [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 5 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=4726814332844813300 dd.span_id=4594344034551989862 ddsource=ruby] Completed 202 Accepted in 11ms (Views: 2.3ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:52 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby]   [1m[36mName Load (0.6ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby]   [1m[36mName Load (0.5ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 4 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=121373422486151248 dd.span_id=488586147610312639 ddsource=ruby] Completed 202 Accepted in 13ms (Views: 1.9ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:53 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby]   [1m[36mName Load (2.1ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby]   [1m[36mName Load (1.2ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 5 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=4385698792146480096 dd.span_id=1303820947407995290 ddsource=ruby] Completed 202 Accepted in 6ms (Views: 0.3ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:55 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby]   [1m[36mName Load (0.6ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby]   [1m[36mName Load (0.7ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 3 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=885897624131430150 dd.span_id=759730104006569614 ddsource=ruby] Completed 202 Accepted in 8ms (Views: 4.6ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:57 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby]   [1m[36mName Load (1.0ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby]   [1m[36mName Load (1.1ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 1 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=6465838062015318672 dd.span_id=4067895759518062610 ddsource=ruby] Completed 202 Accepted in 7ms (Views: 0.8ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:02:58 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby]   [1m[36mName Load (1.3ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby]   [1m[36mName Load (1.1ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 2 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=2007209827412137628 dd.span_id=1152731196181353673 ddsource=ruby] Completed 202 Accepted in 5ms (Views: 0.5ms | ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:03:01 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby]   [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby]   [1m[36mName Load (0.7ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 1 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=3536894559688178638 dd.span_id=3657430924698334107 ddsource=ruby] Completed 202 Accepted in 4ms (Views: 0.4ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:03:01 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby]   [1m[36mName Load (0.7ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby]   [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 4 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=3594492847103322889 dd.span_id=2992919125042639305 ddsource=ruby] Completed 202 Accepted in 4ms (Views: 0.1ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:03:04 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby]   [1m[36mName Load (1.0ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby]   [1m[36mName Load (0.9ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 3 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=788713036862402010 dd.span_id=2813379808189993050 ddsource=ruby] Completed 202 Accepted in 5ms (Views: 0.6ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:03:05 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby]   [1m[36mName Load (0.5ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby]   [1m[36mName Load (0.5ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 1 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=342181272499548022 dd.span_id=3739736751205319986 ddsource=ruby] Completed 202 Accepted in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby] Started GET "/name/random" for ::1 at 2024-12-18 13:03:07 -0500
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby] Processing by NamesController#setRandomName as */*
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby]   [1m[36mName Load (0.6ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby]   ↳ app/models/name.rb:5:in `randomName'
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby]   [1m[36mName Load (0.6ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 1 LIMIT 1 /*action='setRandomName',application='They',controller='names'*/[0m
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby]   ↳ app/controllers/names_controller.rb:20:in `setRandomName'
+[dd.env=dev dd.service=they-api dd.trace_id=2663073956988592089 dd.span_id=3314798197495009828 ddsource=ruby] Completed 202 Accepted in 10ms (Views: 2.0ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
