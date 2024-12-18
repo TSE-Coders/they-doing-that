@@ -21,6 +21,8 @@ echo 'Removing Adjective-service Database container '
 
 # Stop Next.js app (port 3001)
 
+rm 
+
 kill_process_on_port 3001
 
 # Stop Rails API (port 8080)
