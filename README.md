@@ -55,8 +55,8 @@ Before starting, ensure you have the following installed:
 3. The files start-app.sh and stop-app.sh contain a script that will start and stop all the services.
    run the following command to grant execute permissions to both files: 
    ```bash
-   chmod +x start_apps.sh
-   chmod +x stop_apps.sh
+   chmod +x start_app.sh
+   chmod +x stop_app.sh
    ```
 
 4. Run the following command to start the application:
