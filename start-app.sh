@@ -59,7 +59,7 @@ if grep -q "Starting server on :8080..." go.log; then
     echo "Go server started successfully"
     echo "---- Subject-service API ready in http://localhost:8080 -----"
 else
-    echo "Error: Go server initialization failed. Check rails.log for details."
+    echo "Error: Go server initialization failed. Check go.log for details."
     exit 1
 fi
 

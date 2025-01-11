@@ -7,6 +7,7 @@ services:
       command: "postgres -c 'max_connections=500'"
       environment:
         ENV: dev
+        PGUSER: subject
         POSTGRES_DB: subject-db
         POSTGRES_USER: subject
         POSTGRES_PASSWORD: password

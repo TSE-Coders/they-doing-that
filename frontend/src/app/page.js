@@ -2,7 +2,6 @@
 import {  useState, useEffect } from 'react'
 import * as React from 'react';
 
-
 export default function Home() {
   const [data, setData] = useState([])
   const [that, setThat] = useState([])
@@ -61,7 +60,7 @@ export default function Home() {
       }
     } catch (error) {
       console.error("Error fetching that:", error);
-      setThat({ word: "no data available" });
+      setThat({ word: "that" });
       setLoading(false);
     }
   }
@@ -78,55 +77,66 @@ export default function Home() {
 
 
   return (
-    <main>
-      <div className="grid grid-cols-3 justify-center gap-4 place-content-center place-items-center m-20 ">
+    <main className='bg-black flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+      <div className='bg-black flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
+        <div className='flex flex-row relative w-full'>
+          <p className='text-red-600 text-6xl'>They</p>
+          <p className='text-yellow-200 text-6xl'>Doing</p>
+          <p className='text-sky-400 text-6xl'>That</p>
+          <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
+            <p className='text-white text-l m-1 uppercase'>Home</p>
+            <p className='text-white text-l m-2 uppercase'>Instructions</p>
+        </div>
+        </div>
+        
+      </div>
+      <div className="flex justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
         {/* They */}
-        <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">    
-          <div className="">
-            <div className="m-5 place-content-center place-items-center text-5xl">
-              <p>{data.name}</p>
+        <div className="flex justify-center bg-red-600 w-full h-dvh">    
+          <div className="m-auto justify-items-center pb-56">
+            <div className="pb-6">
+              <p className='text-6xl text-wrap font-black text-red-950 uppercase text-center'>{data.name}</p>
             </div>
-            <div className="place-content-center place-items-center">
-              <form className="place-content-center place-items-center">
-                <label className="flex items-center gap-8">
-                  <input type="text" placeholder="Add a name" className="input input-bordered w-full max-w-xs" />
+            <div className="">
+              <form className="">
+                <label className="">
+                  <input type="text" placeholder="Add a pronoun" className="input rounded-full" />
                 </label>
-                <button className="btn btn-neutral">add</button>
+                <button className="btn btn-neutral border-0 bg-red-800 rounded-full">add</button>
               </form>
             </div>
           </div>
         </div>
         {/* Doing */}
-        <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">
-          <div className="">
-            <div className="m-5 place-content-center place-items-center text-5xl">
-              <p>doing</p>
+        <div className="flex justify-center bg-yellow-200 w-full h-dvh">
+          <div className="m-auto justify-items-center pb-56">
+            <div className="pb-6">
+              <p className='text-6xl text-wrap font-black text-yellow-700 uppercase text-center'>Doing</p>
             </div>
-            <div className="place-content-center place-items-center">
-              <form className="place-content-center place-items-center">
-                <label className="flex items-center gap-8">
-                  <input type="text" placeholder="Add a verb" className="input input-bordered w-full max-w-xs" />
+            <div className="justify-items-center">
+              <form className="">
+                <label className="">
+                  <input type="text" placeholder="Add a verb" className="input rounded-full" />
                 </label>
-                <button className="btn btn-neutral">add</button>
+                <button className="btn btn-neutral border-0 bg-yellow-500 rounded-full">add</button>
               </form>
 
             </div>
           </div>
         </div>
         {/* That */}
-        <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">
-          <div className="">
-            <div className="m-5 place-content-center place-items-center text-5xl">
-            <p>{that.word}</p>
+        <div className="flex justify-center bg-sky-400 w-full h-dvh">
+          <div className="m-auto justify-items-center pb-56">
+            <div className="pb-6">
+            <p className='text-6xl text-wrap font-black text-sky-800 uppercase text-center'>{that.word}</p>
             </div>
-            <div className="place-content-center place-items-center">
-              <form className="place-content-center place-items-center">
-                <label className="flex items-center gap-8">
-                  <input type="text" placeholder="Add an action" className="input input-bordered w-full max-w-xs" />
+            <div className="">
+              <form className="">
+                <label className="">
+                  <input type="text" placeholder="Add a noun" className="input rounded-full" />
                 </label>
-                <button className="btn btn-neutral">add</button>
+                <button className="btn btn-neutral border-0 bg-sky-600 rounded-full">add</button>
               </form>
-
             </div>
           </div>
         </div>        
