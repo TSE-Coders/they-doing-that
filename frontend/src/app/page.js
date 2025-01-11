@@ -105,8 +105,8 @@ export default function Home() {
                 <button className="btn btn-neutral border-0 bg-red-800 rounded-full">add</button>
               </form>
             </div>
-            <div className='relative m-10 mt-32 justify-center'>
-              <p className='text-center text-base text-red-950'>Powered by:</p>
+            <div className='relative m-10 mt-44 justify-center'>
+              <p className='text-center text-base text-sm text-red-950'>Powered by:</p>
               <p className='text-center text-base font-bold text-red-950 uppercase'>Ruby x Postgres</p>
             </div>
           </div>
@@ -124,8 +124,8 @@ export default function Home() {
                 </label>
                 <button className="btn btn-neutral border-0 bg-yellow-500 rounded-full">add</button>
               </form>
-              <div className='relative m-10 mt-32 justify-center'>
-                <p className='text-center text-base text-yellow-700'>Powered by:</p>
+              <div className='relative m-10 mt-44 justify-center'>
+                <p className='text-center text-sm text-yellow-700'>Powered by:</p>
                 <p className='text-center text-base font-bold text-yellow-700 uppercase'>Python x Mongo</p>
             </div>
             </div>
@@ -145,15 +145,15 @@ export default function Home() {
                 <button className="btn btn-neutral border-0 bg-sky-600 rounded-full">add</button>
               </form>
             </div>
-            <div className='relative m-10 mt-32 justify-center'>
-              <p className='text-center text-base text-sky-800'>Powered by:</p>
+            <div className='relative m-10 mt-44 justify-center'>
+              <p className='text-center text-sm text-sky-800'>Powered by:</p>
               <p className='text-center text-base font-bold text-sky-800 uppercase'>Go x MySQL</p>
             </div>
           </div>
         </div>        
     </div>
-    <div className='bg-black p-4'>
-
+    <div className='bg-black p-4 w-full'>
+      <p className='text-white text-right text-xs font-thin'>TSE-Coders 2025</p>
     </div>
     </main>
   );
