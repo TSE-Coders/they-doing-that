@@ -1,8 +1,9 @@
 "use client"
 import {  useState, useEffect } from 'react'
 import * as React from 'react';
+import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
   const [data, setData] = useState([])
   const [that, setThat] = useState([])
   const [isLoading, setLoading] = useState(true)
@@ -84,8 +85,8 @@ export default function Home() {
           <p className='text-yellow-200 text-6xl'>Doing</p>
           <p className='text-sky-400 text-6xl'>That</p>
           <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
-            <button className='text-white text-l m-1 uppercase hover:bg-slate-900'>Home</button>
-            <button className='text-white text-l m-2 uppercase hover:bg-slate-900'>Instructions</button>
+          <button className='text-white text-l m-1 uppercase hover:bg-slate-900'><Link href='/'>Home</Link></button>
+            <button className='text-white text-l m-2 uppercase hover:bg-slate-900'><Link href='/instructions'>Instructions</Link></button>
         </div>
         </div>
         
@@ -98,12 +99,7 @@ export default function Home() {
               <p className='text-6xl text-wrap font-black text-red-950 uppercase text-center'>{data.name}</p>
             </div>
             <div className="">
-              <form className="">
-                <label className="">
-                  <input type="text" placeholder="Add a pronoun" className="input rounded-full" />
-                </label>
-                <button className="btn btn-neutral border-0 bg-red-800 rounded-full">add</button>
-              </form>
+            <Link href='/they'><button className="btn btn-neutral border-0 bg-red-800 rounded-full">add a pronoun</button></Link>
             </div>
             <div className='relative m-10 mt-44 justify-center'>
               <p className='text-center text-base text-sm text-red-950'>Powered by:</p>
@@ -118,17 +114,13 @@ export default function Home() {
               <p className='text-6xl text-wrap font-black text-yellow-700 uppercase text-center'>Doing</p>
             </div>
             <div className="justify-items-center">
-              <form className="">
-                <label className="">
-                  <input type="text" placeholder="Add a verb" className="input rounded-full" />
-                </label>
-                <button className="btn btn-neutral border-0 bg-yellow-500 rounded-full">add</button>
-              </form>
+            <Link href='/doing'><button className="btn btn-neutral border-0 bg-yellow-500 rounded-full">add a verb</button></Link>
+            </div>
               <div className='relative m-10 mt-44 justify-center'>
                 <p className='text-center text-sm text-yellow-700'>Powered by:</p>
                 <p className='text-center text-base font-bold text-yellow-700 uppercase'>Python x Mongo</p>
             </div>
-            </div>
+            
           </div>
         </div>
         {/* That */}
@@ -138,12 +130,7 @@ export default function Home() {
             <p className='text-6xl text-wrap font-black text-sky-800 uppercase text-center'>{that.word}</p>
             </div>
             <div className="">
-              <form className="">
-                <label className="">
-                  <input type="text" placeholder="Add a noun" className="input rounded-full" />
-                </label>
-                <button className="btn btn-neutral border-0 bg-sky-600 rounded-full">add</button>
-              </form>
+            <Link href='/that'><button className="btn btn-neutral border-0 bg-sky-600 rounded-full">add a noun</button></Link>
             </div>
             <div className='relative m-10 mt-44 justify-center'>
               <p className='text-center text-sm text-sky-800'>Powered by:</p>
