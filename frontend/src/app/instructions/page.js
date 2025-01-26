@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function InstructionsPage() {
 
-    return (<main>
+    return (<main className='bg-black flex flex-col m-0 justify-stretch relative w-full h-dvh'>
         
         
         <div className='bg-black flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
@@ -22,7 +22,6 @@ export default function InstructionsPage() {
       </div>
       <div className="flex justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
 
-        Hello World
       </div>
         
         
