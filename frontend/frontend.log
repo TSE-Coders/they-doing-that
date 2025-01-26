@@ -23816,3 +23816,1189 @@ SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
   575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
   576 |       )
   577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 59ms
+ GET /api/name 200 in 67ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 92ms
+ GET /api/name 200 in 95ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/name 200 in 30ms
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 77ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 81ms
+ GET /api/name 200 in 84ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 68ms
+ GET /api/name 200 in 73ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 104ms
+ GET /api/name 200 in 108ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /they 200 in 53ms
+ GET /api/name 200 in 40ms
+ GET /api/name 200 in 46ms
+ GET /api/name 200 in 42ms
+ GET /api/name 200 in 42ms
+ GET /api/name 200 in 48ms
+ GET /that 200 in 30ms
+ GET /doing 200 in 37ms
+ ✓ Compiled in 526ms (957 modules)
+ GET /doing 200 in 77ms
+ GET /instructions 200 in 42ms
+ ✓ Compiled in 239ms (957 modules)
+ GET /instructions 200 in 42ms
+ ✓ Compiled in 404ms (957 modules)
+ GET /instructions 200 in 48ms
+ ✓ Compiled in 235ms (957 modules)
+ GET /instructions 200 in 44ms
+ ✓ Compiled in 361ms (957 modules)
+ GET /instructions 200 in 28ms
+ ✓ Compiled in 281ms (957 modules)
+ GET /instructions 200 in 62ms
+ ✓ Compiled in 210ms (957 modules)
+ GET /instructions 200 in 26ms
+ ✓ Compiled in 351ms (957 modules)
+ GET /instructions 200 in 28ms
+ ✓ Compiled in 223ms (957 modules)
+ GET /instructions 200 in 24ms
+ ✓ Compiled in 234ms (957 modules)
+ GET /instructions 200 in 24ms
+ ✓ Compiled in 272ms (957 modules)
+ GET /instructions 200 in 69ms
+ ✓ Compiled in 226ms (957 modules)
+ GET /instructions 200 in 23ms
+ ✓ Compiled in 195ms (957 modules)
+ GET /instructions 200 in 26ms
+ ✓ Compiled in 364ms (957 modules)
+ GET /instructions 200 in 29ms
+ ✓ Compiled in 292ms (957 modules)
+ GET /instructions 200 in 64ms
+ GET / 200 in 38ms
+ ✓ Compiled /api/that in 273ms (464 modules)
+ ✓ Compiled (466 modules)
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 668ms
+ GET /api/name 200 in 671ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 101ms
+ GET /api/name 200 in 103ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /that 200 in 38ms
+ GET / 200 in 36ms
+ GET /they 200 in 30ms
+ GET /api/name 200 in 43ms
+ GET /api/name 200 in 30ms
+ GET /api/name 200 in 77ms
+ GET /api/name 200 in 45ms
+ GET / 200 in 26ms
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 106ms
+ GET /api/name 200 in 110ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /instructions 200 in 36ms
+ GET / 200 in 33ms
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 102ms
+ GET /api/name 200 in 104ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 86ms
+ GET /api/name 200 in 87ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 76ms
+ GET /api/name 200 in 79ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 78ms
+ GET /api/name 200 in 84ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+SyntaxError: Unexpected token 'E', "Error fetc"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at async GET (src/app/api/that/route.js:12:17)
+    at async AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:14)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  10 |     const res = await fetch(`http://localhost:8080/random`)       
+  11 |
+> 12 |     const that = await res.json()
+     |                 ^
+  13 |     
+  14 |     return NextResponse.json({ that })
+  15 |
+ ⨯ Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (webpack://next/dist/src/server/route-modules/app-route/module.ts:574:12)
+    at async AppRouteRouteModule.handle (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:30)
+    at async doRender (node_modules/next/src/server/base-server.ts:2504:29)
+    at async responseGenerator (node_modules/next/src/server/base-server.ts:3027:21)
+    at async DevServer.renderToResponseWithComponentsImpl (node_modules/next/src/server/base-server.ts:3039:23)
+    at async DevServer.renderPageComponent (node_modules/next/src/server/base-server.ts:3597:15)
+    at async DevServer.renderToResponseImpl (node_modules/next/src/server/base-server.ts:3659:23)
+    at async DevServer.pipeImpl (node_modules/next/src/server/base-server.ts:1698:20)
+    at async NextNodeServer.handleCatchallRenderRequest (node_modules/next/src/server/next-server.ts:1034:6)
+    at async DevServer.handleRequestImpl (node_modules/next/src/server/base-server.ts:1462:8)
+    at async (node_modules/next/src/server/dev/next-dev-server.ts:514:13)
+    at async Span.traceAsyncFn (node_modules/next/src/trace/trace.ts:143:13)
+    at async DevServer.handleRequest (node_modules/next/src/server/dev/next-dev-server.ts:512:19)
+    at async invokeRender (node_modules/next/src/server/lib/router-server.ts:284:10)
+    at async handleRequest (node_modules/next/src/server/lib/router-server.ts:530:15)
+    at async requestHandlerImpl (node_modules/next/src/server/lib/router-server.ts:576:6)
+    at async Server.requestListener (node_modules/next/src/server/lib/start-server.ts:146:6)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |            ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
+ GET /api/that 500 in 82ms
+ GET /api/name 200 in 85ms
+ ⨯ next/dist/src/server/route-modules/app-route/module.ts (574:13) @ AppRouteRouteModule.do
+ ⨯ Internal error: Error: No response is returned from route handler '/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/api/that/route.js'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+    at AppRouteRouteModule.do (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:34160)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async AppRouteRouteModule.handle (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:10:40382)
+    at async doRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1455:42)
+    at async responseGenerator (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1814:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:1824:28)
+    at async DevServer.renderPageComponent (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2240:24)
+    at async DevServer.renderToResponseImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:2278:32)
+    at async DevServer.pipeImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:960:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/base-server.js:853:17)
+    at async /Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:373:20
+    at async Span.traceAsyncFn (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/dev/next-dev-server.js:370:24)
+    at async invokeRender (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:183:21)
+    at async handleRequest (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:360:24)
+    at async requestHandlerImpl (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/router-server.js:384:13)
+    at async Server.requestListener (/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/node_modules/next/dist/server/lib/start-server.js:142:13)
+  572 |     // Validate that the response is a valid response object.
+  573 |     if (!(res instanceof Response)) {
+> 574 |       throw new Error(
+      |             ^
+  575 |         `No response is returned from route handler '${this.resolvedPagePath}'. Ensure you return a \`Response\` or a \`NextResponse\` in all branches of your handler.`
+  576 |       )
+  577 |     }
