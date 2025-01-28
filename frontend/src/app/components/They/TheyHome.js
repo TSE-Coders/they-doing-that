@@ -7,7 +7,7 @@ const TheyHome = () => {
     const [isLoading, setLoading] = useState(true)
     const [check, setCheck] = useState(0)
 
-  //FETCH NAME 
+  //FETCH RANDOM NAME
   async function fetchName() {
     try {
       const res = await fetch(`/api/getRandomName`);

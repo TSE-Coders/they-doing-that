@@ -13,7 +13,7 @@ const DoingHome = () => {
             </div>
               <div className='relative m-10 mt-44 justify-center'>
                 <p className='text-center text-sm text-yellow-700'>Powered by:</p>
-                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Python x Mongo</p>
+                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Python x SQLServer</p>
             </div>
           </div>
         </div>
