@@ -1,23 +1,22 @@
-"use client"
-import {  useState, useEffect } from 'react'
-import * as React from 'react';
-
+"use client";
+import { useState, useEffect } from "react";
+import * as React from "react";
 
 export default function Home() {
-  const [data, setData] = useState([])
-  const [that, setThat] = useState([])
-  const [isLoading, setLoading] = useState(true)
-  const [check, setCheck] = useState(0)
+  const [data, setData] = useState([]);
+  const [that, setThat] = useState([]);
+  const [verb, setVerb] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [check, setCheck] = useState(0);
 
-
-  //FETCH NAME 
+  // FETCH NAME
   async function fetchName() {
     try {
       const res = await fetch(`/api/name`);
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status} API unreachable`);
       }
-  
+
       const payload = await res.json();
       if (payload && payload.data) {
         setData(payload.data);
@@ -33,24 +32,22 @@ export default function Home() {
     }
   }
 
- useEffect(() => {  
-    
-  const id = setInterval(() => {
-                fetchName()
-                setCheck(check + 1)
-              }, 3000);
-  return () => clearInterval(id);            
-  },[check]) 
+  useEffect(() => {
+    const id = setInterval(() => {
+      fetchName();
+      setCheck((prev) => prev + 1);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [check]);
 
-
-  //FETCH THAT 
+  // FETCH THAT
   async function fetchThat() {
     try {
       const res = await fetch(`/api/that`);
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status} API unreachable`);
       }
-  
+
       const payload = await res.json();
       if (payload && payload.that) {
         setThat(payload.that);
@@ -65,23 +62,51 @@ export default function Home() {
       setLoading(false);
     }
   }
-  
 
- useEffect(() => {  
-    
-  const id = setInterval(() => {
-                fetchThat()
-                setCheck(check + 1)
-              }, 3000);
-  return () => clearInterval(id);            
-  },[check]) 
+  useEffect(() => {
+    const id = setInterval(() => {
+      fetchThat();
+      setCheck((prev) => prev + 1);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [check]);
 
+  // FETCH VERB
+  async function fetchVerb() {
+    try {
+      const res = await fetch(`/api/verb`);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+      }
+
+      const payload = await res.json();
+      if (payload && payload.verb) {
+        setVerb(payload.verb);
+        setLoading(false);
+      } else {
+        setVerb({ word: "no data" });
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error fetching verb:", error);
+      setThat({ word: "no data available" });
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      fetchVerb();
+      setCheck((prev) => prev + 1);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [check]);
 
   return (
     <main>
       <div className="grid grid-cols-3 justify-center gap-4 place-content-center place-items-center m-20 ">
         {/* They */}
-        <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">    
+        <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">
           <div className="">
             <div className="m-5 place-content-center place-items-center text-5xl">
               <p>{data.name}</p>
@@ -89,7 +114,11 @@ export default function Home() {
             <div className="place-content-center place-items-center">
               <form className="place-content-center place-items-center">
                 <label className="flex items-center gap-8">
-                  <input type="text" placeholder="Add a name" className="input input-bordered w-full max-w-xs" />
+                  <input
+                    type="text"
+                    placeholder="Add a name"
+                    className="input input-bordered w-full max-w-xs"
+                  />
                 </label>
                 <button className="btn btn-neutral">add</button>
               </form>
@@ -100,16 +129,19 @@ export default function Home() {
         <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">
           <div className="">
             <div className="m-5 place-content-center place-items-center text-5xl">
-              <p>doing</p>
+              <p>{verb.word}</p>
             </div>
             <div className="place-content-center place-items-center">
               <form className="place-content-center place-items-center">
                 <label className="flex items-center gap-8">
-                  <input type="text" placeholder="Add a verb" className="input input-bordered w-full max-w-xs" />
+                  <input
+                    type="text"
+                    placeholder="Add a verb"
+                    className="input input-bordered w-full max-w-xs"
+                  />
                 </label>
                 <button className="btn btn-neutral">add</button>
               </form>
-
             </div>
           </div>
         </div>
@@ -117,20 +149,23 @@ export default function Home() {
         <div className="grid grid-row-2 justify-center gap-4 place-content-center place-items-center m-20">
           <div className="">
             <div className="m-5 place-content-center place-items-center text-5xl">
-            <p>{that.word}</p>
+              <p>{that.word}</p>
             </div>
             <div className="place-content-center place-items-center">
               <form className="place-content-center place-items-center">
                 <label className="flex items-center gap-8">
-                  <input type="text" placeholder="Add an action" className="input input-bordered w-full max-w-xs" />
+                  <input
+                    type="text"
+                    placeholder="Add an action"
+                    className="input input-bordered w-full max-w-xs"
+                  />
                 </label>
                 <button className="btn btn-neutral">add</button>
               </form>
-
             </div>
           </div>
-        </div>        
-    </div>
+        </div>
+      </div>
     </main>
-  );
-}
+  )
+};
