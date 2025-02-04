@@ -18,6 +18,8 @@ kill_process_on_port() {
 echo 'Removing Subject-service Database container '
 (cd adjective && docker compose down)
 echo 'Removing Adjective-service Database container '
+(cd verb-service/java-sqlserver && docker compose down)
+echo 'Removing Verb-service Database container '
 
 # Stop Next.js app (port 3001)
 
@@ -30,3 +32,6 @@ kill_process_on_port 8080
 
 # Stop Rails API (port 3000)
 kill_process_on_port 3000
+
+# Stop Java API (port 8081)
+kill_process_on_port 8081
