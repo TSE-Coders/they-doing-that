@@ -45,7 +45,7 @@ public class JavaSqlServer {
         try {
             // Establish the shared database connection
             sharedConnection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-
+    
             // Create database if it doesn't exist
             try (Statement stmt = sharedConnection.createStatement()) {
                 String createDbSql = "IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = '" + DB_NAME + "') " +
@@ -53,24 +53,65 @@ public class JavaSqlServer {
                 stmt.execute(createDbSql);
                 System.out.println("Database initialized.");
             }
-
+    
             // Reconnect to the newly created database
             sharedConnection = DriverManager.getConnection(DB_URL + ";databaseName=" + DB_NAME, DB_USER, DB_PASSWORD);
-
+    
             // Create table if it doesn't exist
             try (Statement stmt = sharedConnection.createStatement()) {
                 String createTableSql = "IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='verb' AND xtype='U') " +
                                          "CREATE TABLE verb (" +
-                                         "word VARCHAR(255) NOT NULL)";
+                                         "word VARCHAR(255) NOT NULL UNIQUE)";
                 stmt.execute(createTableSql);
                 System.out.println("Table 'verb' ensured.");
             }
-
+    
+            // Insert seed data if table is empty
+            insertSeedData();
+    
         } catch (SQLException e) {
             throw new RuntimeException("Failed to initialize database or table: " + e.getMessage(), e);
         }
     }
-
+    
+    private static void insertSeedData() {
+        String[] seedVerbs = {"run", "code", "jump", "swim", "think", "write"};
+    
+        try {
+            System.out.println("Checking for missing seed data...");
+    
+            for (String verb : seedVerbs) {
+                // Debug: Check the current word
+                System.out.println("Checking if '" + verb + "' exists in the database...");
+    
+                // Check if the word already exists
+                try (PreparedStatement checkStmt = sharedConnection.prepareStatement("SELECT COUNT(*) FROM verb WHERE word = ?")) {
+                    checkStmt.setString(1, verb);
+                    ResultSet rs = checkStmt.executeQuery();
+                    if (rs.next()) {  // Ensure we have a result
+                        int count = rs.getInt(1);
+    
+                        if (count == 0) {
+                            System.out.println("'" + verb + "' not found. Inserting...");
+    
+                            try (PreparedStatement insertStmt = sharedConnection.prepareStatement("INSERT INTO verb (word) VALUES (?)")) {
+                                insertStmt.setString(1, verb);
+                                insertStmt.executeUpdate();
+                                System.out.println("Inserted: " + verb);
+                            }
+                        } else {
+                            System.out.println("Skipping: '" + verb + "' (already exists)");
+                        }
+                    }
+                }
+            }
+            System.out.println("Seeding process completed.");
+        } catch (SQLException e) {
+            System.err.println("Failed to insert seed data: " + e.getMessage());
+        }
+    }
+    
+    
     // Servlet to receive data from the front-end API and store it in SQL Server
     public static class ReceiveDataServlet extends HttpServlet {
         @Override
