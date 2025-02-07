@@ -31,7 +31,6 @@ export default function TheyPage() {
           fetchAllNames()
     }, [])
 
-    console.log(subjects)
     return (
     <main className='bg-red-950 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
         <TheyHeader />

@@ -23,6 +23,7 @@ class NamesController < ApplicationController
 
   # POST /names
   def create
+    Rails.logger.debug "Received params: #{params.inspect}" # Debugging log
     @name = Name.new(name_params)
 
     if @name.save
@@ -54,6 +55,6 @@ class NamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def name_params
-      params.expect(name: [ :name ])
+      params.require(:name).permit(:name)
     end
 end

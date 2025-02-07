@@ -40,8 +40,6 @@ const TheyHome = () => {
   return () => clearInterval(id);            
   },[check]) 
 
-  console.log(data)
-
     return (
         <div className="flex justify-center bg-red-600 w-full h-dvh hover:bg-red-700">    
           <div className="m-auto mt-64 justify-items-center pb-56">
