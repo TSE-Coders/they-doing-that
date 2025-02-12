@@ -55,13 +55,13 @@ async function TheyDelete(subjects){
 const TheyForm = ({subjects}) => {
     return (
         <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-red-950 m-0'>
-        <form onSubmit={TheyPost} className="flex flex-col justify-stretch w-full mt-36 mb-0">
+        <form onSubmit={TheyPost} className="flex flex-col justify-stretch w-full mt-36 mb-0 p-0">
           <label id="subject" className="flex items-center gap-8">
-            <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20" />
+            <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0" />
           </label>
-          <button type="submit" className="btn ml-36 mr-36 mt-8 mb-0 border-0 bg-red-800 rounded-full">add a subject</button>
+          <button type="submit" className="btn ml-36 mr-36 mt-8 mb-0 pb-0 border-0 bg-red-800 rounded-full">add a subject</button>
         </form>
-          <button onClick={() => TheyDelete(subjects)} className="btn  ml-36 mr-36 mt-0 border-0 bg-red-800 rounded-full">remove a subject</button>
+          <button onClick={() => TheyDelete(subjects)} className="btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove a subject</button>
         </div>
     )
 }

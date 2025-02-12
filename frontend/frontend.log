@@ -167,3 +167,804 @@ Error: Route "/api/deleteName/[id]" used `params.id`. `params` should be awaited
  DELETE /api/deleteName/16 200 in 79ms
  GET /they 200 in 43ms
  GET /api/getAllNames 200 in 38ms
+ ⨯ ./src/app/they/page.js
+Error:   [31mx[0m Return statement is not allowed here
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:12:1]
+ [2m 9[0m |     
+ [2m10[0m |     
+ [2m11[0m |     
+ [2m12[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m     return (
+ [2m13[0m | [35;1m|[0m       <main className='bg-red-950 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+ [2m14[0m | [35;1m|[0m           <TheyHeader />
+ [2m15[0m | [35;1m|[0m           <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+ [2m16[0m | [35;1m|[0m               <TheyWordDisplay />
+ [2m17[0m | [35;1m|[0m               <div className="bg-red-700 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+ [2m18[0m | [35;1m|[0m               <TheyForm subjects={subjects}/>
+ [2m19[0m | [35;1m|[0m               <SubjectList subjects={subjects}/>
+ [2m20[0m | [35;1m|[0m               </div>
+ [2m21[0m | [35;1m|[0m           </div>
+ [2m22[0m | [35;1m|[0m       </main>
+ [2m23[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m     )
+ [2m24[0m |     }
+    `----
+  [31mx[0m Expression expected
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:24:1]
+ [2m21[0m |         </div>
+ [2m22[0m |     </main>
+ [2m23[0m |     )
+ [2m24[0m | }
+    : [35;1m^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/they/page.js
+ ⨯ ./src/app/they/page.js
+Error:   [31mx[0m Return statement is not allowed here
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:12:1]
+ [2m 9[0m |     
+ [2m10[0m |     
+ [2m11[0m |     
+ [2m12[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m     return (
+ [2m13[0m | [35;1m|[0m       <main className='bg-red-950 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+ [2m14[0m | [35;1m|[0m           <TheyHeader />
+ [2m15[0m | [35;1m|[0m           <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+ [2m16[0m | [35;1m|[0m               <TheyWordDisplay />
+ [2m17[0m | [35;1m|[0m               <div className="bg-red-700 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+ [2m18[0m | [35;1m|[0m               <TheyForm subjects={subjects}/>
+ [2m19[0m | [35;1m|[0m               <SubjectList subjects={subjects}/>
+ [2m20[0m | [35;1m|[0m               </div>
+ [2m21[0m | [35;1m|[0m           </div>
+ [2m22[0m | [35;1m|[0m       </main>
+ [2m23[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m     )
+ [2m24[0m |     }
+    `----
+  [31mx[0m Expression expected
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:24:1]
+ [2m21[0m |         </div>
+ [2m22[0m |     </main>
+ [2m23[0m |     )
+ [2m24[0m | }
+    : [35;1m^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/they/page.js
+ ○ Compiling /_error ...
+ GET /they 500 in 732ms
+ GET /they 500 in 6ms
+ GET /they 500 in 6ms
+ GET /they 500 in 6ms
+ ✓ Compiled /_not-found in 604ms (926 modules)
+ GET /_next/static/webpack/c036f2443bcf6a22.webpack.hot-update.json 404 in 678ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /they 200 in 31ms
+ ✓ Compiled /api/getAllNames in 72ms (449 modules)
+ GET /api/getAllNames 200 in 139ms
+ ✓ Compiled in 203ms (957 modules)
+ GET /they 200 in 47ms
+ ⨯ ./src/app/they/page.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:34:1]
+ [2m31[0m |           fetchAllNames()
+ [2m32[0m |     }, [])
+ [2m33[0m | 
+ [2m34[0m |     export default function TheyPage() {
+    : [35;1m    ^^^^^^[0m
+ [2m35[0m |       const [subjects, setSubject] = useState([]);
+ [2m36[0m |   
+ [2m37[0m |       useEffect(() => {
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/they/page.js
+ GET /they 500 in 9ms
+ GET /they 500 in 5ms
+ ⨯ ./src/app/they/page.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:34:1]
+ [2m31[0m |           fetchAllNames()
+ [2m32[0m |     }, [])
+ [2m33[0m | 
+ [2m34[0m |     export default function TheyPage() {
+    : [35;1m    ^^^^^^[0m
+ [2m35[0m |       const [subjects, setSubject] = useState([]);
+ [2m36[0m |   
+ [2m37[0m |       useEffect(() => {
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/they/page.js
+ GET /_next/static/webpack/c036f2443bcf6a22.webpack.hot-update.json 500 in 171ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /they 500 in 8ms
+ ⨯ ./src/app/they/page.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:34:1]
+ [2m31[0m |           fetchAllNames()
+ [2m32[0m |     }, [])
+ [2m33[0m | 
+ [2m34[0m |     export default function TheyPage() {
+    : [35;1m    ^^^^^^[0m
+ [2m35[0m |       const [subjects, setSubject] = useState([]);
+ [2m36[0m |   
+ [2m37[0m |       useEffect(() => {
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/they/page.js
+ GET /_next/static/webpack/c036f2443bcf6a22.webpack.hot-update.json 500 in 240ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /they 500 in 6ms
+ ⨯ ./src/app/they/page.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/they/page.js[0m:34:1]
+ [2m31[0m |           fetchAllNames()
+ [2m32[0m |     }, [])
+ [2m33[0m | 
+ [2m34[0m |     export default function TheyPage() {
+    : [35;1m    ^^^^^^[0m
+ [2m35[0m |     const [subjects, setSubject] = useState([]);
+ [2m36[0m | 
+ [2m37[0m |     useEffect(() => {
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/they/page.js
+ GET /_next/static/webpack/c036f2443bcf6a22.webpack.hot-update.json 500 in 190ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /they 500 in 7ms
+ ✓ Compiled in 575ms (943 modules)
+ GET /_next/static/webpack/c036f2443bcf6a22.webpack.hot-update.json 404 in 639ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /they 200 in 26ms
+ GET /api/getAllNames 200 in 32ms
+ ✓ Compiled in 261ms (957 modules)
+ GET /they 200 in 40ms
+ ✓ Compiled in 198ms (957 modules)
+ GET /they 200 in 33ms
+ ✓ Compiled in 174ms (957 modules)
+ GET /they 200 in 21ms
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:51:1]
+ [2m48[0m |         </div>
+ [2m49[0m |     )
+ [2m50[0m | }
+ [2m51[0m | export default TheyWordDisplay
+    : [35;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:52:1]
+ [2m49[0m |         </div>
+ [2m50[0m |     )
+ [2m51[0m | }
+ [2m52[0m | export default TheyWordDisplay
+    : [35;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ✓ Compiled in 143ms (935 modules)
+ GET /they 200 in 64ms
+ ✓ Compiled in 150ms (935 modules)
+ GET /they 200 in 34ms
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:52:1]
+ [2m49[0m |         </div>
+ [2m50[0m |     )
+ [2m51[0m | }
+ [2m52[0m | export default TheyWordDisplay
+    : [35;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:17:1]
+ [2m14[0m |         </div>
+ [2m15[0m |     )
+ [2m16[0m | }
+ [2m17[0m | export default TheyWordDisplay
+    : [35;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:19:1]
+ [2m16[0m |         </div>
+ [2m17[0m |     )
+ [2m18[0m | }
+ [2m19[0m | export default TheyWordDisplay
+    : [35;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m 'import', and 'export' cannot be used outside of module code
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:54:1]
+ [2m51[0m |         </div>
+ [2m52[0m |     )
+ [2m53[0m | }
+ [2m54[0m | export default TheyWordDisplay
+    : [35;1m^^^^^^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 240ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ GET /they 500 in 158ms
+ ✓ Compiled in 161ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /they 500 in 81ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 184ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ GET /they 500 in 84ms
+ ⨯ ./src/app/components/They/TheyWordDisplay.js
+Error:   [31mx[0m Expression expected
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:43:1]
+ [2m40[0m | 
+ [2m41[0m |     return (
+ [2m42[0m |         <div className="bg-red-700 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-red-950">
+ [2m43[0m |             <p className='text-8xl text-wrap font-black text-red-950 uppercase text-center p-36'>{</p>
+    : [35;1m                                                                                                   ^[0m
+ [2m44[0m |             <div className='relative m-10 mt-44 justify-center content-end'>
+ [2m45[0m |                 <p className='text-center text-base text-sm text-red-950'>Powered by:</p>
+ [2m46[0m |                 <p className='text-center text-base font-bold text-red-950 uppercase'>Ruby x Postgres</p>
+    `----
+  [31mx[0m Expression expected
+    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyWordDisplay.js[0m:43:1]
+ [2m40[0m | 
+ [2m41[0m |     return (
+ [2m42[0m |         <div className="bg-red-700 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-red-950">
+ [2m43[0m |             <p className='text-8xl text-wrap font-black text-red-950 uppercase text-center p-36'>{</p>
+    : [35;1m                                                                                                    ^[0m
+ [2m44[0m |             <div className='relative m-10 mt-44 justify-center content-end'>
+ [2m45[0m |                 <p className='text-center text-base text-sm text-red-950'>Powered by:</p>
+ [2m46[0m |                 <p className='text-center text-base font-bold text-red-950 uppercase'>Ruby x Postgres</p>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/They/TheyWordDisplay.js
+./src/app/they/page.js
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 162ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ GET /they 500 in 111ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 168ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ GET /they 500 in 106ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 135ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ ⨯ src/app/components/They/TheyWordDisplay.js (6:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  4 | const TheyWordDisplay = () => {
+  5 |
+> 6 |     const [data, setData] = useState([])
+    |                             ^
+  7 |     const [isLoading, setLoading] = useState(true)
+  8 |     const [check, setCheck] = useState(0)
+  9 |
+ GET /they 500 in 50ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 145ms (935 modules)
+ ⨯ src/app/components/They/TheyWordDisplay.js (5:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  3 |
+  4 | const TheyWordDisplay = () => {
+> 5 |     const [data, setData] = useState([])
+    |                             ^
+  6 |     const [isLoading, setLoading] = useState(true)
+  7 |     const [check, setCheck] = useState(0)
+  8 |
+ ⨯ src/app/components/They/TheyWordDisplay.js (5:29) @ useState
+ ⨯ ReferenceError: useState is not defined
+    at TheyWordDisplay (./src/app/components/They/TheyWordDisplay.js:9:29)
+digest: "1424255479"
+  3 |
+  4 | const TheyWordDisplay = () => {
+> 5 |     const [data, setData] = useState([])
+    |                             ^
+  6 |     const [isLoading, setLoading] = useState(true)
+  7 |     const [check, setCheck] = useState(0)
+  8 |
+ GET /they 500 in 49ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 296ms (935 modules)
+ GET /they 200 in 115ms
+ ✓ Compiled /api/getAllNames in 104ms (447 modules)
+ GET /api/getAllNames 200 in 174ms
+ ✓ Compiled /api/getRandomName in 209ms (940 modules)
+ GET /api/getRandomName 200 in 279ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 33ms
+ GET /api/getRandomName 200 in 53ms
+ GET /api/getRandomName 200 in 57ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 50ms
+ GET /api/getRandomName 200 in 54ms
+ ✓ Compiled /api/postName in 146ms (451 modules)
+{ name: { name: 'Nicole' } }
+response from POST request {
+  id: 17,
+  name: 'Nicole',
+  created_at: '2025-02-12T22:38:21.793Z',
+  updated_at: '2025-02-12T22:38:21.793Z'
+}
+ POST /api/postName 200 in 187ms
+ GET /api/getRandomName 200 in 26ms
+ GET /they 200 in 68ms
+ GET /api/getAllNames 200 in 15ms
+ GET /api/getRandomName 200 in 31ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 40ms
+ GET /api/getRandomName 200 in 51ms
+ GET /api/getRandomName 200 in 41ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 49ms
+ GET /api/getRandomName 200 in 34ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 51ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 33ms
+ GET /api/getRandomName 200 in 42ms
+ ✓ Compiled /api/deleteName/[id] in 161ms (453 modules)
+Error: Route "/api/deleteName/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at createParamsAccessError (webpack://next/dist/src/server/request/params.ts:467:9)
+    at getMessage (webpack://next/dist/src/server/create-deduped-by-callsite-server-error-logger.ts:46:20)
+    at warnForSyncAccess (webpack://next/dist/src/server/request/params.ts:445:4)
+    at syncIODev (webpack://next/dist/src/server/request/params.ts:403:10)
+    at id (src/app/api/deleteName/[id]/route.js:4:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:41)
+    at handler (webpack://next/dist/src/server/route-modules/app-route/module.ts:725:18)
+    at fn (node_modules/next/src/server/lib/trace/tracer.ts:351:27)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at NoopTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/NoopTracer.ts:98:27)
+    at ProxyTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/ProxyTracer.ts:51:19)
+    at startActiveSpan (node_modules/next/src/server/lib/trace/tracer.ts:304:31)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at spanContext (node_modules/next/src/server/lib/trace/tracer.ts:303:24)
+    at trace (webpack://next/dist/src/server/route-modules/app-route/module.ts:715:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:662:32)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:661:34)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:60)
+    at handle (node_modules/next/src/server/base-server.ts:2504:47)
+    at doRender (node_modules/next/src/server/base-server.ts:3027:27)
+    at responseGenerator (node_modules/next/src/server/response-cache/index.ts:67:13)
+    at get (node_modules/next/src/server/base-server.ts:3039:48)
+  465 | ) {
+  466 |   const prefix = route ? `Route "${route}" ` : 'This route '
+> 467 |   return new Error(
+      |         ^
+  468 |     `${prefix}used ${expression}. ` +
+  469 |       `\`params\` should be awaited before using its properties. ` +
+  470 |       `Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis`
+ DELETE /api/deleteName/17 200 in 230ms
+ GET /they 200 in 64ms
+ GET /api/getAllNames 200 in 16ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 35ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 41ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 41ms
+ GET /api/getRandomName 200 in 41ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 40ms
+ GET /api/getRandomName 200 in 51ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 41ms
+ GET /api/getRandomName 200 in 49ms
+ GET /api/getRandomName 200 in 44ms
+ ✓ Compiled /doing in 306ms (953 modules)
+ GET /doing 200 in 341ms
+ ✓ Compiled /that in 161ms (968 modules)
+ GET /that 200 in 219ms
+ GET /doing 200 in 39ms
+ GET /they 200 in 27ms
+ ✓ Compiled /api/getAllNames in 91ms (467 modules)
+ GET /api/getAllNames 200 in 125ms
+ GET /api/getAllNames 200 in 10ms
+ GET /api/getRandomName 200 in 51ms
+ GET /api/getRandomName 200 in 40ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 31ms
+ GET /api/getRandomName 200 in 42ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 53ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 26ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 47ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 37ms
+ GET /api/getRandomName 200 in 50ms
+ GET /api/getRandomName 200 in 36ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 26ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 50ms
+ GET /api/getRandomName 200 in 25ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 57ms
+ GET /api/getRandomName 200 in 58ms
+ GET /api/getRandomName 200 in 64ms
+ GET /api/getRandomName 200 in 40ms
+ GET /api/getRandomName 200 in 42ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 27ms
+ GET /api/getRandomName 200 in 52ms
+ GET /api/getRandomName 200 in 53ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 47ms
+ GET /api/getRandomName 200 in 24ms
+ ✓ Compiled in 318ms (982 modules)
+ GET /they 200 in 43ms
+ ✓ Compiled in 181ms (982 modules)
+ GET /they 200 in 42ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 35ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 31ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 51ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 37ms
+ GET /api/getRandomName 200 in 34ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 45ms
+ ✓ Compiled in 312ms (982 modules)
+ GET /they 200 in 24ms
+ GET /api/getRandomName 200 in 34ms
+ GET /api/getRandomName 200 in 49ms
+ ✓ Compiled in 181ms (982 modules)
+ GET /they 200 in 24ms
+ ✓ Compiled in 180ms (982 modules)
+ GET /they 200 in 22ms
+ GET /api/getRandomName 200 in 16ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 40ms
+ ✓ Compiled in 319ms (982 modules)
+ GET /api/getRandomName 200 in 263ms
+ GET /they 200 in 17ms
+ GET /api/getRandomName 200 in 27ms
+ GET /api/getRandomName 200 in 27ms
+ GET /api/getRandomName 200 in 35ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 37ms
+ GET /api/getRandomName 200 in 28ms
+ ✓ Compiled in 257ms (982 modules)
+ GET /they 200 in 41ms
+ ✓ Compiled in 235ms (982 modules)
+ GET /they 200 in 63ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 25ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 52ms
+ GET /api/getRandomName 200 in 35ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 31ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 59ms
+ ✓ Compiled in 168ms (982 modules)
+ GET /they 200 in 40ms
+ ✓ Compiled in 187ms (982 modules)
+ GET /they 200 in 22ms
+ GET /api/getRandomName 200 in 33ms
+ GET /api/getRandomName 200 in 26ms
+ ✓ Compiled in 223ms (982 modules)
+ GET /they 200 in 34ms
+ GET /api/getRandomName 200 in 35ms
+ ✓ Compiled in 244ms (982 modules)
+ GET /they 200 in 25ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 23ms
+ GET /api/getRandomName 200 in 63ms
+ GET /api/getRandomName 200 in 30ms
+ ✓ Compiled in 207ms (982 modules)
+ GET /they 200 in 35ms
+ GET /api/getRandomName 200 in 55ms
+ GET /api/getRandomName 200 in 35ms
+ GET /api/getRandomName 200 in 78ms
+ ✓ Compiled in 316ms (982 modules)
+ GET /they 200 in 27ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 27ms
+ GET /api/getRandomName 200 in 50ms
+ ✓ Compiled in 179ms (982 modules)
+ GET /they 200 in 23ms
+ ✓ Compiled in 197ms (982 modules)
+ GET /they 200 in 24ms
+ GET /api/getRandomName 200 in 18ms
+ GET /api/getRandomName 200 in 37ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 31ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 47ms
+ ✓ Compiled in 257ms (982 modules)
+ GET /they 200 in 27ms
+ GET /api/getRandomName 200 in 27ms
+ GET /api/getRandomName 200 in 28ms
+ ✓ Compiled in 185ms (982 modules)
+ GET /they 200 in 24ms
+ ✓ Compiled in 133ms (982 modules)
+ GET /they 200 in 20ms
+ GET /api/getRandomName 200 in 40ms
+ ✓ Compiled in 218ms (982 modules)
+ ✓ Compiled in 0ms (465 modules)
+ GET /api/getRandomName 200 in 218ms
+ GET /they 200 in 164ms
+ ✓ Compiled in 169ms (982 modules)
+ GET /they 200 in 20ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 60ms
+ GET /api/getRandomName 200 in 25ms
+ ✓ Compiled in 240ms (982 modules)
+ GET /they 200 in 25ms
+ ✓ Compiled in 178ms (982 modules)
+ GET /they 200 in 21ms
+ GET /api/getRandomName 200 in 34ms
+ GET /api/getRandomName 200 in 24ms
+ GET /api/getRandomName 200 in 27ms
+ GET /api/getRandomName 200 in 37ms
+ GET /api/getRandomName 200 in 47ms
+ GET /api/getRandomName 200 in 32ms
+ ✓ Compiled in 272ms (982 modules)
+ GET /they 200 in 25ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 41ms
+ ✓ Compiled in 243ms (982 modules)
+ GET /they 200 in 24ms
+ GET /api/getRandomName 200 in 42ms
+ GET /api/getRandomName 200 in 47ms
+ GET /api/getRandomName 200 in 26ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 35ms
+ GET /api/getRandomName 200 in 32ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 41ms
+ GET /api/getRandomName 200 in 55ms
+ GET /api/getRandomName 200 in 43ms
+ GET /doing 200 in 25ms
+ GET /that 200 in 36ms
+ GET /doing 200 in 36ms
+ GET /they 200 in 26ms
+ ✓ Compiled /api/getAllNames in 162ms (467 modules)
+ GET /api/getAllNames 200 in 198ms
+ GET /api/getAllNames 200 in 15ms
+ GET /api/getRandomName 200 in 50ms
+ GET /api/getRandomName 200 in 45ms
+ ✓ Compiled in 282ms (984 modules)
+ GET /they 200 in 32ms
+ GET /api/getRandomName 200 in 34ms
+ GET /api/getRandomName 200 in 26ms
+ GET /api/getRandomName 200 in 42ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 36ms
+ ✓ Compiled in 245ms (984 modules)
+ GET /they 200 in 47ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 33ms
+ GET /api/getRandomName 200 in 63ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 36ms
+ GET /doing 200 in 30ms
+ GET /that 200 in 31ms
+ GET /they 200 in 16ms
+ GET /api/getAllNames 200 in 25ms
+ GET /api/getAllNames 200 in 16ms
+ GET /api/getRandomName 200 in 53ms
+ GET /api/getRandomName 200 in 49ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 49ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 51ms
+ GET /api/getRandomName 200 in 48ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 41ms
