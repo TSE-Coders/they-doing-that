@@ -6,490 +6,164 @@
    - Local:        http://localhost:3001
 
  ✓ Starting...
- ✓ Ready in 1238ms
+ ✓ Ready in 1031ms
  ○ Compiling /they ...
 
 🌼   daisyUI 4.12.14
 ├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
 ╰─ ★ Star daisyUI on GitHub	https://github.com/saadeghi/daisyui
 
- ✓ Compiled /they in 1367ms (694 modules)
- GET /they 200 in 1785ms
- ✓ Compiled in 245ms (309 modules)
- ✓ Compiled /api/getAllNames in 157ms (400 modules)
- ✓ Compiled in 73ms (296 modules)
- GET /favicon.ico 200 in 328ms
- GET /api/getAllNames 200 in 531ms
- ✓ Compiled /api/postName in 218ms (702 modules)
-{ name: { value: 'John' } }
-response from POST request {
-  id: 9,
-  name: null,
-  created_at: '2025-02-07T21:17:43.554Z',
-  updated_at: '2025-02-07T21:17:43.554Z'
-}
- POST /api/postName 200 in 310ms
- GET /they 200 in 113ms
- GET /favicon.ico 200 in 12ms
- GET /api/getAllNames 200 in 28ms
- ✓ Compiled in 349ms (695 modules)
- GET /they 200 in 84ms
- ✓ Compiled in 181ms (695 modules)
- GET /they 200 in 72ms
- GET /they 200 in 82ms
- ✓ Compiled /api/getAllNames in 63ms (400 modules)
- ✓ Compiled (404 modules)
- GET /favicon.ico 200 in 199ms
- GET /api/getAllNames 200 in 210ms
- ✓ Compiled /api/postName in 125ms (406 modules)
-{ name: { name: 'Sam' } }
-response from POST request {
-  id: 12,
-  name: 'Sam',
-  created_at: '2025-02-07T21:24:09.410Z',
-  updated_at: '2025-02-07T21:24:09.410Z'
-}
- POST /api/postName 200 in 179ms
- GET /they 200 in 94ms
- GET /favicon.ico 200 in 10ms
- GET /api/getAllNames 200 in 21ms
- ✓ Compiled in 163ms (310 modules)
- GET /they 200 in 11ms
- ✓ Compiled in 162ms (310 modules)
+ ✓ Compiled /they in 1063ms (694 modules)
+ GET /they 200 in 1339ms
+ ✓ Compiled in 135ms (309 modules)
+ ✓ Compiled /api/getAllNames in 158ms (698 modules)
+ GET /api/getAllNames 200 in 410ms
+ ✓ Compiled /_not-found in 217ms (701 modules)
+ DELETE /api/deleteName/15 404 in 295ms
+ ✓ Compiled in 137ms (312 modules)
+ GET /they 200 in 18ms
+ ✓ Compiled in 114ms (312 modules)
+ GET /they 200 in 9ms
+ ✓ Compiled in 143ms (312 modules)
  GET /they 200 in 13ms
- GET /they 200 in 34ms
- ✓ Compiled in 146ms (681 modules)
- GET /they 200 in 79ms
- ✓ Compiled in 159ms (310 modules)
+ ✓ Compiled in 100ms (312 modules)
+ GET /they 200 in 9ms
+ ✓ Compiled in 122ms (312 modules)
  GET /they 200 in 11ms
- ✓ Compiled in 144ms (310 modules)
+ ✓ Compiled in 78ms (312 modules)
  GET /they 200 in 9ms
- ✓ Compiled in 96ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 93ms (310 modules)
- GET /they 200 in 11ms
- ✓ Compiled in 128ms (310 modules)
+ ✓ Compiled in 102ms (312 modules)
  GET /they 200 in 9ms
- ✓ Compiled in 95ms (310 modules)
- GET /they 200 in 9ms
- ✓ Compiled in 97ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 120ms (310 modules)
- GET /they 200 in 9ms
- ✓ Compiled in 102ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 80ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 128ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 111ms (310 modules)
- GET /they 200 in 12ms
- ✓ Compiled in 110ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 95ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 113ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 134ms (310 modules)
- GET /they 200 in 12ms
- ✓ Compiled in 140ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 105ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 128ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 107ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 127ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 97ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 128ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 95ms (310 modules)
- GET /they 200 in 7ms
- GET /they 200 in 79ms
- ✓ Compiled /api/getAllNames in 95ms (400 modules)
- ✓ Compiled (404 modules)
- GET /favicon.ico 200 in 196ms
- GET /api/getAllNames 200 in 197ms
- ✓ Compiled in 136ms (310 modules)
- GET /they 200 in 29ms
- ✓ Compiled in 92ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 127ms (310 modules)
- GET /they 200 in 7ms
- ✓ Compiled in 100ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 137ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 100ms (310 modules)
- GET /they 200 in 6ms
- ✓ Compiled in 125ms (310 modules)
- GET /they 200 in 9ms
- ✓ Compiled in 93ms (310 modules)
- GET /they 200 in 8ms
- ✓ Compiled in 129ms (310 modules)
- GET /they 200 in 9ms
- ✓ Compiled in 103ms (310 modules)
- GET /they 200 in 10ms
- ✓ Compiled in 124ms (310 modules)
- GET /they 200 in 9ms
- ✓ Compiled in 83ms (310 modules)
- GET /they 200 in 9ms
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:44:1]
- [2m41[0m |         
- [2m42[0m |         </div>
- [2m43[0m |     )
- [2m44[0m | }
-    : [35;1m^[0m
- [2m45[0m | 
- [2m46[0m | export default TheyForm
-    `----
-  [31mx[0m Unterminated JSX contents
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |               <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |               <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
- [2m41[0m |             
- [2m42[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m         </div>
- [2m43[0m | [35;1m|[0m       )
- [2m44[0m | [35;1m|[0m   }
- [2m45[0m | [35;1m|[0m   
- [2m46[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default TheyForm
-    `----
-  [31mx[0m Unexpected eof
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:46:1]
- [2m43[0m |     )
- [2m44[0m | }
- [2m45[0m | 
- [2m46[0m | export default TheyForm
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:45:1]
- [2m42[0m |         
- [2m43[0m |         </div>
- [2m44[0m |     )
- [2m45[0m | }
-    : [35;1m^[0m
- [2m46[0m | 
- [2m47[0m | export default TheyForm
-    `----
-  [31mx[0m Unterminated JSX contents
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:43:1]
- [2m40[0m |               
- [2m41[0m |               <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
- [2m42[0m |             
- [2m43[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m         </div>
- [2m44[0m | [35;1m|[0m       )
- [2m45[0m | [35;1m|[0m   }
- [2m46[0m | [35;1m|[0m   
- [2m47[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default TheyForm
-    `----
-  [31mx[0m Unexpected eof
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:47:1]
- [2m44[0m |     )
- [2m45[0m | }
- [2m46[0m | 
- [2m47[0m | export default TheyForm
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ✓ Compiled in 266ms (695 modules)
- GET /they 200 in 69ms
- ✓ Compiled in 135ms (695 modules)
- GET /they 200 in 40ms
- ✓ Compiled in 133ms (695 modules)
- GET /they 200 in 21ms
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Expression expected
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m          ^[0m
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
-    `----
-  [31mx[0m Expression expected
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m           ^^^^^^[0m
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Expression expected
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <For
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m          ^[0m
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
-    `----
-  [31mx[0m Expression expected
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <For
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m           ^^^^^^[0m
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Expression expected
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <form
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m          ^[0m
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
-    `----
-  [31mx[0m Expression expected
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <form
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m           ^^^^^^[0m
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ✓ Compiled in 127ms (695 modules)
- GET /they 200 in 41ms
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:46:1]
- [2m43[0m |         
- [2m44[0m |         </div>
- [2m45[0m |     )
- [2m46[0m | }
-    : [35;1m^[0m
- [2m47[0m | 
- [2m48[0m | export default TheyForm
-    `----
-  [31mx[0m Unterminated JSX contents
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:44:1]
- [2m41[0m |             <form>
- [2m42[0m |               <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
- [2m43[0m |             
- [2m44[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m         </div>
- [2m45[0m | [35;1m|[0m       )
- [2m46[0m | [35;1m|[0m   }
- [2m47[0m | [35;1m|[0m   
- [2m48[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default TheyForm
-    `----
-  [31mx[0m Unexpected eof
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:48:1]
- [2m45[0m |     )
- [2m46[0m | }
- [2m47[0m | 
- [2m48[0m | export default TheyForm
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:47:1]
- [2m44[0m |         
- [2m45[0m |         </div>
- [2m46[0m |     )
- [2m47[0m | }
-    : [35;1m^[0m
- [2m48[0m | 
- [2m49[0m | export default TheyForm
-    `----
-  [31mx[0m Unterminated JSX contents
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:45:1]
- [2m42[0m |               <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
- [2m43[0m |               
- [2m44[0m |             
- [2m45[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m         </div>
- [2m46[0m | [35;1m|[0m       )
- [2m47[0m | [35;1m|[0m   }
- [2m48[0m | [35;1m|[0m   
- [2m49[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m export default TheyForm
-    `----
-  [31mx[0m Unexpected eof
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:49:1]
- [2m46[0m |     )
- [2m47[0m | }
- [2m48[0m | 
- [2m49[0m | export default TheyForm
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ✓ Compiled in 147ms (695 modules)
- GET /they 200 in 44ms
- ✓ Compiled in 178ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 133ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 236ms (695 modules)
- GET /they 200 in 46ms
- ✓ Compiled in 151ms (695 modules)
- GET /they 200 in 35ms
- ⨯ ./src/app/components/They/TheyForm.js
-Error:   [31mx[0m Unexpected token `string literal ( className=, " className=")`. Expected jsx identifier
-    ,-[[36;1;4m/Users/tori.watkis/Documents/sandboxes/they-doing-that/they-doing-that/frontend/src/app/components/They/TheyForm.js[0m:42:1]
- [2m39[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">add a subject</button>
- [2m40[0m |         </form>
- [2m41[0m |         <form className="flex flex-col justify-stretch w-full m-auto>
- [2m42[0m |           <button type="submit" className="btn  ml-36 mr-36 mt-4 border-0 bg-red-800 rounded-full">remove a subject</button>
-    : [35;1m                              ^^^^^^^^^^^^^[0m
- [2m43[0m |         </form>
- [2m44[0m |         
- [2m45[0m |         </div>
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/components/They/TheyForm.js
-./src/app/they/page.js
- ✓ Compiled in 123ms (695 modules)
- GET /they 200 in 23ms
- ✓ Compiled in 134ms (695 modules)
- GET /they 200 in 32ms
- ✓ Compiled in 194ms (695 modules)
- GET /they 200 in 29ms
- ✓ Compiled in 140ms (695 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 143ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 123ms (695 modules)
- GET /they 200 in 24ms
- ✓ Compiled in 193ms (695 modules)
- GET /they 200 in 52ms
- ✓ Compiled in 131ms (695 modules)
- GET /they 200 in 41ms
- ✓ Compiled in 132ms (695 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 143ms (695 modules)
- GET /they 200 in 23ms
- ✓ Compiled in 155ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 141ms (695 modules)
- GET /they 200 in 21ms
- ✓ Compiled in 174ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 118ms (695 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 152ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 129ms (695 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 167ms (695 modules)
- GET /they 200 in 27ms
- ✓ Compiled in 118ms (695 modules)
- GET /they 200 in 26ms
- ✓ Compiled in 168ms (695 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 151ms (695 modules)
- GET /they 200 in 42ms
- ✓ Compiled in 139ms (695 modules)
- GET /they 200 in 23ms
- GET /they 200 in 69ms
- ✓ Compiled /api/getAllNames in 124ms (400 modules)
- ✓ Compiled (404 modules)
- GET /favicon.ico 200 in 214ms
- GET /api/getAllNames 200 in 211ms
- ✓ Compiled in 182ms (714 modules)
- GET /they 200 in 41ms
- ✓ Compiled in 104ms (714 modules)
- GET /they 200 in 44ms
- ✓ Compiled in 157ms (714 modules)
- GET /they 200 in 26ms
- ✓ Compiled in 123ms (714 modules)
- GET /they 200 in 30ms
- ✓ Compiled in 133ms (714 modules)
+ GET /they 200 in 54ms
+ GET /api/getAllNames 200 in 45ms
+ DELETE /api/deleteName/15 404 in 33ms
  GET /they 200 in 37ms
- ✓ Compiled in 176ms (714 modules)
- GET /they 200 in 29ms
- ✓ Compiled in 163ms (714 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 174ms (714 modules)
- GET /they 200 in 25ms
- ✓ Compiled in 131ms (714 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 175ms (714 modules)
- GET /they 200 in 38ms
- ✓ Compiled in 144ms (714 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 150ms (714 modules)
- GET /they 200 in 30ms
- ✓ Compiled in 215ms (714 modules)
- GET /they 200 in 21ms
- ✓ Compiled in 169ms (695 modules)
- GET /they 200 in 69ms
- ✓ Compiled in 128ms (695 modules)
- GET /they 200 in 36ms
- ✓ Compiled in 130ms (695 modules)
- GET /they 200 in 24ms
- ✓ Compiled in 166ms (695 modules)
- GET /they 200 in 22ms
- ✓ Compiled in 139ms (695 modules)
- GET /they 200 in 24ms
- ✓ Compiled in 199ms (695 modules)
- GET /they 200 in 48ms
+ GET /api/getAllNames 200 in 60ms
+ DELETE /api/deleteName/15 404 in 47ms
+ ✓ Compiled in 118ms (310 modules)
+ GET /they 200 in 8ms
+ ✓ Compiled in 117ms (310 modules)
+ GET /they 200 in 15ms
+ GET /they 200 in 27ms
+ ✓ Compiled in 161ms (681 modules)
+ GET /they 200 in 189ms
+ GET /they 200 in 6ms
+ ✓ Compiled /api/deleteName/[id] in 206ms (698 modules)
+ GET /api/deleteName/15 405 in 1060ms
+Error: Route "/api/deleteName/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at createParamsAccessError (webpack://next/dist/src/server/request/params.ts:467:9)
+    at getMessage (webpack://next/dist/src/server/create-deduped-by-callsite-server-error-logger.ts:46:20)
+    at warnForSyncAccess (webpack://next/dist/src/server/request/params.ts:445:4)
+    at syncIODev (webpack://next/dist/src/server/request/params.ts:403:10)
+    at id (src/app/api/deleteName/[id]/route.js:4:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:41)
+    at handler (webpack://next/dist/src/server/route-modules/app-route/module.ts:725:18)
+    at fn (node_modules/next/src/server/lib/trace/tracer.ts:351:27)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at NoopTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/NoopTracer.ts:98:27)
+    at ProxyTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/ProxyTracer.ts:51:19)
+    at startActiveSpan (node_modules/next/src/server/lib/trace/tracer.ts:304:31)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at spanContext (node_modules/next/src/server/lib/trace/tracer.ts:303:24)
+    at trace (webpack://next/dist/src/server/route-modules/app-route/module.ts:715:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:662:32)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:661:34)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:60)
+    at handle (node_modules/next/src/server/base-server.ts:2504:47)
+    at doRender (node_modules/next/src/server/base-server.ts:3027:27)
+    at responseGenerator (node_modules/next/src/server/response-cache/index.ts:67:13)
+    at get (node_modules/next/src/server/base-server.ts:3039:48)
+  465 | ) {
+  466 |   const prefix = route ? `Route "${route}" ` : 'This route '
+> 467 |   return new Error(
+      |         ^
+  468 |     `${prefix}used ${expression}. ` +
+  469 |       `\`params\` should be awaited before using its properties. ` +
+  470 |       `Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis`
+ DELETE /api/deleteName/15 200 in 149ms
+ GET /they 200 in 75ms
+ ✓ Compiled /api/getAllNames in 89ms (404 modules)
+ GET /api/getAllNames 200 in 130ms
+Error: Route "/api/deleteName/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at createParamsAccessError (webpack://next/dist/src/server/request/params.ts:467:9)
+    at getMessage (webpack://next/dist/src/server/create-deduped-by-callsite-server-error-logger.ts:46:20)
+    at warnForSyncAccess (webpack://next/dist/src/server/request/params.ts:445:4)
+    at syncIODev (webpack://next/dist/src/server/request/params.ts:403:10)
+    at id (src/app/api/deleteName/[id]/route.js:4:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:41)
+    at handler (webpack://next/dist/src/server/route-modules/app-route/module.ts:725:18)
+    at fn (node_modules/next/src/server/lib/trace/tracer.ts:351:27)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at NoopTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/NoopTracer.ts:98:27)
+    at ProxyTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/ProxyTracer.ts:51:19)
+    at startActiveSpan (node_modules/next/src/server/lib/trace/tracer.ts:304:31)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at spanContext (node_modules/next/src/server/lib/trace/tracer.ts:303:24)
+    at trace (webpack://next/dist/src/server/route-modules/app-route/module.ts:715:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:662:32)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:661:34)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:60)
+    at handle (node_modules/next/src/server/base-server.ts:2504:47)
+    at doRender (node_modules/next/src/server/base-server.ts:3027:27)
+    at responseGenerator (node_modules/next/src/server/response-cache/index.ts:67:13)
+    at get (node_modules/next/src/server/base-server.ts:3039:48)
+  465 | ) {
+  466 |   const prefix = route ? `Route "${route}" ` : 'This route '
+> 467 |   return new Error(
+      |         ^
+  468 |     `${prefix}used ${expression}. ` +
+  469 |       `\`params\` should be awaited before using its properties. ` +
+  470 |       `Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis`
+ DELETE /api/deleteName/14 200 in 89ms
+ GET /they 200 in 83ms
+ GET /api/getAllNames 200 in 32ms
+ ✓ Compiled /api/postName in 216ms (702 modules)
+{ name: { name: 'Jackson' } }
+response from POST request {
+  id: 16,
+  name: 'Jackson',
+  created_at: '2025-02-12T22:29:45.746Z',
+  updated_at: '2025-02-12T22:29:45.746Z'
+}
+ POST /api/postName 200 in 260ms
+ GET /they 200 in 75ms
+ GET /api/getAllNames 200 in 30ms
+Error: Route "/api/deleteName/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at createParamsAccessError (webpack://next/dist/src/server/request/params.ts:467:9)
+    at getMessage (webpack://next/dist/src/server/create-deduped-by-callsite-server-error-logger.ts:46:20)
+    at warnForSyncAccess (webpack://next/dist/src/server/request/params.ts:445:4)
+    at syncIODev (webpack://next/dist/src/server/request/params.ts:403:10)
+    at id (src/app/api/deleteName/[id]/route.js:4:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:41)
+    at handler (webpack://next/dist/src/server/route-modules/app-route/module.ts:725:18)
+    at fn (node_modules/next/src/server/lib/trace/tracer.ts:351:27)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at NoopTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/NoopTracer.ts:98:27)
+    at ProxyTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/ProxyTracer.ts:51:19)
+    at startActiveSpan (node_modules/next/src/server/lib/trace/tracer.ts:304:31)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at spanContext (node_modules/next/src/server/lib/trace/tracer.ts:303:24)
+    at trace (webpack://next/dist/src/server/route-modules/app-route/module.ts:715:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:662:32)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:661:34)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:60)
+    at handle (node_modules/next/src/server/base-server.ts:2504:47)
+    at doRender (node_modules/next/src/server/base-server.ts:3027:27)
+    at responseGenerator (node_modules/next/src/server/response-cache/index.ts:67:13)
+    at get (node_modules/next/src/server/base-server.ts:3039:48)
+  465 | ) {
+  466 |   const prefix = route ? `Route "${route}" ` : 'This route '
+> 467 |   return new Error(
+      |         ^
+  468 |     `${prefix}used ${expression}. ` +
+  469 |       `\`params\` should be awaited before using its properties. ` +
+  470 |       `Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis`
+ DELETE /api/deleteName/16 200 in 79ms
+ GET /they 200 in 43ms
+ GET /api/getAllNames 200 in 38ms

@@ -7,175 +7,121 @@ Puma starting in single mode...
 *  Min threads: 3
 *  Max threads: 3
 *  Environment: development
-*          PID: 62549
+*          PID: 10093
 * Listening on http://127.0.0.1:3000
 * Listening on http://[::1]:3000
 Use Ctrl-C to stop
-[dd.env=mac dd.service=subject-api dd.trace_id=3597867212595832145 dd.span_id=3185957000647717716 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:17:27 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=3597867212595832145 dd.span_id=3185957000647717716 ddsource=ruby]   [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='They'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=3597867212595832145 dd.span_id=3185957000647717716 ddsource=ruby] Processing by NamesController#index as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=3597867212595832145 dd.span_id=3185957000647717716 ddsource=ruby]   [1m[36mName Load (22.6ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=3597867212595832145 dd.span_id=3185957000647717716 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=3597867212595832145 dd.span_id=3185957000647717716 ddsource=ruby] Completed 200 OK in 58ms (Views: -8.6ms | ActiveRecord: 50.5ms (1 query, 0 cached) | GC: 8.5ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=8151900878267036689 dd.span_id=1331093288922278190 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:14:01 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=8151900878267036689 dd.span_id=1331093288922278190 ddsource=ruby]   [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='They'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=8151900878267036689 dd.span_id=1331093288922278190 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=8151900878267036689 dd.span_id=1331093288922278190 ddsource=ruby]   [1m[36mName Load (21.3ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=8151900878267036689 dd.span_id=1331093288922278190 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=8151900878267036689 dd.span_id=1331093288922278190 ddsource=ruby] Completed 200 OK in 48ms (Views: -7.3ms | ActiveRecord: 42.4ms (1 query, 0 cached) | GC: 6.4ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby] Started POST "/names" for ::1 at 2025-02-07 16:17:43 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby] Processing by NamesController#create as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   Parameters: {"name"=>{"value"=>"John"}}
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby] Received params: #<ActionController::Parameters {"name"=>{"value"=>"John"}, "controller"=>"names", "action"=>"create"} permitted: false>
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby] [31mUnpermitted parameter: :value. Context: { controller: NamesController, action: create, request: #<ActionDispatch::Request:0x000000011d7cc6d0>, params: {"name"=>{"value"=>"John"}, "controller"=>"names", "action"=>"create"} }[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mBEGIN /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   [1m[36mName Create (4.7ms)[0m  [1m[32mINSERT INTO "names" ("name", "created_at", "updated_at") VALUES (NULL, '2025-02-07 21:17:43.554186', '2025-02-07 21:17:43.554186') RETURNING "id" /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=4274257363448884008 dd.span_id=4386722093104021491 ddsource=ruby] Completed 201 Created in 8ms (Views: 0.3ms | ActiveRecord: 8.5ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=5069692841983585615 dd.span_id=3301680181377576578 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:15:19 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=5069692841983585615 dd.span_id=3301680181377576578 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=5069692841983585615 dd.span_id=3301680181377576578 ddsource=ruby]   [1m[36mName Load (2.1ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=5069692841983585615 dd.span_id=3301680181377576578 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=5069692841983585615 dd.span_id=3301680181377576578 ddsource=ruby] Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=131019367770559117 dd.span_id=4564086851279849266 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:19:01 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=131019367770559117 dd.span_id=4564086851279849266 ddsource=ruby] Processing by NamesController#index as HTML
-[dd.env=mac dd.service=subject-api dd.trace_id=131019367770559117 dd.span_id=4564086851279849266 ddsource=ruby]   [1m[36mName Load (1.9ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=131019367770559117 dd.span_id=4564086851279849266 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=131019367770559117 dd.span_id=4564086851279849266 ddsource=ruby] Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=7691644889740231589 dd.span_id=1505340380943546493 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:18:28 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=7691644889740231589 dd.span_id=1505340380943546493 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=7691644889740231589 dd.span_id=1505340380943546493 ddsource=ruby]   [1m[36mName Load (0.7ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=7691644889740231589 dd.span_id=1505340380943546493 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=7691644889740231589 dd.span_id=1505340380943546493 ddsource=ruby] Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 4.7ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby] Started POST "/names" for ::1 at 2025-02-07 16:20:41 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby] Processing by NamesController#create as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   Parameters: {"name"=>{"value"=>"Joey"}}
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby] Received params: #<ActionController::Parameters {"name"=>{"value"=>"Joey"}, "controller"=>"names", "action"=>"create"} permitted: false>
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby] [31mUnpermitted parameter: :value. Context: { controller: NamesController, action: create, request: #<ActionDispatch::Request:0x000000011df621d8>, params: {"name"=>{"value"=>"Joey"}, "controller"=>"names", "action"=>"create"} }[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   [1m[36mName Create (6.3ms)[0m  [1m[32mINSERT INTO "names" ("name", "created_at", "updated_at") VALUES (NULL, '2025-02-07 21:20:41.164203', '2025-02-07 21:20:41.164203') RETURNING "id" /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=262627861439701871 dd.span_id=2495980296726944605 ddsource=ruby] Completed 201 Created in 12ms (Views: 0.4ms | ActiveRecord: 8.5ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby] Started DELETE "/names/15" for ::1 at 2025-02-12 17:28:24 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby] Processing by NamesController#destroy as JSON
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   Parameters: {"id"=>"15", "name"=>{}}
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   [1m[36mName Load (25.9ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 15 LIMIT 1 /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   ↳ app/controllers/names_controller.rb:61:in `set_name'
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby] Received params: #<ActionController::Parameters {"controller"=>"names", "action"=>"destroy", "id"=>"15", "name"=>{}} permitted: false>
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   [1m[36mCACHE Name Load (0.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 15 LIMIT 1[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   ↳ app/controllers/names_controller.rb:48:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   [1m[36mName Destroy (1.3ms)[0m  [1m[31mDELETE FROM "names" WHERE "names"."id" = 15 /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=6675142532073106052 dd.span_id=2364405070690637670 ddsource=ruby] Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 39.5ms (3 queries, 1 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=1037225268052844436 dd.span_id=589223718906446019 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:21:04 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=1037225268052844436 dd.span_id=589223718906446019 ddsource=ruby] Processing by NamesController#index as HTML
-[dd.env=mac dd.service=subject-api dd.trace_id=1037225268052844436 dd.span_id=589223718906446019 ddsource=ruby]   [1m[36mName Load (4.7ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=1037225268052844436 dd.span_id=589223718906446019 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=1037225268052844436 dd.span_id=589223718906446019 ddsource=ruby] Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 5.0ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=5842529744704004385 dd.span_id=1339048830416855324 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:28:36 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=5842529744704004385 dd.span_id=1339048830416855324 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=5842529744704004385 dd.span_id=1339048830416855324 ddsource=ruby]   [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=5842529744704004385 dd.span_id=1339048830416855324 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=5842529744704004385 dd.span_id=1339048830416855324 ddsource=ruby] Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=3232927429622741525 dd.span_id=3502295470971759836 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:21:10 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=3232927429622741525 dd.span_id=3502295470971759836 ddsource=ruby] Processing by NamesController#index as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=3232927429622741525 dd.span_id=3502295470971759836 ddsource=ruby]   [1m[36mName Load (5.9ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=3232927429622741525 dd.span_id=3502295470971759836 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=3232927429622741525 dd.span_id=3502295470971759836 ddsource=ruby] Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 6.0ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby] Started DELETE "/names/14" for ::1 at 2025-02-12 17:28:48 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby] Processing by NamesController#destroy as JSON
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   Parameters: {"id"=>"14", "name"=>{}}
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   [1m[36mName Load (0.8ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 14 LIMIT 1 /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   ↳ app/controllers/names_controller.rb:61:in `set_name'
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby] Received params: #<ActionController::Parameters {"controller"=>"names", "action"=>"destroy", "id"=>"14", "name"=>{}} permitted: false>
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   [1m[36mCACHE Name Load (0.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 14 LIMIT 1[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   ↳ app/controllers/names_controller.rb:48:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   [1m[36mName Destroy (1.0ms)[0m  [1m[31mDELETE FROM "names" WHERE "names"."id" = 14 /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=3088568307678127014 dd.span_id=2313870013050986577 ddsource=ruby] Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.9ms (3 queries, 1 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby] Started POST "/names" for ::1 at 2025-02-07 16:22:25 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby] Processing by NamesController#create as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   Parameters: {"name"=>{"name"=>"Joey"}}
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby] Received params: #<ActionController::Parameters {"name"=>{"name"=>"Joey"}, "controller"=>"names", "action"=>"create"} permitted: false>
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   [1m[36mName Create (2.7ms)[0m  [1m[32mINSERT INTO "names" ("name", "created_at", "updated_at") VALUES ('Joey', '2025-02-07 21:22:25.471720', '2025-02-07 21:22:25.471720') RETURNING "id" /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=4388066257649463918 dd.span_id=936737027265476828 ddsource=ruby] Completed 201 Created in 6ms (Views: 0.2ms | ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=5002624145577091792 dd.span_id=464313709905124711 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:28:52 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=5002624145577091792 dd.span_id=464313709905124711 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=5002624145577091792 dd.span_id=464313709905124711 ddsource=ruby]   [1m[36mName Load (1.0ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=5002624145577091792 dd.span_id=464313709905124711 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=5002624145577091792 dd.span_id=464313709905124711 ddsource=ruby] Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=1746970467878428200 dd.span_id=1937526027260323984 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:23:34 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=1746970467878428200 dd.span_id=1937526027260323984 ddsource=ruby] Processing by NamesController#index as HTML
-[dd.env=mac dd.service=subject-api dd.trace_id=1746970467878428200 dd.span_id=1937526027260323984 ddsource=ruby]   [1m[36mName Load (1.9ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=1746970467878428200 dd.span_id=1937526027260323984 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=1746970467878428200 dd.span_id=1937526027260323984 ddsource=ruby] Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby] Started POST "/names" for ::1 at 2025-02-12 17:29:45 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby] Processing by NamesController#create as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   Parameters: {"name"=>{"name"=>"Jackson"}}
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby] Received params: #<ActionController::Parameters {"name"=>{"name"=>"Jackson"}, "controller"=>"names", "action"=>"create"} permitted: false>
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   [1m[36mName Create (1.5ms)[0m  [1m[32mINSERT INTO "names" ("name", "created_at", "updated_at") VALUES ('Jackson', '2025-02-12 22:29:45.746293', '2025-02-12 22:29:45.746293') RETURNING "id" /*action='create',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*action='create',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
+[dd.env=mac dd.service=subject-api dd.trace_id=8482136517705498565 dd.span_id=3323082870081499631 ddsource=ruby] Completed 201 Created in 4ms (Views: 0.4ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=437698282646389372 dd.span_id=338816928396915909 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:23:56 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=437698282646389372 dd.span_id=338816928396915909 ddsource=ruby] Processing by NamesController#index as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=437698282646389372 dd.span_id=338816928396915909 ddsource=ruby]   [1m[36mName Load (3.5ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=437698282646389372 dd.span_id=338816928396915909 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=437698282646389372 dd.span_id=338816928396915909 ddsource=ruby] Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=6116854448156298195 dd.span_id=1668185395274179738 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:29:48 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=6116854448156298195 dd.span_id=1668185395274179738 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=6116854448156298195 dd.span_id=1668185395274179738 ddsource=ruby]   [1m[36mName Load (1.3ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=6116854448156298195 dd.span_id=1668185395274179738 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=6116854448156298195 dd.span_id=1668185395274179738 ddsource=ruby] Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby] Started POST "/names" for ::1 at 2025-02-07 16:24:09 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby] Processing by NamesController#create as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   Parameters: {"name"=>{"name"=>"Sam"}}
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby] Received params: #<ActionController::Parameters {"name"=>{"name"=>"Sam"}, "controller"=>"names", "action"=>"create"} permitted: false>
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   [1m[36mName Create (1.4ms)[0m  [1m[32mINSERT INTO "names" ("name", "created_at", "updated_at") VALUES ('Sam', '2025-02-07 21:24:09.410036', '2025-02-07 21:24:09.410036') RETURNING "id" /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*action='create',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby]   ↳ app/controllers/names_controller.rb:29:in `create'
-[dd.env=mac dd.service=subject-api dd.trace_id=7956284776007320488 dd.span_id=2893587075154011517 ddsource=ruby] Completed 201 Created in 4ms (Views: 0.2ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby] Started DELETE "/names/16" for ::1 at 2025-02-12 17:29:51 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby] Processing by NamesController#destroy as JSON
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   Parameters: {"id"=>"16", "name"=>{}}
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   [1m[36mName Load (1.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 16 LIMIT 1 /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   ↳ app/controllers/names_controller.rb:61:in `set_name'
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby] Received params: #<ActionController::Parameters {"controller"=>"names", "action"=>"destroy", "id"=>"16", "name"=>{}} permitted: false>
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   [1m[36mCACHE Name Load (0.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 16 LIMIT 1[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   ↳ app/controllers/names_controller.rb:48:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   [1m[36mName Destroy (0.9ms)[0m  [1m[31mDELETE FROM "names" WHERE "names"."id" = 16 /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*action='destroy',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby]   ↳ app/controllers/names_controller.rb:51:in `destroy'
+[dd.env=mac dd.service=subject-api dd.trace_id=4898287385401397923 dd.span_id=2501568185956879957 ddsource=ruby] Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 3.1ms (3 queries, 1 cached) | GC: 0.0ms)
 
 
-[dd.env=mac dd.service=subject-api dd.trace_id=7858628840265965129 dd.span_id=300802073031024208 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:24:16 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=7858628840265965129 dd.span_id=300802073031024208 ddsource=ruby] Processing by NamesController#index as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=7858628840265965129 dd.span_id=300802073031024208 ddsource=ruby]   [1m[36mName Load (1.7ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=7858628840265965129 dd.span_id=300802073031024208 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=7858628840265965129 dd.span_id=300802073031024208 ddsource=ruby] Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=165656915187619271 dd.span_id=2793380975962921005 ddsource=ruby] Started GET "/names/9" for ::1 at 2025-02-07 16:36:29 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=165656915187619271 dd.span_id=2793380975962921005 ddsource=ruby] Processing by NamesController#show as HTML
-[dd.env=mac dd.service=subject-api dd.trace_id=165656915187619271 dd.span_id=2793380975962921005 ddsource=ruby]   Parameters: {"id"=>"9"}
-[dd.env=mac dd.service=subject-api dd.trace_id=165656915187619271 dd.span_id=2793380975962921005 ddsource=ruby]   [1m[36mName Load (24.0ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 9 LIMIT 1 /*action='show',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=165656915187619271 dd.span_id=2793380975962921005 ddsource=ruby]   ↳ app/controllers/names_controller.rb:53:in `set_name'
-[dd.env=mac dd.service=subject-api dd.trace_id=165656915187619271 dd.span_id=2793380975962921005 ddsource=ruby] Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 39.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=3691073955798299930 dd.span_id=840941761130844377 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:37:55 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=3691073955798299930 dd.span_id=840941761130844377 ddsource=ruby] Processing by NamesController#index as HTML
-[dd.env=mac dd.service=subject-api dd.trace_id=3691073955798299930 dd.span_id=840941761130844377 ddsource=ruby]   [1m[36mName Load (3.6ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=3691073955798299930 dd.span_id=840941761130844377 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=3691073955798299930 dd.span_id=840941761130844377 ddsource=ruby] Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 3.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby] Started DELETE "/names/9" for ::1 at 2025-02-07 16:38:08 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby] Processing by NamesController#destroy as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   Parameters: {"name"=>{"name"=>"Joey"}, "id"=>"9"}
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   [1m[36mName Load (0.9ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 9 LIMIT 1 /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   ↳ app/controllers/names_controller.rb:53:in `set_name'
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   ↳ app/controllers/names_controller.rb:47:in `destroy'
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   [1m[36mName Destroy (2.1ms)[0m  [1m[31mDELETE FROM "names" WHERE "names"."id" = 9 /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   ↳ app/controllers/names_controller.rb:47:in `destroy'
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby]   ↳ app/controllers/names_controller.rb:47:in `destroy'
-[dd.env=mac dd.service=subject-api dd.trace_id=4438490393807555529 dd.span_id=2195745481012975548 ddsource=ruby] Completed 204 No Content in 13ms (ActiveRecord: 4.9ms (2 queries, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby] Started DELETE "/names/10" for ::1 at 2025-02-07 16:38:15 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby] Processing by NamesController#destroy as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   Parameters: {"name"=>{"name"=>"Joey"}, "id"=>"10"}
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   [1m[36mName Load (1.4ms)[0m  [1m[34mSELECT "names".* FROM "names" WHERE "names"."id" = 10 LIMIT 1 /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   ↳ app/controllers/names_controller.rb:53:in `set_name'
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   ↳ app/controllers/names_controller.rb:47:in `destroy'
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   [1m[36mName Destroy (3.7ms)[0m  [1m[31mDELETE FROM "names" WHERE "names"."id" = 10 /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   ↳ app/controllers/names_controller.rb:47:in `destroy'
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*action='destroy',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby]   ↳ app/controllers/names_controller.rb:47:in `destroy'
-[dd.env=mac dd.service=subject-api dd.trace_id=1825218862380746917 dd.span_id=1163200929326361860 ddsource=ruby] Completed 204 No Content in 10ms (ActiveRecord: 7.5ms (2 queries, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=3520707641619106952 dd.span_id=2106166302661209315 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:38:17 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=3520707641619106952 dd.span_id=2106166302661209315 ddsource=ruby] Processing by NamesController#index as HTML
-[dd.env=mac dd.service=subject-api dd.trace_id=3520707641619106952 dd.span_id=2106166302661209315 ddsource=ruby]   [1m[36mName Load (1.8ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=3520707641619106952 dd.span_id=2106166302661209315 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=3520707641619106952 dd.span_id=2106166302661209315 ddsource=ruby] Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=6422313520344141561 dd.span_id=1349178602184868804 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:38:23 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=6422313520344141561 dd.span_id=1349178602184868804 ddsource=ruby] Processing by NamesController#index as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=6422313520344141561 dd.span_id=1349178602184868804 ddsource=ruby]   [1m[36mName Load (2.2ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=6422313520344141561 dd.span_id=1349178602184868804 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=6422313520344141561 dd.span_id=1349178602184868804 ddsource=ruby] Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-[dd.env=mac dd.service=subject-api dd.trace_id=2511237775247301231 dd.span_id=2702363468071698837 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-07 16:49:17 -0500
-[dd.env=mac dd.service=subject-api dd.trace_id=2511237775247301231 dd.span_id=2702363468071698837 ddsource=ruby] Processing by NamesController#index as */*
-[dd.env=mac dd.service=subject-api dd.trace_id=2511237775247301231 dd.span_id=2702363468071698837 ddsource=ruby]   [1m[36mName Load (14.8ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
-[dd.env=mac dd.service=subject-api dd.trace_id=2511237775247301231 dd.span_id=2702363468071698837 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
-[dd.env=mac dd.service=subject-api dd.trace_id=2511237775247301231 dd.span_id=2702363468071698837 ddsource=ruby] Completed 200 OK in 16ms (Views: -6.5ms | ActiveRecord: 22.4ms (1 query, 0 cached) | GC: 0.0ms)
+[dd.env=mac dd.service=subject-api dd.trace_id=2698623055863163787 dd.span_id=1505979808611453890 ddsource=ruby] Started GET "/names" for ::1 at 2025-02-12 17:29:54 -0500
+[dd.env=mac dd.service=subject-api dd.trace_id=2698623055863163787 dd.span_id=1505979808611453890 ddsource=ruby] Processing by NamesController#index as */*
+[dd.env=mac dd.service=subject-api dd.trace_id=2698623055863163787 dd.span_id=1505979808611453890 ddsource=ruby]   [1m[36mName Load (8.2ms)[0m  [1m[34mSELECT "names".* FROM "names" /*action='index',application='They',controller='names'*/[0m
+[dd.env=mac dd.service=subject-api dd.trace_id=2698623055863163787 dd.span_id=1505979808611453890 ddsource=ruby]   ↳ app/controllers/names_controller.rb:8:in `index'
+[dd.env=mac dd.service=subject-api dd.trace_id=2698623055863163787 dd.span_id=1505979808611453890 ddsource=ruby] Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 8.3ms (1 query, 0 cached) | GC: 0.0ms)
 
 

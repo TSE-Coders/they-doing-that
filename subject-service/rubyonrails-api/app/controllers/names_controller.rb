@@ -16,7 +16,7 @@ class NamesController < ApplicationController
   # GET /name/random
 
   def setRandomName
-    randomId = Name.randomName
+    randomId = Name.random_existing_id
     @name = Name.find(randomId)
     render json: @name, status: :accepted
   end
@@ -44,7 +44,15 @@ class NamesController < ApplicationController
 
   # DELETE /names/1
   def destroy
-    @name.destroy!
+    Rails.logger.debug "Received params: #{params.inspect}" # Debugging log
+    name = Name.find_by(id: params[:id])
+
+    if name
+      name.destroy
+      render json: { message: "Deleted successfully" }, status: :ok
+    else
+      render json: { error: "Name not found" }, status: :not_found
+    end
   end
 
   private

@@ -37,7 +37,7 @@ export default function TheyPage() {
         <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
             <TheyWordDisplay />
             <div className="bg-red-700 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
-            <TheyForm />
+            <TheyForm subjects={subjects}/>
             <SubjectList subjects={subjects}/>
             </div>
         </div>

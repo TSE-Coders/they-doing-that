@@ -17287,3 +17287,106 @@
 2025/02/07 16:17:18 Datadog tracer started
 2025/02/07 16:17:18 Go application started successfully
 2025/02/07 16:17:18 Starting server on :8080...
+2025/02/12 14:31:03 Logging started...
+2025/02/12 14:31:03 Logging started...
+2025/02/12 14:31:03 Application is starting...
+2025/02/12 14:31:03 Database connection established.
+2025/02/12 14:31:03 Seeding database with predetermined words...
+2025/02/12 14:31:03 Error inserting word 'happy': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:03 Error inserting word 'all the time': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:03 Error inserting word 'often': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:03 Error inserting word 'no more': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:03 Error inserting word 'every day': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:03 Database seeding completed.
+2025/02/12 14:31:03 Datadog tracer started
+2025/02/12 14:31:03 Go application started successfully
+2025/02/12 14:31:03 Starting server on :8080...
+2025/02/12 14:31:24 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:27 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:30 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:33 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:36 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:39 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:42 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:45 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:48 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 14:31:51 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:26:53 Logging started...
+2025/02/12 15:26:53 Logging started...
+2025/02/12 15:26:53 Application is starting...
+2025/02/12 15:26:53 Database connection established.
+2025/02/12 15:26:53 Seeding database with predetermined words...
+2025/02/12 15:26:53 Error inserting word 'happy': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:26:53 Error inserting word 'all the time': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:26:53 Error inserting word 'often': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:26:53 Error inserting word 'no more': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:26:53 Error inserting word 'every day': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:26:53 Database seeding completed.
+2025/02/12 15:26:53 Datadog tracer started
+2025/02/12 15:26:53 Go application started successfully
+2025/02/12 15:26:53 Starting server on :8080...
+2025/02/12 15:27:11 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:13 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:16 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:19 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:22 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:25 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:28 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:31 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:34 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:37 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:40 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:43 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:46 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 15:27:49 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 16:48:58 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:19 Logging started...
+2025/02/12 17:10:19 Logging started...
+2025/02/12 17:10:19 Application is starting...
+2025/02/12 17:10:19 Database connection established.
+2025/02/12 17:10:19 Seeding database with predetermined words...
+2025/02/12 17:10:19 Error inserting word 'happy': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:19 Error inserting word 'all the time': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:19 Error inserting word 'often': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:19 Error inserting word 'no more': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:19 Error inserting word 'every day': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:19 Database seeding completed.
+2025/02/12 17:10:19 Datadog tracer started
+2025/02/12 17:10:19 Go application started successfully
+2025/02/12 17:10:19 Starting server on :8080...
+2025/02/12 17:10:34 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:36 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:39 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:42 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:45 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:48 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:51 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:54 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:10:57 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:00 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:03 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:06 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:10 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:12 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:16 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:19 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:22 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:25 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:28 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:31 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:34 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:11:37 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:13:29 Logging started...
+2025/02/12 17:13:29 Logging started...
+2025/02/12 17:13:29 Application is starting...
+2025/02/12 17:13:29 Database connection established.
+2025/02/12 17:13:29 Seeding database with predetermined words...
+2025/02/12 17:13:29 Error inserting word 'happy': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:13:29 Error inserting word 'all the time': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:13:29 Error inserting word 'often': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:13:29 Error inserting word 'no more': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:13:29 Error inserting word 'every day': Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/12 17:13:29 Database seeding completed.
+2025/02/12 17:13:29 Datadog tracer started
+2025/02/12 17:13:29 Go application started successfully
+2025/02/12 17:13:29 Starting server on :8080...
