@@ -4732,3 +4732,79 @@ Import trace for requested module:
  GET /api/getRandomName 200 in 45ms
  GET /api/getRandomName 200 in 29ms
  GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 26ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 17ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 28ms
+ GET /api/getRandomName 200 in 30ms
+ GET /api/getRandomName 200 in 22ms
+ GET /api/getRandomName 200 in 34ms
+ GET /api/getRandomName 200 in 29ms
+ GET /api/getRandomName 200 in 37ms
+ GET /api/getRandomName 200 in 40ms
+ GET /api/getRandomName 200 in 45ms
+ GET /api/getRandomName 200 in 43ms
+ GET /api/getRandomName 200 in 39ms
+ GET /api/getRandomName 200 in 45ms
+ ✓ Compiled /api/postName in 202ms (482 modules)
+{ name: { name: 'Fran' } }
+response from POST request {
+  id: 29,
+  name: 'Fran',
+  created_at: '2025-02-24T15:48:01.765Z',
+  updated_at: '2025-02-24T15:48:01.765Z'
+}
+ POST /api/postName 200 in 380ms
+ GET /they? 200 in 377ms
+ ✓ Compiled /api/getAllNames in 98ms (484 modules)
+ GET /api/getAllNames 200 in 134ms
+ GET /api/getRandomName 200 in 46ms
+ GET /api/getRandomName 200 in 47ms
+ GET /api/getRandomName 200 in 58ms
+ GET /api/getRandomName 200 in 40ms
+ ✓ Compiled /api/deleteName/[id] in 208ms (486 modules)
+Error: Route "/api/deleteName/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at createParamsAccessError (webpack://next/dist/src/server/request/params.ts:467:9)
+    at getMessage (webpack://next/dist/src/server/create-deduped-by-callsite-server-error-logger.ts:46:20)
+    at warnForSyncAccess (webpack://next/dist/src/server/request/params.ts:445:4)
+    at syncIODev (webpack://next/dist/src/server/request/params.ts:403:10)
+    at id (src/app/api/deleteName/[id]/route.js:4:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:529:41)
+    at handler (webpack://next/dist/src/server/route-modules/app-route/module.ts:725:18)
+    at fn (node_modules/next/src/server/lib/trace/tracer.ts:351:27)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at NoopTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/NoopTracer.ts:98:27)
+    at ProxyTracer.startActiveSpan (node_modules/@opentelemetry/api/src/trace/ProxyTracer.ts:51:19)
+    at startActiveSpan (node_modules/next/src/server/lib/trace/tracer.ts:304:31)
+    at NoopContextManager.with (node_modules/@opentelemetry/api/src/context/NoopContextManager.ts:31:14)
+    at ContextAPI.with (node_modules/@opentelemetry/api/src/api/context.ts:77:42)
+    at spanContext (node_modules/next/src/server/lib/trace/tracer.ts:303:24)
+    at trace (webpack://next/dist/src/server/route-modules/app-route/module.ts:715:26)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:662:32)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:661:34)
+    at run (webpack://next/dist/src/server/route-modules/app-route/module.ts:658:60)
+    at handle (node_modules/next/src/server/base-server.ts:2504:47)
+    at doRender (node_modules/next/src/server/base-server.ts:3027:27)
+    at responseGenerator (node_modules/next/src/server/response-cache/index.ts:67:13)
+    at get (node_modules/next/src/server/base-server.ts:3039:48)
+  465 | ) {
+  466 |   const prefix = route ? `Route "${route}" ` : 'This route '
+> 467 |   return new Error(
+      |         ^
+  468 |     `${prefix}used ${expression}. ` +
+  469 |       `\`params\` should be awaited before using its properties. ` +
+  470 |       `Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis`
+ DELETE /api/deleteName/29 200 in 273ms
+ GET /they 200 in 43ms
+ ✓ Compiled /favicon.ico in 213ms (488 modules)
+ GET /favicon.ico 200 in 372ms
+ GET /api/getAllNames 200 in 354ms
+ GET /api/getRandomName 200 in 44ms
+ GET /api/getRandomName 200 in 38ms
+ GET /api/getRandomName 200 in 42ms
+ GET /api/getRandomName 200 in 51ms
+ GET /doing 200 in 68ms
+ GET /that 200 in 26ms
