@@ -27,10 +27,10 @@ async function ThatPost(event){
 async function ThatDelete(noun){
   //get the last element of the subjects array and delete it. 
   const lastElement = noun.length - 1
-  const subjectId = noun[lastElement].id
+  const nounId = noun[lastElement].id
 
   try {
-    const res = await fetch(`/api/deleteNoun/${subjectId}`, { method: "DELETE" });
+    const res = await fetch(`/api/deleteNoun/${nounId}`, { method: "DELETE" });
     console.log(res)
 
     if (!res.ok) {
@@ -43,13 +43,13 @@ async function ThatDelete(noun){
     // Update state AFTER successful delete
     //setNames((prevNames) => prevNames.filter((name) => name.id !== id));
   } catch (error) {
-    console.error("Error deleting name:", error);
+    console.error("Error deleting noun:", error);
   }
 
 }
 
 
-const ThatForm = () => {
+const ThatForm = ({noun}) => {
     return (
       <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-sky-950 m-0 p-0'>
       <div className="flex justify-stretch flex-col w-full">

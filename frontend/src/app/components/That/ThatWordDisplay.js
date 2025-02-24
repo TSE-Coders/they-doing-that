@@ -9,7 +9,7 @@ const ThatWordDisplay = () => {
       //FETCH RANDOM NAME
       async function fetchName() {
         try {
-          const res = await fetch(`/api/that`);
+          const res = await fetch(`/api/getRandomNoun`);
           if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status} API unreachable`);
           }

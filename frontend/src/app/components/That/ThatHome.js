@@ -11,7 +11,7 @@ const [check, setCheck] = useState(0)
 //FETCH THAT 
 async function fetchThat() {
     try {
-      const res = await fetch(`/api/that`);
+      const res = await fetch(`/api/getRandomNoun`);
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status} API unreachable`);
       }
