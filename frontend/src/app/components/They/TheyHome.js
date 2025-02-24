@@ -44,7 +44,7 @@ const TheyHome = () => {
         <div className="flex justify-center bg-red-600 w-full h-dvh hover:bg-red-700">    
           <div className="m-auto mt-64 justify-items-center pb-56">
             <div className="pb-6">
-              <p className='text-6xl text-wrap font-black text-red-950 uppercase text-center'>{data.name}</p>
+              <p className='text-6xl text-wrap font-black text-red-950 uppercase text-center'>{isLoading ? `Loading...` : data.name}</p>
             </div>
             <div className="">
             <Link href='/they'><button className="btn btn-neutral border-0 bg-red-800 rounded-full">add a subject</button></Link>
