@@ -1,4 +1,6 @@
 'use client'
+import {  useState, useEffect } from 'react'
+
 const DoingWordDisplay = () => {
   const [doing, setDoing] = useState([])
   const [isLoading, setLoading] = useState(true)

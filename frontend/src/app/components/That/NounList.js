@@ -3,7 +3,7 @@
 const NounList = () => {
     return (
         <div className='bg-sky-600 flex justify-stretch  place-items-stretch m-4 ml-0 flex relative w-full h-dvh'>
-            <div class="grid grid-cols-4 gap-4 relative w-full p-6">
+            <div className="grid grid-cols-4 gap-4 relative w-full p-6">
                 <div className='bg-sky-900 border-sky-950 border-4 rounded-full text-center content-center text-white uppercase font-bold'>Highway</div>
                 <div className='bg-sky-900 border-sky-950 border-4 rounded-full text-center content-center text-white uppercase font-bold'>Lake</div>
                 <div className='bg-sky-900 border-sky-950 border-4 rounded-full text-center content-center text-white uppercase font-bold'>Restaurant</div>

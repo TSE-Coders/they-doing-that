@@ -26,7 +26,7 @@ async function fetchThat() {
       }
     } catch (error) {
       console.error("Error fetching that:", error);
-      setThat({ word: "that" });
+      setThat({ word: "highway" });
       setLoading(false);
     }
   }
