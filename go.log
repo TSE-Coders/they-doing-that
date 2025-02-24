@@ -42,3 +42,8 @@
 2025/02/24 09:58:25 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
 2025/02/24 09:58:29 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
 2025/02/24 09:58:32 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/24 10:27:08 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/24 10:28:37 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/24 10:28:41 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/24 10:28:45 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist
+2025/02/24 10:28:49 Error executing query: Error 1146 (42S02): Table 'that-db.words' doesn't exist

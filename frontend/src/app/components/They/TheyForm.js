@@ -3,7 +3,6 @@ import Link from "next/link"
 
 
 async function TheyPost(event){
-  event.preventDefault()
   
   const theySubject = {
     name: {
@@ -42,6 +41,7 @@ async function TheyDelete(subjects){
       return;
     }
     console.log("Deleted successfully");
+    window.location.reload();
     // Update state AFTER successful delete
     //setNames((prevNames) => prevNames.filter((name) => name.id !== id));
   } catch (error) {
@@ -54,14 +54,18 @@ async function TheyDelete(subjects){
 
 const TheyForm = ({subjects}) => {
     return (
-        <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-red-950 m-0'>
-        <form onSubmit={TheyPost} className="flex flex-col justify-stretch w-full mt-36 mb-0 p-0">
-          <label id="subject" className="flex items-center gap-8">
-            <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0" />
-          </label>
-          <button type="submit" className="btn ml-36 mr-36 mt-8 mb-0 pb-0 border-0 bg-red-800 rounded-full">add a subject</button>
-        </form>
-          <button onClick={() => TheyDelete(subjects)} className="btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove a subject</button>
+        <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-red-950 m-0 p-0'>
+          <div className="flex justify-stretch flex-col w-full">
+            <form onSubmit={TheyPost} className="flex flex-col justify-stretch w-full mt-32 mb-0 p-0 ">
+            <label id="subject" className="flex items-center gap-8 p-0">
+              <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0" />
+            </label>
+            <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-red-800 rounded-full">add a subject</button>
+            </form>
+          </div>
+          <div className="flex flex-col justify-stretch w-full mb-24">
+            <button onClick={() => TheyDelete(subjects)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove a subject</button>
+          </div>
         </div>
     )
 }
