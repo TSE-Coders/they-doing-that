@@ -61,7 +61,7 @@ const TheyForm = ({subjects}) => {
             <label id="subject" className="flex items-center gap-8 p-0">
               <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-red-950" />
             </label>
-            {subjectNum === 12 ?  
+            {subjectNum === 16 ?  
             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-red-800 rounded-full cursor-not-allowed opacity-50" disabled>add a subject</button> :
             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-red-800 rounded-full">add a subject</button>
             }

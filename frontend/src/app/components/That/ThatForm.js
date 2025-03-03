@@ -58,11 +58,10 @@ const ThatForm = ({noun}) => {
         <label id="noun" className="flex items-center gap-8 p-0">
           <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-sky-900" />
         </label>
-        {nounNum === 12 ?  
+        {nounNum === 16 ?  
             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-sky-700 rounded-full cursor-not-allowed opacity-50" disabled>add a noun</button> :
             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-sky-700 rounded-full">add a noun</button>
         }
-        <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-sky-700 rounded-full">add a noun</button>
         </form>
       </div>
       <div className="flex flex-col justify-stretch w-full mb-24">

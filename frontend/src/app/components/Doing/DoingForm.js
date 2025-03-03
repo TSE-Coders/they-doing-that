@@ -58,7 +58,7 @@ const DoingForm = ({verb}) => {
         <label id="noun" className="flex items-center gap-8 p-0">
           <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-yellow-600" />
         </label>
-        {verbNum === 12 ?  
+        {verbNum === 16 ?  
             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-yellow-500 rounded-full cursor-not-allowed opacity-50" disabled>add a verb</button> :
             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-yellow-500 rounded-full">add a verb</button>
         }
@@ -69,7 +69,6 @@ const DoingForm = ({verb}) => {
             <button className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full cursor-not-allowed opacity-50" disabled>remove a verb</button> :
             <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove a verb</button>
       }
-        
       </div>
     </div>
     )
