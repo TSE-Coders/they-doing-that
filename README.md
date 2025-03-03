@@ -55,13 +55,13 @@ Before starting, ensure you have the following installed:
 3. The files start-app.sh and stop-app.sh contain a script that will start and stop all the services.
    run the following command to grant execute permissions to both files: 
    ```bash
-   chmod +x start_tdt_apps.sh
-   chmod +x stop_tdt_apps.sh
+   chmod +x start_app.sh
+   chmod +x stop_app.sh
    ```
 
 4. Run the following command to start the application:
    ```bash
-   ./start-app
+   ./start-app.sh
    ```
    This will:
    - Start the Next.js frontend.
@@ -71,7 +71,7 @@ Before starting, ensure you have the following installed:
 To stop the application, run:
 
    ```bash
-   ./stop-app
+   ./stop-app.sh
    ```
 
 ## Repository

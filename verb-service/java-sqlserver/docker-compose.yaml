@@ -1,0 +1,23 @@
+services:
+
+  mssql:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    cap_add: [ 'SYS_PTRACE' ]
+    environment:
+      - "ACCEPT_EULA=1"
+      - "MSSQL_SA_PASSWORD=Password1!"
+    ports:
+      - "1433:1433"
+      - "1431:1431"
+    hostname: mssql
+    volumes:
+      #- "verb-service-data:/var/opt/mssql"
+      - "./:/var/opt/mssql"
+
+
+volumes:
+  verb-service-data:
+
+networks:
+  ddog:
+    driver: bridge

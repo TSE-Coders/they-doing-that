@@ -19,6 +19,14 @@ echo "Creating MySQL container"
 echo "---- Adjective-service Database ready -----"
 sleep 5
 
+# Start SQLServer container and wait for it to be ready
+
+echo "Creating Verb-service Database"
+echo "Creating SQLServer container"
+(cd verb-service/java-sqlserver && docker compose up -d)
+echo "---- Verb-service Database ready -----"
+sleep 5
+
 
 
 # Start Rails service sequentially
@@ -52,7 +60,7 @@ sleep 5
 # Start Go 
 
 nohup bash -c "(cd adjective && go run .)" > go.log 2>&1 &
-sleep 3  # Give Go a moment to start
+sleep 6  # Give Go a moment to start
 
 # Check if the Go server started successfully
 if grep -q "Starting server on :8080..." go.log; then
@@ -88,4 +96,19 @@ else
     exit 1
 fi
 
+if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
+  -Ddd.service=verb-API \
+  -Ddd.env=prod \
+  -Ddd.version=1.0.0 \
+  -Ddd.logs.injection=true \
+  -Ddd.trace.sample.rate=1 \
+  -Ddd.trace.debug=true \
+  -Ddd.diagnostics.debug=true \
+  -Ddd.trace.agent.port=8136 \
+  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
+  echo "Java verb-service started"
+else 
+    echo "Java failed"
+    exit 1
+fi
 disown
