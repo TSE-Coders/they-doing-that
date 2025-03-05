@@ -5,6 +5,7 @@ import TheyHeader from '../components/They/TheyHeader';
 import TheyWordDisplay from '../components/They/TheyWordDisplay';
 import SubjectList from '../components/They/SubjectList';
 import TheyForm from '../components/They/TheyForm';
+import TheyFooter from '../components/They/TheyFooter';
 
 export default function TheyPage() {
     const [subjects, setSubject] = useState([]);
@@ -19,6 +20,7 @@ export default function TheyPage() {
           
               const payload = await res.json();
               if (payload && payload.data) {
+                console.log(payload.data)
                 setSubject(payload.data);
               } else {
                 setSubject({ name: "no data available" });
@@ -41,6 +43,7 @@ export default function TheyPage() {
             <SubjectList subjects={subjects}/>
             </div>
         </div>
+        <TheyFooter/>
     </main>
     )
 }

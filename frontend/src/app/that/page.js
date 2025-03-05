@@ -5,9 +5,11 @@ import ThatHeader from '../components/That/ThatHeader';
 import NounList from '../components/That/NounList';
 import ThatWordDisplay from '../components/That/ThatWordDisplay';
 import ThatForm from '../components/That/ThatForm';
+import ThatFooter from '../components/That/ThatFooter';
 
 export default function ThatPage() {
     const [noun, setNoun] = useState([]);
+    const thatArray = [{word:"highway", id: 1}, {word:"lake", id: 2}, {word: "restaurant", id: 3}, {word: "table", id: 4}, {word: "computer", id: 5 }, {word:"book", id: 6}, {word:"shoebox", id: 7}, {word: "blanket", id: 8}, {word: "tv", id: 9}, {word: "hospital", id: 10}, {word:"car", id: 11}, {word:"cake", id: 12}, {word: "bus", id: 13}, {word: "house", id: 14}, {word: "vegetable", id: 15}]
     
         useEffect(() => {
             async function fetchAllNouns() {
@@ -21,11 +23,11 @@ export default function ThatPage() {
                   if (payload && payload.data) {
                     setNoun(payload.data);
                   } else {
-                    setNoun({ word: "no data available" });
+                    setNoun(thatArray);
                   }
                 } catch (error) {
                   console.error("Error fetching name:", error);
-                  setNoun({ word: "no data available" });
+                  setNoun(thatArray);
                 }
               }
               fetchAllNouns()
@@ -36,12 +38,13 @@ export default function ThatPage() {
     <main className='bg-sky-900 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
         <ThatHeader />
         <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
-            <ThatWordDisplay />
+            <ThatWordDisplay/>
             <div className="bg-sky-600 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
             <ThatForm noun={noun}/>
             <NounList noun={noun}/>
             </div>
         </div>
+        <ThatFooter/>
     </main>
     )
 }

@@ -5,6 +5,10 @@ const ThatWordDisplay = () => {
     const [that, setThat] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [check, setCheck] = useState(0)
+
+    const thatArray = [{word:"highway"}, {word:"lake"}, {word: "restaurant"}, {word: "table"}, {word: "computer"}, {word:"book"}, {word:"shoebox"}, {word: "blanket"}, {word: "tv"}, {word: "hospital"}, {word:"car"}, {word:"cake"}, {word: "bus"}, {word: "house"}, {word: "vegetable"}]
+    const i = Math.floor(Math.random() * thatArray.length);
+    const randomThat = thatArray[i] 
     
       //FETCH RANDOM NAME
       async function fetchName() {
@@ -24,7 +28,7 @@ const ThatWordDisplay = () => {
           }
         } catch (error) {
           console.error("Error fetching name:", error);
-          setThat({ word: "highway" });
+          setThat(randomThat);
           setLoading(false);
         }
       }

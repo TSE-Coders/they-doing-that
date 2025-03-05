@@ -17,6 +17,7 @@ const TheyHome = () => {
   
       const payload = await res.json();
       if (payload && payload.data) {
+        console.log(payload.data)
         setData(payload.data);
         setLoading(false);
       } else {
@@ -47,7 +48,7 @@ const TheyHome = () => {
               <p className='text-6xl text-wrap font-black text-red-950 uppercase text-center'>{isLoading ? `Loading...` : data.name}</p>
             </div>
             <div className="">
-            <Link href='/they'><button className="btn btn-neutral border-0 bg-red-800 rounded-full">add a subject</button></Link>
+            <Link href='/they'><button className="btn btn-neutral border-0 bg-red-900 rounded-full">add a subject</button></Link>
             </div>
             <div className='relative m-10 mt-44 justify-center'>
               <p className='text-center text-base text-sm text-red-950'>Powered by:</p>

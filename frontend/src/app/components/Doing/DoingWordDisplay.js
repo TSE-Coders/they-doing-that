@@ -5,6 +5,10 @@ const DoingWordDisplay = () => {
   const [doing, setDoing] = useState([])
   const [isLoading, setLoading] = useState(true)
   const [check, setCheck] = useState(0)
+
+  const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
+  const i = Math.floor(Math.random() * doingArray.length);
+  const randomDoing = doingArray[i]
   
   async function fetchDoing() {
 
@@ -24,7 +28,7 @@ const DoingWordDisplay = () => {
         }
       } catch (error) {
         console.error("Error fetching doing:", error);
-        setDoing({ word: "swim" });
+        setDoing(randomDoing);
         setLoading(false);
       }
     }
@@ -44,7 +48,7 @@ const DoingWordDisplay = () => {
             <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center p-36'>{isLoading ? `Loading...` : doing.word}</p>
             <div className='relative m-10 mt-44 justify-center content-end'>
                 <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
-                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Python x SQLServer</p>
+                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
             </div>
         </div>
     )
