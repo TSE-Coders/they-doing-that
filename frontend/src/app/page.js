@@ -8,14 +8,17 @@ import Footer from './components/Footer';
 
 export default function HomePage() {
   return (
-    <main className='bg-black flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+    <main className='bg-black relative h-screen w-full'>
+      <div className='flex flex-col relative h-screen w-full'>
       <Header />
-      <div className="flex justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+      <div className="flex h-full justify-stretch w-full">
         <TheyHome />
         <DoingHome />
         <ThatHome />
       </div>
       <Footer />
+      </div>
+      
     </main>
   )
 };

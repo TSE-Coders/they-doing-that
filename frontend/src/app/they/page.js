@@ -34,11 +34,11 @@ export default function TheyPage() {
     }, [])
 
     return (
-    <main className='bg-red-950 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+    <main className='h-screen bg-red-950 flex flex-col w-full'>
         <TheyHeader />
-        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+        <div className='h-screen flex w-full'>
             <TheyWordDisplay />
-            <div className="bg-red-700 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+            <div className="h-full bg-red-700 flex flex-col w-full">
             <TheyForm subjects={subjects}/>
             <SubjectList subjects={subjects}/>
             </div>

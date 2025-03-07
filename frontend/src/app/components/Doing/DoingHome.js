@@ -45,8 +45,8 @@ const DoingHome = () => {
     },[check]) 
 
     return (
-        <div className="flex justify-center bg-yellow-300 w-full h-dvh hover:bg-yellow-400">
-          <div className="m-auto mt-64 justify-items-center pb-56">
+        <div className="flex justify-center content-stretch bg-yellow-300 w-full hover:bg-yellow-400">
+          <div className="m-auto mt-64 justify-items-center">
             <div className="pb-6">
               <p className='text-6xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
             </div>

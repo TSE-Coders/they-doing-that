@@ -35,11 +35,11 @@ export default function DoingPage() {
             }, [])
 
     return (
-    <main className='bg-yellow-700 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
-        <DoingHeader />
-        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+    <main className='h-screen bg-yellow-700 flex flex-col w-full'>
+      <DoingHeader />
+        <div className='h-full flex w-full'>
         <DoingWordDisplay />
-            <div className="bg-yellow-400 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+            <div className="h-full bg-yellow-400 flex flex-col w-full">
                 <DoingForm verb={verb} />
                 <VerbList verb={verb} />
             </div>

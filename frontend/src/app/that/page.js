@@ -35,11 +35,11 @@ export default function ThatPage() {
     
 
     return (
-    <main className='bg-sky-900 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+    <main className='h-screen bg-sky-900 flex flex-col w-full '>
         <ThatHeader />
-        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+        <div className='h-screen flex w-full'>
             <ThatWordDisplay/>
-            <div className="bg-sky-600 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+            <div className="h-full bg-sky-600 flex flex-col w-full">
             <ThatForm noun={noun}/>
             <NounList noun={noun}/>
             </div>

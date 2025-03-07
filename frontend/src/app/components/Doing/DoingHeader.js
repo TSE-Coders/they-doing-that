@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const DoingHeader = () => {
     return (
-        <div className='bg-yellow-700 flex flex-row m-4 ml-0 max-h-14 justify-stretch relative w-full'>
+        <div className='bg-yellow-700 flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
             <div className='flex flex-row relative w-full'>
             <Link href='/they'><p className='text-yellow-400 text-6xl hover:text-red-600'>They</p></Link>
                 <p className='text-yellow-400 text-6xl font-semibold'>Doing</p>

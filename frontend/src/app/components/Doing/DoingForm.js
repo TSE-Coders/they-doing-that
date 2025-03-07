@@ -52,8 +52,8 @@ async function DoingDelete(verb){
 const DoingForm = ({verb}) => {
   const verbNum = verb.length
     return (
-      <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-yellow-600 m-0 p-0'>
-      <div className="flex justify-stretch flex-col w-full">
+      <div className='h-full w-full border-b-4 border-yellow-600 m-0 p-0 '>
+      <div className="flex justify-stretch flex-col w-full mb-6">
         <form onSubmit={DoingPost} className="flex flex-col justify-stretch w-full mt-32 mb-0 p-0 ">
         <label id="noun" className="flex items-center gap-8 p-0">
           <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-yellow-600" />
