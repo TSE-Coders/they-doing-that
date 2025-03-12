@@ -17,7 +17,6 @@ const TheyHome = () => {
   
       const payload = await res.json();
       if (payload && payload.data) {
-        console.log(payload.data)
         setData(payload.data);
         setLoading(false);
       } else {

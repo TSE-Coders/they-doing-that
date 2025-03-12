@@ -5,9 +5,9 @@ export async function GET (){
 
    try {
 
-    const res = await fetch(`http://localhost:/random`)       
+    const res = await fetch(`http://localhost:8081/verb/random`)       
 
-    const that = await res.json()
+    const doing = await res.json()
     
     return NextResponse.json({ doing })
 

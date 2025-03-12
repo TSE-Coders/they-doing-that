@@ -8,7 +8,7 @@ export async function POST (request){
 
    try {
 
-        const response = await fetch('http://localhost:/names', {
+        const response = await fetch('http://localhost:8081/verb', {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",

@@ -6,9 +6,9 @@ const DoingWordDisplay = () => {
   const [isLoading, setLoading] = useState(true)
   const [check, setCheck] = useState(0)
 
-  const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
-  const i = Math.floor(Math.random() * doingArray.length);
-  const randomDoing = doingArray[i]
+  //const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
+  //const i = Math.floor(Math.random() * doingArray.length);
+  //const randomDoing = doingArray[i]
   
   async function fetchDoing() {
 
@@ -28,7 +28,7 @@ const DoingWordDisplay = () => {
         }
       } catch (error) {
         console.error("Error fetching doing:", error);
-        setDoing(randomDoing);
+        setDoing({ word: "no data" });
         setLoading(false);
       }
     }
@@ -46,7 +46,7 @@ const DoingWordDisplay = () => {
     return (
         <div className="bg-yellow-400 flex flex-col justify-center w-full border-r-4 border-yellow-600">
             <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
-            <div className='relative mt-44 justify-center content-end'>
+            <div className='relative mt-24 justify-center content-end'>
                 <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
                 <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
             </div>

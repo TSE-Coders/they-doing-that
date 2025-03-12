@@ -7,9 +7,9 @@ const DoingHome = () => {
   const [isLoading, setLoading] = useState(true)
   const [check, setCheck] = useState(0)
 
-  const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
-  const i = Math.floor(Math.random() * doingArray.length);
-  const randomDoing = doingArray[i]
+  //const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
+  //const i = Math.floor(Math.random() * doingArray.length);
+  //const randomDoing = doingArray[i]
 
   async function fetchDoing() {
 
@@ -20,6 +20,7 @@ const DoingHome = () => {
         }
     
         const payload = await res.json();
+        console.log(payload)
         if (payload && payload.doing) {
           setDoing(payload.doing);
           setLoading(false);
@@ -29,7 +30,7 @@ const DoingHome = () => {
         }
       } catch (error) {
         console.error("Error fetching doing:", error);
-        setDoing(randomDoing);
+        setDoing({ word: "no data available" });
         setLoading(false);
       }
     }
