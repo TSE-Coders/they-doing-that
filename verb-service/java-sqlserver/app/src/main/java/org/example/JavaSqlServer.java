@@ -36,6 +36,8 @@ public class JavaSqlServer {
         // Register endpoints
         context.addServlet(new ServletHolder(new ReceiveDataServlet()), "/verb");
         context.addServlet(new ServletHolder(new QueryDataServlet()), "/verb/random");
+        context.addServlet(new ServletHolder(new GetAllVerbsServlet()), "/verb/all");
+
 
         server.start();
         server.join();
@@ -179,4 +181,41 @@ public class JavaSqlServer {
             resp.getWriter().println(jsonResponse);
         }
     }
+
+
+    public static class GetAllVerbsServlet extends HttpServlet {
+        @Override
+        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+            StringBuilder jsonResponse = new StringBuilder();
+            jsonResponse.append("[");
+    
+            try (Statement stmt = sharedConnection.createStatement()) {
+                String query = "SELECT word FROM verb ORDER BY word ASC";
+                try (ResultSet rs = stmt.executeQuery(query)) {
+                    boolean first = true;
+                    int id = 1;
+                    while (rs.next()) {
+                        if (!first) {
+                            jsonResponse.append(",");
+                        }
+                        String word = rs.getString("word");
+                        jsonResponse.append("{\"word\":\"").append(word).append("\",\"id\":").append(id).append("}");
+                        first = false;
+                        id++;
+                    }
+                }
+            } catch (SQLException e) {
+                jsonResponse = new StringBuilder("{\"error\":\"Database error: " + e.getMessage() + "\"}");
+            }
+    
+            jsonResponse.append("]");
+    
+            resp.setContentType("application/json");
+            resp.setCharacterEncoding("UTF-8");
+            resp.getWriter().println(jsonResponse.toString());
+        }
+    
 }
+}
+
+
