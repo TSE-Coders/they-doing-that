@@ -111,4 +111,5 @@ else
     echo "Java failed"
     exit 1
 fi
+echo "Enjoy the app!!!"
 disown
