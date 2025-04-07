@@ -7,3 +7,5 @@ What's happening under the hood??
 
 
 https://docs.datadoghq.com/tracing/trace_collection/automatic_instrumentation/dd_libraries/ruby/#additional-configuration 
+
+// To enable Datadog APM add NODE_OPTIONS='--require dd-trace/init' DD_SERVICE='frontend' DD_TRACE_AGENT_PORT=8136 
