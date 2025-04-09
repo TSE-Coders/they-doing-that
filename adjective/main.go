@@ -102,7 +102,7 @@ func setupLogging() {
 
 func initDDTracer() {
 	tracer.Start(
-		tracer.WithEnv("dev"),
+		tracer.WithEnv("tdt"),
 		tracer.WithService("adjective-api"),
 		tracer.WithServiceVersion("v1"),
 		tracer.WithAgentAddr("localhost:8136"),

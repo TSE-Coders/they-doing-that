@@ -65,13 +65,29 @@ sleep 6  # Give Go a moment to start
 # Check if the Go server started successfully
 if grep -q "Starting server on :8080..." go.log; then
     echo "Go server started successfully"
-    echo "---- Subject-service API ready in http://localhost:8080 -----"
+    echo "---- Adjective-service API ready in http://localhost:8080 -----"
 else
     echo "Error: Go server initialization failed. Check go.log for details."
     exit 1
 fi
 
+# Start java service
 
+if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
+  -Ddd.service=verb-API \
+  -Ddd.env=prod \
+  -Ddd.version=1.0.0 \
+  -Ddd.logs.injection=true \
+  -Ddd.trace.sample.rate=1 \
+  -Ddd.trace.debug=true \
+  -Ddd.diagnostics.debug=true \
+  -Ddd.trace.agent.port=8136 \
+  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
+  echo "Java verb-service started"
+else 
+    echo "Java failed"
+    exit 1
+fi
 
 
 # Start Next.js application
@@ -95,21 +111,6 @@ else
     echo "Error: Dependencies installation failed. Exiting..."
     exit 1
 fi
-
-if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
-  -Ddd.service=verb-API \
-  -Ddd.env=prod \
-  -Ddd.version=1.0.0 \
-  -Ddd.logs.injection=true \
-  -Ddd.trace.sample.rate=1 \
-  -Ddd.trace.debug=true \
-  -Ddd.diagnostics.debug=true \
-  -Ddd.trace.agent.port=8136 \
-  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
-  echo "Java verb-service started"
-else 
-    echo "Java failed"
-    exit 1
-fi
 echo "Enjoy the app!!!"
+
 disown

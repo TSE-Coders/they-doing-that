@@ -1,15 +1,15 @@
-
 {
   "name": "tdt-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "NODE_OPTIONS='--require dd-trace/init' DD_ENV='development' DD_SERVICE='tdt-frontend' DD_TRACE_AGENT_PORT=8136 next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@datadog/browser-rum": "^6.6.3",
     "dd-trace": "^5.27.1",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
