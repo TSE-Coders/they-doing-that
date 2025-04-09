@@ -1,5 +1,6 @@
 'use client'
 import {  useState, useEffect } from 'react'
+import { datadogLogs } from '@datadog/browser-logs';
 
 const TheyWordDisplay = () => {
     const [data, setData] = useState([])
@@ -11,15 +12,28 @@ const TheyWordDisplay = () => {
     try {
       const res = await fetch(`/api/getRandomName`);
       if (!res.ok) {
+        datadogLogs.logger.error("Error Fetching name from backend", {
+          contextKey: res.status,
+        timestamp: Date.now()
+        });
         throw new Error(`HTTP error! status: ${res.status} API unreachable`);
       }
   
       const payload = await res.json();
       if (payload && payload.data) {
+        datadogLogs.logger.info("Name Fetched successfully", {
+          payload: payload
+        ,
+        timestamp: Date.now()
+        });
         setData(payload.data);
         setLoading(false);
       } else {
         setData({ name: "no data available" });
+        datadogLogs.logger.error("No data available in response", {
+          payload: payload,
+          timestamp: Date.now()
+        });
         setLoading(false);
       }
     } catch (error) {
