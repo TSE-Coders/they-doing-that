@@ -5,6 +5,10 @@ const ThatWordDisplay = () => {
     const [that, setThat] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [check, setCheck] = useState(0)
+
+    const thatArray = [{word:"highway"}, {word:"lake"}, {word: "restaurant"}, {word: "table"}, {word: "computer"}, {word:"book"}, {word:"shoebox"}, {word: "blanket"}, {word: "tv"}, {word: "hospital"}, {word:"car"}, {word:"cake"}, {word: "bus"}, {word: "house"}, {word: "vegetable"}]
+    const i = Math.floor(Math.random() * thatArray.length);
+    const randomThat = thatArray[i] 
     
       //FETCH RANDOM NAME
       async function fetchName() {
@@ -24,7 +28,7 @@ const ThatWordDisplay = () => {
           }
         } catch (error) {
           console.error("Error fetching name:", error);
-          setThat({ word: "highway" });
+          setThat(randomThat);
           setLoading(false);
         }
       }
@@ -38,9 +42,9 @@ const ThatWordDisplay = () => {
       },[check]) 
 
     return (
-        <div className="bg-sky-600 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-sky-900">
-            <p className='text-8xl text-wrap font-black text-sky-900 uppercase text-center p-36'>{isLoading ? `Loading...` : that.word}</p>
-            <div className='relative m-10 mt-44 justify-center content-end'>
+        <div className="bg-sky-600 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full border-r-4 border-sky-900">
+            <p className='text-8xl text-wrap font-black text-sky-900 uppercase text-center'>{isLoading ? `Loading...` : that.word}</p>
+            <div className='relative m-10 mt-24 justify-center content-end'>
                 <p className='text-center text-base text-sm text-sky-900'>Powered by:</p>
                 <p className='text-center text-base font-bold text-sky-900 uppercase'>Go x MySQL</p>
             </div>

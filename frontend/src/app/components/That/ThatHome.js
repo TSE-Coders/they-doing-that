@@ -8,6 +8,10 @@ const [that, setThat] = useState([])
 const [isLoading, setLoading] = useState(true)
 const [check, setCheck] = useState(0)
 
+const thatArray = [{word:"highway"}, {word:"lake"}, {word: "restaurant"}, {word: "table"}, {word: "computer"}, {word:"book"}, {word:"shoebox"}, {word: "blanket"}, {word: "tv"}, {word: "hospital"}, {word:"car"}, {word:"cake"}, {word: "bus"}, {word: "house"}, {word: "vegetable"}]
+const i = Math.floor(Math.random() * thatArray.length);
+const randomThat = thatArray[i]
+
 //FETCH THAT 
 async function fetchThat() {
     try {
@@ -26,7 +30,7 @@ async function fetchThat() {
       }
     } catch (error) {
       console.error("Error fetching that:", error);
-      setThat({ word: "highway" });
+      setThat(randomThat);
       setLoading(false);
     }
   }
@@ -42,13 +46,13 @@ async function fetchThat() {
   },[check]) 
 
     return (
-        <div className="flex justify-center bg-sky-400 w-full h-dvh hover:bg-sky-500">
-          <div className="m-auto mt-64 justify-items-center pb-56">
+        <div className="flex justify-stretch content-stretch bg-sky-400 w-full  hover:bg-sky-500">
+          <div className="m-auto mt-64 justify-items-center ">
             <div className="pb-6">
             <p className='text-6xl text-wrap font-black text-sky-800 uppercase text-center'>{isLoading ? `Loading...` : that.word}</p>
             </div>
             <div className="">
-            <Link href='/that'><button className="btn btn-neutral border-0 bg-sky-600 rounded-full">add a noun</button></Link>
+            <Link href='/that'><button className="btn btn-neutral border-0 bg-sky-700 rounded-full">add a noun</button></Link>
             </div>
             <div className='relative m-10 mt-44 justify-center'>
               <p className='text-center text-sm text-sky-800'>Powered by:</p>

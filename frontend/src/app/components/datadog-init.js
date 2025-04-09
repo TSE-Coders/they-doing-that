@@ -1,26 +1,37 @@
-   // Necessary if using App Router to ensure this file runs on the client
    "use client";
     
     import { datadogRum } from "@datadog/browser-rum";
+    import { datadogLogs } from '@datadog/browser-logs';
+
+    datadogLogs.logger.setHandler("http"); // or "console" for local debugging
+    datadogLogs.logger.setLevel("info");   // You can adjust this to debug, warn, error, etc.
     
     datadogRum.init({
-      applicationId: "<YOUR_APPLICATION_ID>",
-      clientToken: "<CLIENT_TOKEN>",
+      applicationId: "96a16c07-262b-45de-9785-fee4549fad0c",
+      clientToken: "pub6a0a7c0d0afc72660183c1ca15f9926a",
       site: "datadoghq.com",
-      service: "<SERVICE_NAME>",
-      env: "<ENV_NAME>",
-      // Specify a version number to identify the deployed version of your application in Datadog
-      // version: '1.0.0',
+      service: "frontend",
+      env: "tdt",
+      tags: ['source:browser', 'team:frontend'],
+
+      version: '1.0.0',
       sessionSampleRate: 100,
-      sessionReplaySampleRate: 20,
+      sessionReplaySampleRate: 100,
       trackUserInteractions: true,
       trackResources: true,
       trackLongTasks: true,
       defaultPrivacyLevel: "mask-user-input",
-      // Specify URLs to propagate trace headers for connection between RUM and backend trace
-      allowedTracingUrls: [
-        { match: "https://example.com/api/", propagatorTypes: ["tracecontext"] },
-      ],
+      allowedTracingUrls: [(url) => url.startsWith("http://localhost:3001/")],
+    });
+
+    datadogLogs.init({
+      clientToken: "pub6a0a7c0d0afc72660183c1ca15f9926a",
+      site: 'datadoghq.com',
+      forwardErrorsToLogs: true,
+      sampleRate: 100,
+      service: 'frontend',
+      env: 'tdt',
+      tags: ['source:browser', 'team:frontend']
     });
     
     export default function DatadogInit() {

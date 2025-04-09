@@ -71,6 +71,24 @@ else
     exit 1
 fi
 
+# Starting Java service 
+echo "Initializing TDT Verb service"
+if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
+  -Ddd.service=verb-API \
+  -Ddd.env=prod \
+  -Ddd.version=1.0.0 \
+  -Ddd.logs.injection=true \
+  -Ddd.trace.sample.rate=1 \
+  -Ddd.trace.debug=true \
+  -Ddd.diagnostics.debug=true \
+  -Ddd.trace.agent.port=8136 \
+  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
+  echo "Java verb-service started"
+else 
+    echo "Java failed"
+    exit 1
+fi
+
 
 
 
@@ -96,19 +114,6 @@ else
     exit 1
 fi
 
-if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
-  -Ddd.service=verb-API \
-  -Ddd.env=prod \
-  -Ddd.version=1.0.0 \
-  -Ddd.logs.injection=true \
-  -Ddd.trace.sample.rate=1 \
-  -Ddd.trace.debug=true \
-  -Ddd.diagnostics.debug=true \
-  -Ddd.trace.agent.port=8136 \
-  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
-  echo "Java verb-service started"
-else 
-    echo "Java failed"
-    exit 1
-fi
+echo "Application started successfully"
+echo "Happy debugging!!"
 disown

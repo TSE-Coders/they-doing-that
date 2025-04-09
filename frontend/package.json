@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--require dd-trace/init' DD_SERVICE='frontend' DD_TRACE_AGENT_PORT=8136 next dev -p 3001",
+    "dev": "NODE_OPTIONS='--require dd-trace/init' DD_SERVICE='frontend' DD_ENV='tdt' DD_TRACE_AGENT_PORT=8136  DD_LOGS_INJECTION=true  next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@datadog/browser-logs": "^6.6.3",
+    "@datadog/browser-rum": "^6.3.0",
+    "@datadog/datadog-ci": "^2.48.0",
     "dd-trace": "^5.27.1",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
