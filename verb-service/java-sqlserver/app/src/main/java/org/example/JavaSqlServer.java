@@ -36,6 +36,9 @@ public class JavaSqlServer {
         // Register endpoints
         context.addServlet(new ServletHolder(new ReceiveDataServlet()), "/verb");
         context.addServlet(new ServletHolder(new QueryDataServlet()), "/verb/random");
+        context.addServlet(new ServletHolder(new GetAllVerbsServlet()), "/verb/all");
+        context.addServlet(new ServletHolder(new DeleteVerbServlet()), "/verb/delete");
+
 
         server.start();
         server.join();
@@ -179,4 +182,83 @@ public class JavaSqlServer {
             resp.getWriter().println(jsonResponse);
         }
     }
-}
+
+
+    public static class GetAllVerbsServlet extends HttpServlet {
+        @Override
+        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+            StringBuilder jsonResponse = new StringBuilder();
+            jsonResponse.append("[");
+    
+            try (Statement stmt = sharedConnection.createStatement()) {
+                String query = "SELECT word FROM verb ORDER BY word ASC";
+                try (ResultSet rs = stmt.executeQuery(query)) {
+                    boolean first = true;
+                    int id = 1;
+                    while (rs.next()) {
+                        if (!first) {
+                            jsonResponse.append(",");
+                        }
+                        String word = rs.getString("word");
+                        jsonResponse.append("{\"word\":\"").append(word).append("\",\"id\":").append(id).append("}");
+                        first = false;
+                        id++;
+                    }
+                }
+            } catch (SQLException e) {
+                jsonResponse = new StringBuilder("{\"error\":\"Database error: " + e.getMessage() + "\"}");
+            }
+    
+            jsonResponse.append("]");
+    
+            resp.setContentType("application/json");
+            resp.setCharacterEncoding("UTF-8");
+            resp.getWriter().println(jsonResponse.toString());
+        }
+
+    }
+
+     // Servlet to delete a word from the database using DELETE request
+    public static class DeleteVerbServlet extends HttpServlet {
+        @Override
+        protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+            // Read JSON input
+            BufferedReader reader = new BufferedReader(new InputStreamReader(req.getInputStream(), "utf-8"));
+            StringBuilder jsonInput = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                jsonInput.append(line);
+            }
+    
+            String input = jsonInput.toString();
+            String wordToDelete;
+    
+            try {
+                // Extract the "word" value from JSON input
+                if (input.contains("\"word\"")) {
+                    wordToDelete = input.split("\"word\"\\s*:\\s*\"")[1].split("\"")[0];
+                } else {
+                    throw new IllegalArgumentException("Missing 'word' field");
+                }
+            } catch (Exception e) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid JSON input");
+                return;
+            }
+    
+            // Delete the word from the database
+            try (PreparedStatement stmt = sharedConnection.prepareStatement("DELETE FROM verb WHERE word = ?")) {
+                stmt.setString(1, wordToDelete);
+                int affectedRows = stmt.executeUpdate();
+    
+                resp.setContentType("application/json");
+                if (affectedRows > 0) {
+                    resp.getWriter().println("{ \"status\": \"deleted\", \"word\": \"" + wordToDelete + "\" }");
+                } else {
+                    resp.getWriter().println("{ \"status\": \"not_found\", \"word\": \"" + wordToDelete + "\" }");
+                }
+            } catch (SQLException e) {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error: " + e.getMessage());
+            }
+        }
+    }
+  }
