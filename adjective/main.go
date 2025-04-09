@@ -3,7 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
-	"log"
+  	log "github.com/sirupsen/logrus"
 	"net/http"
 	"os"
 	"io"
@@ -14,6 +14,9 @@ import (
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 
 	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
+	"github.com/sirupsen/logrus"
+
+    dd_logrus "gopkg.in/DataDog/dd-trace-go.v1/contrib/sirupsen/logrus"
 )
 
 // Word represents the data structure for input/output
@@ -86,6 +89,15 @@ func RandomWordHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func setupLogging() {
+
+	logrus.AddHook(&dd_logrus.DDContextLogHook{}) 
+
+	// use JSONFormatter
+	log.SetFormatter(&log.JSONFormatter{})
+
+	// log an event as usual with logrus
+	log.WithFields(log.Fields{"string": "foo", "int": 1, "float": 1.1 }).Info("My first event from golang to stdout")
+
 	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		log.Fatalf("Failed to open log file: %v", err)
@@ -102,8 +114,8 @@ func setupLogging() {
 
 func initDDTracer() {
 	tracer.Start(
-		tracer.WithEnv("dev"),
-		tracer.WithService("adjective-api"),
+		tracer.WithEnv("tdt"),
+		tracer.WithService("that-api"),
 		tracer.WithServiceVersion("v1"),
 		tracer.WithAgentAddr("localhost:8136"),
 		tracer.WithLogStartup(false),
@@ -112,6 +124,7 @@ func initDDTracer() {
 }
 
 func main() {
+
 	setupLogging()
 	log.Println("Application is starting...")
 

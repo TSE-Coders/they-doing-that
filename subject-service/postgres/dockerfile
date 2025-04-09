@@ -1,5 +1,0 @@
-FROM postgres
-ENV POSTGRES_DB subject-database
-ENV POSTGRES_USER subject
-ENV POSTGRES_PASSWORD password
-EXPOSE 5432
