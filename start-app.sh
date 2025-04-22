@@ -32,8 +32,9 @@ sleep 5
 # Start Rails service sequentially
 
 echo "Initializing Subject-service API"
+#sudo gem install rails
 
-if (cd subject-service/rubyonrails-api && rails db:migrate); then
+if (cd subject-service/rubyonrails-api && bundle install && rails db:migrate); then
     echo "Database migration completed successfully."
 else
     echo "Error: Database migration failed. Exiting..."
@@ -105,7 +106,7 @@ if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
   -Ddd.trace.debug=true \
   -Ddd.diagnostics.debug=true \
   -Ddd.trace.agent.port=8136 \
-  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
+  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log); then
   echo "Java verb-service started"
 else 
     echo "Java failed"
