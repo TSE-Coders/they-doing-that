@@ -32,7 +32,7 @@ sleep 5
 # Start Rails service sequentially
 
 echo "Initializing Subject-service API"
-#sudo gem install rails
+
 
 if (cd subject-service/rubyonrails-api && rails db:migrate); then
     echo "Database migration completed successfully."
