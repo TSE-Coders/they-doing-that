@@ -97,6 +97,17 @@ else
     exit 1
 fi
 
+# Check if Java 17 is installed
+if ! java -version 2>&1 | grep -q '17'; then
+    echo "Java 17 not found. Installing OpenJDK 17..."
+    sudo apt-get update
+    sudo apt-get install -y openjdk-17-jdk
+    echo "Java 17 installed successfully"
+else
+    echo "Java 17 is already installed"
+fi
+
+
 if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
   -Ddd.service=verb-API \
   -Ddd.env=prod \
