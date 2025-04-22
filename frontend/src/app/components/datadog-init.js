@@ -4,10 +4,10 @@
     import { datadogRum } from "@datadog/browser-rum";
     
     datadogRum.init({
-      applicationId: "96a16c07-262b-45de-9785-fee4549fad0c",
-      clientToken: "pub6a0a7c0d0afc72660183c1ca15f9926a'",
-      site: "datadoghq.com",
-      service: "tdt-frontend",
+      applicationId: "<YOUR_APPLICATION_ID>",
+      clientToken: "<YOUR_CLIENT_TOKEN>",
+      site: "<Datadog_SITE>",
+      service: "<YOUR_SERVICE_NAME>",
       env: "development",
       // Specify a version number to identify the deployed version of your application in Datadog
       // version: '1.0.0',
