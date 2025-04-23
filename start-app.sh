@@ -11,24 +11,6 @@ echo "Creating Postgres container"
 echo "---- Subject-service Database ready -----"
 sleep 5
 
-# Start MySQL container and wait for it to be ready
-
-echo "Creating Adjective-service Database"
-echo "Creating MySQL container"
-(cd adjective && docker compose up -d)
-echo "---- Adjective-service Database ready -----"
-sleep 5
-
-# Start SQLServer container and wait for it to be ready
-
-echo "Creating Verb-service Database"
-echo "Creating SQLServer container"
-(cd verb-service/java-sqlserver && docker compose up -d)
-echo "---- Verb-service Database ready -----"
-sleep 5
-
-
-
 # Start Rails service sequentially
 
 echo "Initializing Subject-service API"
@@ -60,6 +42,14 @@ sleep 5
 
 # Start Go 
 
+# Start MySQL container and wait for it to be ready
+
+echo "Creating Adjective-service Database"
+echo "Creating MySQL container"
+(cd adjective && docker compose up -d)
+echo "---- Adjective-service Database ready -----"
+sleep 5
+
 nohup bash -c "(cd adjective && go run .)" > go.log 2>&1 &
 sleep 6  # Give Go a moment to start
 
@@ -74,7 +64,53 @@ fi
 
 # Start java service
 
-if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
+# Start SQLServer container and wait for it to be ready
+
+echo "Creating Verb-service Database"
+echo "Creating SQLServer container"
+(cd verb-service/java-sqlserver && docker compose up -d)
+echo "---- Verb-service Database ready -----"
+sleep 5
+
+echo "Initializing Verb-service API"
+
+# Check for Java 17
+if ! java -version 2>&1 | grep -q '17'; then
+    echo "Java 17 not found. Installing OpenJDK 17..."
+    brew update
+    brew install openjdk@17
+    echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zprofile
+    source ~/.zprofile
+    echo "Java 17 installed successfully"
+else
+    echo "Java 17 is already installed"
+fi
+
+# Check for Gradle
+if ! command -v gradle &> /dev/null; then
+    echo "Gradle not found. Installing Gradle..."
+    brew install gradle
+    echo "Gradle installed successfully"
+else
+    echo "Gradle is already installed"
+fi
+
+# Build the app if the jar doesn't exist
+JAR_PATH="verb-service/java-sqlserver/app/build/libs"
+cd verb-service/java-sqlserver/app || { echo "App directory not found"; exit 1; }
+
+if [ ! -f "$JAR_PATH/app.jar" ]; then
+    echo "JAR file not found. Building the app..."
+    gradle build || { echo "Gradle build failed"; exit 1; }
+    echo "Build complete"
+else
+    echo "JAR file already exists"
+fi
+
+cd ../../../  # back to root of project
+
+# Start the service
+nohup bash -c "(cd verb-service && java -javaagent:./java-sqlserver/dd-java-agent.jar \
   -Ddd.service=verb-API \
   -Ddd.env=prod \
   -Ddd.version=1.0.0 \
@@ -83,10 +119,17 @@ if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
   -Ddd.trace.debug=true \
   -Ddd.diagnostics.debug=true \
   -Ddd.trace.agent.port=8136 \
-  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log 2>&1 &); then
-  echo "Java verb-service started"
-else 
-    echo "Java failed"
+  -jar ./java-sqlserver/app/build/libs/app.jar)" > verb-service.log 2>&1 &
+
+sleep 5  # give Java service time to boot
+
+# Check if the server started (e.g., by log grep or curl health check)
+if grep -q "Started" verb-service.log; then
+    echo "Java verb-service started"
+    echo "Java server started successfully"
+    echo "---- Verb-service API ready in http://localhost:8081 -----"
+else
+    echo "Java failed to start. Check verb-service.log for more info."
     exit 1
 fi
 

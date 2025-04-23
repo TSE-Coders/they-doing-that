@@ -19,6 +19,7 @@ async function DoingPost(event){
           body: JSON.stringify(doingVerb)
     })
     const data = await res.json()
+    console.log(data)
   } catch (error) {
     console.error(error)
   }
