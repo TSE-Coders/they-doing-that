@@ -11,9 +11,7 @@ services:
       - "1431:1431"
     hostname: mssql
     volumes:
-      #- "verb-service-data:/var/opt/mssql"
-      - "./:/var/opt/mssql"
-
+      - "verb-service-data:/var/opt/mssql"
 
 volumes:
   verb-service-data:

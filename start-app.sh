@@ -33,6 +33,7 @@ sleep 5
 
 echo "Initializing Subject-service API"
 
+
 if (cd subject-service/rubyonrails-api && rails db:migrate); then
     echo "Database migration completed successfully."
 else
@@ -112,6 +113,17 @@ else
     exit 1
 fi
 echo "Enjoy the app!!!"
+
+
+# Check if Java 17 is installed
+if ! java -version 2>&1 | grep -q '17'; then
+    echo "Java 17 not found. Installing OpenJDK 17..."
+    sudo apt-get update
+    sudo apt-get install -y openjdk-17-jdk
+    echo "Java 17 installed successfully"
+else
+    echo "Java 17 is already installed"
+fi
 
 
 # Check if Java 17 is installed
