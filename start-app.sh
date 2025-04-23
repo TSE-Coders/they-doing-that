@@ -113,4 +113,31 @@ else
 fi
 echo "Enjoy the app!!!"
 
+
+# Check if Java 17 is installed
+if ! java -version 2>&1 | grep -q '17'; then
+    echo "Java 17 not found. Installing OpenJDK 17..."
+    sudo apt-get update
+    sudo apt-get install -y openjdk-17-jdk
+    echo "Java 17 installed successfully"
+else
+    echo "Java 17 is already installed"
+fi
+
+
+if ( cd verb-service/ && java -javaagent:./java-sqlserver/dd-java-agent.jar \
+  -Ddd.service=verb-API \
+  -Ddd.env=prod \
+  -Ddd.version=1.0.0 \
+  -Ddd.logs.injection=true \
+  -Ddd.trace.sample.rate=1 \
+  -Ddd.trace.debug=true \
+  -Ddd.diagnostics.debug=true \
+  -Ddd.trace.agent.port=8136 \
+  -jar ./java-sqlserver/app/build/libs/app.jar > ../verb-service.log); then
+  echo "Java verb-service started"
+else 
+    echo "Java failed"
+    exit 1
+fi
 disown
