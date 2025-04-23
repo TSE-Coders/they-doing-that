@@ -3,12 +3,10 @@
 async function DoingPost(event){
   
   const doingVerb = {
-    name: {
-      name: event.target[0].value
-    }
+      word: event.target[0].value
   }
-  
-  console.log(`this is `, doingVerb)
+
+  const payload = JSON.stringify({doingVerb });
 
   try {
     const res = await fetch('/api/postVerb', {
@@ -25,32 +23,33 @@ async function DoingPost(event){
   }
 }
 
-async function DoingDelete(verb){
-  //get the last element of the subjects array and delete it. 
-  const lastElement = verb.length - 1
-  const verbId = verb[lastElement].id
+async function DoingDelete(verb) {
+  const lastElement = verb.verb.length - 1;
+  const verbWord = verb.verb[lastElement].word;
+  console.log("Deleting verb:", verbWord);
 
+  const payload = JSON.stringify({ word: verbWord });
+
+  console.log("Sending DELETE with body:", payload); 
   try {
-    const res = await fetch(`/api/deleteNoun/${verbId}`, { method: "DELETE" });
-    console.log(res)
+    const res = await fetch(`/api/deleteVerb`, {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: payload,
+    });
 
-    if (!res.ok) {
-      const data = await res.json();
-      console.error("Error deleting:", data.error);
-      return;
-    }
-    console.log("Deleted successfully");
-    window.location.reload();
-    // Update state AFTER successful delete
-    //setNames((prevNames) => prevNames.filter((name) => name.id !== id));
+    const data = await res.json();
+    console.log("Delete response:", data);
   } catch (error) {
     console.error("Error deleting verb:", error);
   }
-
 }
 
 
-const DoingForm = () => {
+const DoingForm = (verb) => {
     return (
       <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-yellow-600 m-0 p-0'>
       <div className="flex justify-stretch flex-col w-full">
@@ -62,7 +61,7 @@ const DoingForm = () => {
         </form>
       </div>
       <div className="flex flex-col justify-stretch w-full mb-24">
-        <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove a verb</button>
+        <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove the last verb</button>
       </div>
     </div>
     )

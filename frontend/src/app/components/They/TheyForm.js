@@ -64,7 +64,7 @@ const TheyForm = ({subjects}) => {
             </form>
           </div>
           <div className="flex flex-col justify-stretch w-full mb-24">
-            <button onClick={() => TheyDelete(subjects)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove a subject</button>
+            <button onClick={() => TheyDelete(subjects)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove the last subject</button>
           </div>
         </div>
     )
