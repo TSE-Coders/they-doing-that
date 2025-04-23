@@ -100,16 +100,16 @@ func setupLogging() {
 	log.Println("Logging started...")
 }
 
-func initDDTracer() {
-	tracer.Start(
-		tracer.WithEnv("tdt"),
-		tracer.WithService("adjective-api"),
-		tracer.WithServiceVersion("v1"),
-		tracer.WithAgentAddr("localhost:8136"),
-		tracer.WithLogStartup(false),
-	)
-	log.Println("Datadog tracer started")
-}
+// func initDDTracer() {
+// 	tracer.Start(
+// 		tracer.WithEnv("tdt"),
+// 		tracer.WithService("adjective-api"),
+// 		tracer.WithServiceVersion("v1"),
+// 		tracer.WithAgentAddr("localhost:8136"),
+// 		tracer.WithLogStartup(false),
+// 	)
+// 	log.Println("Datadog tracer started")
+// }
 
 func main() {
 	setupLogging()
@@ -118,8 +118,8 @@ func main() {
 	initDB()
 	defer db.Close()
 
-	initDDTracer()
-	defer tracer.Stop()
+	// initDDTracer()
+	// defer tracer.Stop()
 
 	r := mux.NewRouter()
 
