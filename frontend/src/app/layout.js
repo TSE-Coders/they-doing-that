@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-// import DatadogInit from "./components/datadog-init";
+import DatadogInit from "./components/datadog-init";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "TDT sandbox",
-  description: "Supported by Tory, Brian and Daniel",
+  title: "TDT supersandbox",
+  description: "With love from TSE3",
 };
 
 export default function RootLayout({ children }) {
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
     
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <DatadogInit /> */}
+        <DatadogInit />
         {children}
       </body>
     </html>
