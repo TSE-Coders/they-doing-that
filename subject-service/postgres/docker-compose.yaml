@@ -7,13 +7,8 @@ services:
         app: tdt
       command: "postgres -c 'max_connections=500'"
       environment:
-<<<<<<< HEAD
-        
-        PGUSER: subject
-=======
         ENV: dev
         PGUSER: postgres
->>>>>>> f4141aad2aff907e61b093827683f6b3961166ec
         POSTGRES_DB: subject-db
         POSTGRES_USER: subject
         POSTGRES_PASSWORD: password
