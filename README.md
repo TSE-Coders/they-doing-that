@@ -74,6 +74,7 @@ To stop the application, run:
    ./stop-app.sh
    ```
 
+
 ## Repository
 The source code for this project can be found in the GitHub repository:
 [https://github.com/TSE-Coders/they-doing-that](https://github.com/TSE-Coders/they-doing-that)
@@ -94,6 +95,9 @@ The source code for this project can be found in the GitHub repository:
 - **Endpoints**:
   - `GET/verb/random`: Returns a string (verb).
   - `POST/verb`: Send a string (verb).
+  - `GET/verb/all`: Returns all stored strings (verbs)
+  - `POST//verb/delete`: Deletes a stored string (verb)
+  
 
 #### Adjective-API 
 - **Language**: Golang

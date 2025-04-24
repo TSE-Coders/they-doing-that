@@ -14,12 +14,12 @@ kill_process_on_port() {
     fi
 }
 
-(cd subject-service/postgres && docker compose down)&
-echo 'Removing Subject-service Database container '
-(cd adjective && docker compose down)
-echo 'Removing Adjective-service Database container '
-(cd verb-service/java-sqlserver && docker compose down)
-echo 'Removing Verb-service Database container '
+# (cd subject-service/postgres && docker compose down)&
+# echo 'Removing Subject-service Database container '
+# (cd adjective && docker compose down)
+# echo 'Removing Adjective-service Database container '
+# (cd verb-service/java-sqlserver && docker compose down)
+# echo 'Removing Verb-service Database container '
 
 # Stop Next.js app (port 3001)
 

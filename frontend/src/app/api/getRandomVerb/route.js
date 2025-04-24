@@ -5,11 +5,13 @@ export async function GET (){
 
    try {
 
-    const res = await fetch(`http://localhost:8081/verb/random`)       
+      // Replace the wrong endpoint with the correct one: http://localhost:8081/verb/random
 
-    const doing = await res.json()
-    
-    return NextResponse.json({ doing })
+    const res = await fetch(`http://localhost:/random`)      
+
+    const data = await res.json()
+  
+    return NextResponse.json({ data })
 
    }catch(error){console.log(error)}
 }
