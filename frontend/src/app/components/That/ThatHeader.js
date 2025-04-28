@@ -9,7 +9,6 @@ const ThatHeader = () => {
             <p className='text-sky-600 text-6xl font-semibold'>That</p>
         <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
         <button className='text-sky-600 text-l m-1 uppercase hover:text-black font-semibold'><Link href='/'>Home</Link></button>
-            <button className='text-sky-600 text-l m-2 uppercase hover:text-black font-semibold'><Link href='/instructions'>Instructions</Link></button>
         </div>
         </div>
     </div>

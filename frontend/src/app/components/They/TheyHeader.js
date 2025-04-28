@@ -9,7 +9,6 @@ const TheyHeader = () => {
                 <Link href='/that'><p className='text-red-700 text-6xl hover:text-sky-400'>That</p></Link>
                 <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
                     <button className='text-red-700 text-l m-1 uppercase hover:text-black font-semibold'><Link href='/'>Home</Link></button>
-                    <button className='text-red-700 text-l m-2 uppercase hover:text-black font-semibold'><Link href='/instructions'>Instructions</Link></button>
                  </div>
             </div>
         </div>
