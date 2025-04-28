@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 export async function DELETE (req, { params }){
         const id = params.id;
    try {
-        const response = await fetch(`http://localhost:8080/names/${id}`, {
+        const response = await fetch(`http://localhost:8080/noun/${id}`, {
           method: 'DELETE',
           headers: {
             "Content-Type": "application/json",

@@ -18,6 +18,7 @@ export default function ThatPage() {
                   }
               
                   const payload = await res.json();
+
                   if (payload && payload.data) {
                     setNoun(payload.data);
                   } else {
@@ -38,8 +39,8 @@ export default function ThatPage() {
         <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
             <ThatWordDisplay />
             <div className="bg-sky-600 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
-            <ThatForm noun={noun}/>
-            <NounList noun={noun}/>
+            <ThatForm nouns={noun}/>
+            <NounList nouns={noun}/>
             </div>
         </div>
     </main>
