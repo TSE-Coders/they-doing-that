@@ -9,7 +9,6 @@ const Header = () => {
                 <p className='text-sky-400 text-6xl'>That</p>
                 <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
                     <button className='text-white text-l m-1 uppercase hover:bg-slate-900 font-semibold'><Link href='/'>Home</Link></button>
-                    <button className='text-white text-l m-2 uppercase hover:bg-slate-900 font-semibold'><Link href='/instructions'>Instructions</Link></button>
                 </div>
             </div>
         </div>
