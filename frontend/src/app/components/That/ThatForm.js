@@ -24,10 +24,11 @@ async function ThatPost(event){
   }
 }
 
-async function ThatDelete(noun){
+async function ThatDelete(nouns){
+  console.log("this is the nouns", nouns)
   //get the last element of the subjects array and delete it. 
-  const lastElement = noun.length - 1
-  const nounId = noun[lastElement].id
+  const lastElement = nouns.length - 1
+  const nounId = nouns[lastElement].id
 
   try {
     const res = await fetch(`/api/deleteNoun/${nounId}`, { method: "DELETE" });
@@ -49,7 +50,7 @@ async function ThatDelete(noun){
 }
 
 
-const ThatForm = ({noun}) => {
+const ThatForm = ({nouns}) => {
     return (
       <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-sky-900 m-0 p-0'>
       <div className="flex justify-stretch flex-col w-full">
@@ -61,7 +62,7 @@ const ThatForm = ({noun}) => {
         </form>
       </div>
       <div className="flex flex-col justify-stretch w-full mb-24">
-        <button onClick={() => ThatDelete(noun)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-sky-700 rounded-full">remove a noun</button>
+        <button onClick={() => ThatDelete(nouns)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-sky-700 rounded-full">remove a noun</button>
       </div>
     </div>
     )

@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"os"
 	"io"
+	"github.com/rs/cors"
+
 
 	"github.com/gorilla/mux"
 	sqltrace "gopkg.in/DataDog/dd-trace-go.v1/contrib/database/sql"
@@ -14,11 +16,14 @@ import (
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 
 	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
+	
 )
 
 // Word represents the data structure for input/output
+// Added the ID field to the struct
 type Word struct {
-	Word string `json:"word"`
+	ID   int    `json:"id"`   // ID is now included in the response
+	Word string `json:"word"` // Word remains the same
 }
 
 // Response represents the structure for API responses
@@ -65,7 +70,6 @@ func seedDatabase() {
 	log.Println("Database seeding completed.")
 }
 
-
 func RandomWordHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -85,6 +89,61 @@ func RandomWordHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(Word{Word: word})
 }
 
+// DeleteWordHandler deletes a word by its ID
+func DeleteWordHandler(w http.ResponseWriter, r *http.Request) {
+	// Get the ID from the URL
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+	// Delete the word from the database
+	query := "DELETE FROM words WHERE id = ?"
+	result, err := db.Exec(query, id)
+	if err != nil {
+		http.Error(w, "Error deleting word", http.StatusInternalServerError)
+		log.Printf("Error deleting word '%s': %v", id, err)
+		return
+	}
+
+	rowsAffected, _ := result.RowsAffected()
+	if rowsAffected == 0 {
+		http.Error(w, "Word not found", http.StatusNotFound)
+		return
+	}
+
+	// Return a success response
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(Response{Message: "Word deleted successfully"})
+}
+
+// GetAllWordsHandler returns all words in the database, including the ID
+func GetAllWordsHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	// Query all words from the database, including the ID
+	query := "SELECT id, word FROM words"
+	rows, err := db.Query(query)
+	if err != nil {
+		http.Error(w, "Error fetching words", http.StatusInternalServerError)
+		log.Printf("Error executing query: %v", err)
+		return
+	}
+	defer rows.Close()
+
+	var words []Word
+	for rows.Next() {
+		var word Word
+		if err := rows.Scan(&word.ID, &word.Word); err != nil {
+			http.Error(w, "Error reading words", http.StatusInternalServerError)
+			log.Printf("Error scanning row: %v", err)
+			return
+		}
+		words = append(words, word)
+	}
+
+	// Encode and return the list of words with their IDs
+	json.NewEncoder(w).Encode(words)
+}
+
 func setupLogging() {
 	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
@@ -97,9 +156,11 @@ func setupLogging() {
 
 	// Log that logging has started
 	log.Println("Logging started...")
-	log.Println("Logging started...")
 }
 
+// Uncomment the following function to initialize Datadog tracer
+// and send traces to Datadog.
+	// --------------------------------------->
 // func initDDTracer() {
 // 	tracer.Start(
 // 		tracer.WithEnv("tdt"),
@@ -110,49 +171,73 @@ func setupLogging() {
 // 	)
 // 	log.Println("Datadog tracer started")
 // }
-
-func main() {
-	setupLogging()
-	log.Println("Application is starting...")
-
-	initDB()
-	defer db.Close()
-
-	// initDDTracer()
-	// defer tracer.Stop()
-
-	r := mux.NewRouter()
-
-	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(Response{Message: "Welcome to my API!"})
-	}).Methods("GET")
-
-	r.HandleFunc("/words", func(w http.ResponseWriter, r *http.Request) {
-		var word Word
-
-		err := json.NewDecoder(r.Body).Decode(&word)
-		if err != nil {
-			http.Error(w, "Invalid request payload", http.StatusBadRequest)
-			return
-		}
-
-		query := "INSERT INTO words (word) VALUES (?)"
-		_, err = db.Exec(query, word.Word)
-		if err != nil {
-			http.Error(w, "Error inserting into database", http.StatusInternalServerError)
-			return
-		}
-
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(Response{Message: "Word added successfully"})
-	}).Methods("POST")
-
-	r.HandleFunc("/random", RandomWordHandler).Methods("GET")
-
-	wrappedRouter := httptrace.WrapHandler(r, "that-api", "http.router")
-	log.Println("Go application started successfully")
-
-	log.Println("Starting server on :8080...")
-	log.Fatal(http.ListenAndServe(":8080", wrappedRouter))
-}
+	// <---------------------------------------
+	func main() {
+		setupLogging()
+		log.Println("Application is starting...")
+	
+		initDB()
+		defer db.Close()
+	
+		// Uncomment the following line to initialize Datadog tracer
+		// and send traces to Datadog.
+		// --------------------------------------->
+		// initDDTracer()
+		// defer tracer.Stop()
+		// <---------------------------------------
+		r := mux.NewRouter()
+	
+		// CORS configuration
+		corsHandler := cors.New(cors.Options{
+			AllowedOrigins: []string{"http://localhost:3001/"}, // Your frontend URL
+			AllowedMethods: []string{"GET", "POST", "DELETE"},  // Allowed HTTP methods
+			AllowedHeaders: []string{"Content-Type", "Authorization"}, // Allowed headers
+		})
+	
+		// Datadog HTTP trace wrapper
+		tracedRouter := httptrace.WrapHandler(r, "that-api", "http.router")
+	
+		// Now wrap the router with both CORS and Datadog tracing
+		corsAndTraceHandler := corsHandler.Handler(tracedRouter)
+	
+		r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(Response{Message: "Welcome to my API!"})
+		}).Methods("GET")
+	
+		// Updated endpoint to /noun
+		r.HandleFunc("/noun", func(w http.ResponseWriter, r *http.Request) {
+			var word Word
+	
+			err := json.NewDecoder(r.Body).Decode(&word)
+			if err != nil {
+				http.Error(w, "Invalid request payload", http.StatusBadRequest)
+				return
+			}
+	
+			query := "INSERT INTO words (word) VALUES (?)"
+			_, err = db.Exec(query, word.Word)
+			if err != nil {
+				http.Error(w, "Error inserting into database", http.StatusInternalServerError)
+				return
+			}
+	
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(Response{Message: "Word added successfully"})
+		}).Methods("POST")
+	
+		// Updated endpoint to /noun/random
+		r.HandleFunc("/noun/random", RandomWordHandler).Methods("GET")
+	
+		// Updated endpoint to /noun/{id} for DELETE
+		r.HandleFunc("/noun/{id}", DeleteWordHandler).Methods("DELETE")
+	
+		// Updated endpoint to /noun/all for GET all words (with ID included)
+		r.HandleFunc("/noun/all", GetAllWordsHandler).Methods("GET")
+	
+		log.Println("Go application started successfully")
+	
+		log.Println("Starting server on :8080...")
+		log.Fatal(http.ListenAndServe(":8080", corsAndTraceHandler))
+	}
+	
