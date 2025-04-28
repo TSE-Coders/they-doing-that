@@ -5,6 +5,7 @@ import TheyHeader from '../components/They/TheyHeader';
 import TheyWordDisplay from '../components/They/TheyWordDisplay';
 import SubjectList from '../components/They/SubjectList';
 import TheyForm from '../components/They/TheyForm';
+import TheyFooter from '../components/They/TheyFooter';
 
 export default function TheyPage() {
     const [subjects, setSubject] = useState([]);
@@ -32,15 +33,16 @@ export default function TheyPage() {
     }, [])
 
     return (
-    <main className='bg-red-950 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
-        <TheyHeader />
-        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
-            <TheyWordDisplay />
-            <div className="bg-red-700 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
-            <TheyForm subjects={subjects}/>
-            <SubjectList subjects={subjects}/>
-            </div>
-        </div>
-    </main>
-    )
+      <main className='h-screen bg-red-950 flex flex-col w-full'>
+          <TheyHeader />
+          <div className='h-screen flex w-full'>
+              <TheyWordDisplay />
+              <div className="h-full bg-red-700 flex flex-col w-full">
+              <TheyForm subjects={subjects}/>
+              <SubjectList subjects={subjects}/>
+              </div>
+          </div>
+          <TheyFooter/>
+      </main>
+      )
 }

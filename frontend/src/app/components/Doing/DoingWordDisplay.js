@@ -8,26 +8,26 @@ const DoingWordDisplay = () => {
   
   async function fetchDoing() {
 
-      try {
-        const res = await fetch(`/api/getRandomVerb`);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status} API unreachable`);
-        }
-    
-        const payload = await res.json();
-        if (payload && payload.doing) {
-          setDoing(payload.doing);
-          setLoading(false);
-        } else {
-          setDoing({ word: "no data" });
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error("Error fetching doing:", error);
-        setDoing({ word: "swim" });
+    try {
+      const res = await fetch(`/api/getRandomVerb`);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+      }
+  
+      const payload = await res.json();
+      if (payload && payload.data) {
+        setDoing(payload.data);
+        setLoading(false);
+      } else {
+        setDoing({ word: "no data" });
         setLoading(false);
       }
+    } catch (error) {
+      console.error("Error fetching doing:", error);
+      setDoing({ word: "no data available" });
+      setLoading(false);
     }
+  }
     
   
    useEffect(() => {  
@@ -40,14 +40,14 @@ const DoingWordDisplay = () => {
     },[check]) 
 
     return (
-        <div className="bg-yellow-400 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-yellow-600">
-            <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center p-36'>{isLoading ? `Loading...` : doing.word}</p>
-            <div className='relative m-10 mt-44 justify-center content-end'>
-                <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
-                <p className='text-center text-base font-bold text-yellow-700 uppercase'>JAVA x SQLServer</p>
-            </div>
-        </div>
-    )
+      <div className="bg-yellow-400 flex flex-col justify-center w-full border-r-4 border-yellow-600">
+          <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
+          <div className='relative mt-24 justify-center content-end'>
+              <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
+              <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
+          </div>
+      </div>
+  )
 }
 
 export default DoingWordDisplay
