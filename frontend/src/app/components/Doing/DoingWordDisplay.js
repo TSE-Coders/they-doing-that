@@ -12,36 +12,36 @@ const DoingWordDisplay = () => {
   
   async function fetchDoing() {
 
-      try {
-        const res = await fetch(`/api/getRandomVerb`);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status} API unreachable`);
-        }
-    
-        const payload = await res.json();
-        if (payload && payload.doing) {
-          setDoing(payload.doing);
-          setLoading(false);
-        } else {
-          setDoing({ word: "no data" });
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error("Error fetching doing:", error);
+    try {
+      const res = await fetch(`/api/getRandomVerb`);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+      }
+  
+      const payload = await res.json();
+      if (payload && payload.data) {
+        setDoing(payload.data);
+        setLoading(false);
+      } else {
         setDoing({ word: "no data" });
         setLoading(false);
       }
+    } catch (error) {
+      console.error("Error fetching doing:", error);
+      setDoing({ word: "no data available" });
+      setLoading(false);
     }
-    
+  }
   
-   useEffect(() => {  
-      
-    const id = setInterval(() => {
-                  fetchDoing()
-                  setCheck(check + 1)
-                }, 3000);
-    return () => clearInterval(id);            
-    },[check]) 
+
+ useEffect(() => {  
+    
+  const id = setInterval(() => {
+                fetchDoing()
+                setCheck(check + 1)
+              }, 3000);
+  return () => clearInterval(id);            
+  },[check]) 
 
     return (
         <div className="bg-yellow-400 flex flex-col justify-center w-full border-r-4 border-yellow-600">

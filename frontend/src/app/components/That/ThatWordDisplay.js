@@ -19,15 +19,15 @@ const ThatWordDisplay = () => {
           }
       
           const payload = await res.json();
-          if (payload && payload.data) {
-            setThat(payload.data);
+          if (payload && payload.that) {
+            setThat(payload.that);
             setLoading(false);
           } else {
             setThat({ word: "no data" });
             setLoading(false);
           }
         } catch (error) {
-          console.error("Error fetching name:", error);
+          console.error("Error fetching that:", error);
           setThat(randomThat);
           setLoading(false);
         }

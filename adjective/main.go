@@ -112,18 +112,6 @@ func setupLogging() {
 	log.Println("Logging started...")
 }
 
-<<<<<<< HEAD
-func initDDTracer() {
-	tracer.Start(
-		tracer.WithEnv("tdt"),
-		tracer.WithService("that-api"),
-		tracer.WithServiceVersion("v1"),
-		tracer.WithAgentAddr("localhost:8136"),
-		tracer.WithLogStartup(false),
-	)
-	log.Println("Datadog tracer started")
-}
-=======
 // func initDDTracer() {
 // 	tracer.Start(
 // 		tracer.WithEnv("tdt"),
@@ -134,7 +122,6 @@ func initDDTracer() {
 // 	)
 // 	log.Println("Datadog tracer started")
 // }
->>>>>>> f4141aad2aff907e61b093827683f6b3961166ec
 
 func main() {
 

@@ -3,7 +3,6 @@ services:
   mssql:
     container_name: sqlserver
     image: mcr.microsoft.com/azure-sql-edge:latest
-    platform: linux/amd64 
     cap_add: [ 'SYS_PTRACE' ]
     environment:
       - "ACCEPT_EULA=1"

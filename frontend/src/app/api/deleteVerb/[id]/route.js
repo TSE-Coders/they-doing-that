@@ -5,8 +5,8 @@ export async function POST(request) {
     const { word } = await request.json();
     console.log("Deleting ID:", word);
 
-    const response = await fetch('http://localhost:8081/verb/delete', {
-      method: 'DELETE',
+    const response = await fetch(`http://localhost:8081/verb/delete/${id}`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'

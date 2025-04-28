@@ -3,10 +3,12 @@
 async function DoingPost(event){
   
   const doingVerb = {
-      word: event.target[0].value
+    name: {
+      name: event.target[0].value
+    }
   }
-
-  const payload = JSON.stringify({doingVerb });
+  
+  console.log(`this is `, doingVerb)
 
   try {
     const res = await fetch('/api/postVerb', {
@@ -17,39 +19,38 @@ async function DoingPost(event){
           body: JSON.stringify(doingVerb)
     })
     const data = await res.json()
-    console.log(data)
   } catch (error) {
     console.error(error)
   }
 }
 
-async function DoingDelete(verb) {
-  const lastElement = verb.verb.length - 1;
-  const verbWord = verb.verb[lastElement].word;
-  console.log("Deleting verb:", verbWord);
+async function DoingDelete(verb){
+  //get the last element of the subjects array and delete it. 
+  const lastElement = verb.length - 1
+  const verbId = verb[lastElement].id
 
-  const payload = JSON.stringify({ word: verbWord });
-
-  console.log("Sending DELETE with body:", payload); 
   try {
-    const res = await fetch(`/api/deleteVerb`, {
-      method: "POST", 
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: payload,
-    });
+    const res = await fetch(`/api/deleteVerb/${verbId}`, { method: "POST" });
+    console.log(res)
 
-    const data = await res.json();
-    console.log("Delete response:", data);
+    if (!res.ok) {
+      const data = await res.json();
+      console.error("Error deleting:", data.error);
+      return;
+    }
+    console.log("Deleted successfully");
+    window.location.reload();
+    // Update state AFTER successful delete
+    //setNames((prevNames) => prevNames.filter((name) => name.id !== id));
   } catch (error) {
     console.error("Error deleting verb:", error);
   }
+
 }
 
 
-const DoingForm = (verb) => {
+const DoingForm = ({verb}) => {
+  const verbNum = verb.length
     return (
       <div className='h-full w-full border-b-4 border-yellow-600 m-0 p-0 '>
       <div className="flex justify-stretch flex-col w-full mb-6">
@@ -64,7 +65,10 @@ const DoingForm = (verb) => {
         </form>
       </div>
       <div className="flex flex-col justify-stretch w-full mb-24">
-        <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove the last verb</button>
+      {verbNum === 0 ?  
+            <button className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full cursor-not-allowed opacity-50" disabled>remove a verb</button> :
+            <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove a verb</button>
+      }
       </div>
     </div>
     )
