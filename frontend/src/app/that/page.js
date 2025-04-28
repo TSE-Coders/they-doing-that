@@ -7,7 +7,7 @@ import ThatWordDisplay from '../components/That/ThatWordDisplay';
 import ThatForm from '../components/That/ThatForm';
 
 export default function ThatPage() {
-    const [noun, setNoun] = useState([]);
+    const [nouns, setNoun] = useState([]);
     
         useEffect(() => {
             async function fetchAllNouns() {
@@ -39,8 +39,8 @@ export default function ThatPage() {
         <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
             <ThatWordDisplay />
             <div className="bg-sky-600 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
-            <ThatForm nouns={noun}/>
-            <NounList nouns={noun}/>
+            <ThatForm nouns={nouns}/>
+            <NounList nouns={nouns}/>
             </div>
         </div>
     </main>

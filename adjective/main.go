@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"os"
 	"io"
+	"github.com/rs/cors"
+
 
 	"github.com/gorilla/mux"
 	sqltrace "gopkg.in/DataDog/dd-trace-go.v1/contrib/database/sql"
@@ -14,11 +16,14 @@ import (
 	"gopkg.in/DataDog/dd-trace-go.v1/ddtrace/tracer"
 
 	_ "github.com/go-sql-driver/mysql" // Import the MySQL driver
+	
 )
 
 // Word represents the data structure for input/output
+// Added the ID field to the struct
 type Word struct {
-	Word string `json:"word"`
+	ID   int    `json:"id"`   // ID is now included in the response
+	Word string `json:"word"` // Word remains the same
 }
 
 // Response represents the structure for API responses
@@ -110,12 +115,12 @@ func DeleteWordHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(Response{Message: "Word deleted successfully"})
 }
 
-// GetAllWordsHandler returns all words in the database
+// GetAllWordsHandler returns all words in the database, including the ID
 func GetAllWordsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	// Query all words from the database
-	query := "SELECT word FROM words"
+	// Query all words from the database, including the ID
+	query := "SELECT id, word FROM words"
 	rows, err := db.Query(query)
 	if err != nil {
 		http.Error(w, "Error fetching words", http.StatusInternalServerError)
@@ -126,16 +131,16 @@ func GetAllWordsHandler(w http.ResponseWriter, r *http.Request) {
 
 	var words []Word
 	for rows.Next() {
-		var word string
-		if err := rows.Scan(&word); err != nil {
+		var word Word
+		if err := rows.Scan(&word.ID, &word.Word); err != nil {
 			http.Error(w, "Error reading words", http.StatusInternalServerError)
 			log.Printf("Error scanning row: %v", err)
 			return
 		}
-		words = append(words, Word{Word: word})
+		words = append(words, word)
 	}
 
-	// Encode and return the list of words
+	// Encode and return the list of words with their IDs
 	json.NewEncoder(w).Encode(words)
 }
 
@@ -182,6 +187,16 @@ func main() {
 	// <---------------------------------------
 	r := mux.NewRouter()
 
+	corsHandler := cors.New(cors.Options{
+		AllowedOrigins: []string{"http://localhost:3001"}, // Your frontend URL
+		AllowedMethods: []string{"GET", "POST", "DELETE"},  // Allowed HTTP methods
+		AllowedHeaders: []string{"Content-Type", "Authorization"}, // Allowed headers
+	})
+
+	tracedRouter := httptrace.WrapHandler(r, "that-api", "http.router")
+
+	corsAndTraceHandler := corsHandler.Handler(tracedRouter)
+
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(Response{Message: "Welcome to my API!"})
@@ -214,12 +229,11 @@ func main() {
 	// Updated endpoint to /noun/{id} for DELETE
 	r.HandleFunc("/noun/{id}", DeleteWordHandler).Methods("DELETE")
 
-	// Updated endpoint to /noun/all for GET all words
+	// Updated endpoint to /noun/all for GET all words (with ID included)
 	r.HandleFunc("/noun/all", GetAllWordsHandler).Methods("GET")
 
-	wrappedRouter := httptrace.WrapHandler(r, "that-api", "http.router")
 	log.Println("Go application started successfully")
 
 	log.Println("Starting server on :8080...")
-	log.Fatal(http.ListenAndServe(":8080", wrappedRouter))
+	log.Fatal(http.ListenAndServe(":8080", corsAndTraceHandler))
 }
