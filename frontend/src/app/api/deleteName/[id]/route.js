@@ -7,7 +7,7 @@ export async function DELETE(req, { params }) {
     console.log(`Deleting noun with ID: ${id}`);
 
     try {
-        const response = await fetch(`http://localhost:8080/noun/${id}`, {
+        const response = await fetch(`http://localhost:3000/names/${id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",

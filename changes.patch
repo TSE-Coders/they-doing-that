@@ -1,0 +1,1320 @@
+diff --git a/frontend/next.config.mjs b/frontend/next.config.mjs
+index 5c0f225..4678774 100644
+--- a/frontend/next.config.mjs
++++ b/frontend/next.config.mjs
+@@ -1,6 +1,4 @@
+ /** @type {import('next').NextConfig} */
+-const nextConfig = {
+-    productionBrowserSourceMaps: true,
+-};
++const nextConfig = {};
+ 
+ export default nextConfig;
+diff --git a/frontend/package-lock.json b/frontend/package-lock.json
+index 7464c6d..a077810 100644
+--- a/frontend/package-lock.json
++++ b/frontend/package-lock.json
+@@ -41,25 +41,6 @@
+       "integrity": "sha512-ywuDDWpDwfygFfCAeV9DJEPbKc7kldHPfHlJl/7uqqOQ4NabiFSSH92hSRZIe1F1tKKmf23IX7wvZKATeNeAEA==",
+       "license": "Apache-2.0"
+     },
+-    "node_modules/@datadog/browser-logs": {
+-      "version": "6.6.3",
+-      "resolved": "https://registry.npmjs.org/@datadog/browser-logs/-/browser-logs-6.6.3.tgz",
+-      "integrity": "sha512-i9exVpTKU8f58Y0v76+N02irPOHYjcUunpVP37zu2KW182Sh8JmsYW3u7OhWqeitZrhICzbleafEqYxXVRggFQ==",
+-      "license": "Apache-2.0",
+-      "optional": true,
+-      "peer": true,
+-      "dependencies": {
+-        "@datadog/browser-core": "6.6.3"
+-      },
+-      "peerDependencies": {
+-        "@datadog/browser-rum": "6.6.3"
+-      },
+-      "peerDependenciesMeta": {
+-        "@datadog/browser-rum": {
+-          "optional": true
+-        }
+-      }
+-    },
+     "node_modules/@datadog/browser-rum": {
+       "version": "6.6.3",
+       "resolved": "https://registry.npmjs.org/@datadog/browser-rum/-/browser-rum-6.6.3.tgz",
+@@ -1781,20 +1762,6 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
+-    "node_modules/call-bind-apply-helpers": {
+-      "version": "1.0.2",
+-      "resolved": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
+-      "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
+-      "dev": true,
+-      "license": "MIT",
+-      "dependencies": {
+-        "es-errors": "^1.3.0",
+-        "function-bind": "^1.1.2"
+-      },
+-      "engines": {
+-        "node": ">= 0.4"
+-      }
+-    },
+     "node_modules/callsites": {
+       "version": "3.1.0",
+       "resolved": "https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz",
+@@ -2281,21 +2248,6 @@
+         "node": ">=6.0.0"
+       }
+     },
+-    "node_modules/dunder-proto": {
+-      "version": "1.0.1",
+-      "resolved": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz",
+-      "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
+-      "dev": true,
+-      "license": "MIT",
+-      "dependencies": {
+-        "call-bind-apply-helpers": "^1.0.1",
+-        "es-errors": "^1.3.0",
+-        "gopd": "^1.2.0"
+-      },
+-      "engines": {
+-        "node": ">= 0.4"
+-      }
+-    },
+     "node_modules/eastasianwidth": {
+       "version": "0.2.0",
+       "resolved": "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz",
+@@ -2386,11 +2338,14 @@
+       }
+     },
+     "node_modules/es-define-property": {
+-      "version": "1.0.1",
+-      "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz",
+-      "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.0.tgz",
++      "integrity": "sha512-jxayLKShrEqqzJ0eumQbVhTYQM27CfT1T35+gCgDFoL82JLsXqTJ76zv6A0YLOgEnLUMvLzsDsGIrl8NFpT2gQ==",
+       "dev": true,
+       "license": "MIT",
++      "dependencies": {
++        "get-intrinsic": "^1.2.4"
++      },
+       "engines": {
+         "node": ">= 0.4"
+       }
+@@ -2433,9 +2388,9 @@
+       }
+     },
+     "node_modules/es-object-atoms": {
+-      "version": "1.1.1",
+-      "resolved": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz",
+-      "integrity": "sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==",
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.0.0.tgz",
++      "integrity": "sha512-MZ4iQ6JwHOBQjahnjwaC1ZtIBH+2ohjamzAO3oaHcXYup7qxjF2fixyH+Q71voWHeOkI2q/TnJao/KfXYIZWbw==",
+       "dev": true,
+       "license": "MIT",
+       "dependencies": {
+@@ -2446,16 +2401,15 @@
+       }
+     },
+     "node_modules/es-set-tostringtag": {
+-      "version": "2.1.0",
+-      "resolved": "https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz",
+-      "integrity": "sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==",
++      "version": "2.0.3",
++      "resolved": "https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.0.3.tgz",
++      "integrity": "sha512-3T8uNMC3OQTHkFUsFq8r/BwAXLHvU/9O9mE0fBc/MY5iq/8H7ncvO947LmYA6ldWw9Uh8Yhf25zu6n7nML5QWQ==",
+       "dev": true,
+       "license": "MIT",
+       "dependencies": {
+-        "es-errors": "^1.3.0",
+-        "get-intrinsic": "^1.2.6",
++        "get-intrinsic": "^1.2.4",
+         "has-tostringtag": "^1.0.2",
+-        "hasown": "^2.0.2"
++        "hasown": "^2.0.1"
+       },
+       "engines": {
+         "node": ">= 0.4"
+@@ -3209,22 +3163,17 @@
+       }
+     },
+     "node_modules/get-intrinsic": {
+-      "version": "1.3.0",
+-      "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz",
+-      "integrity": "sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==",
++      "version": "1.2.4",
++      "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.4.tgz",
++      "integrity": "sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==",
+       "dev": true,
+       "license": "MIT",
+       "dependencies": {
+-        "call-bind-apply-helpers": "^1.0.2",
+-        "es-define-property": "^1.0.1",
+         "es-errors": "^1.3.0",
+-        "es-object-atoms": "^1.1.1",
+         "function-bind": "^1.1.2",
+-        "get-proto": "^1.0.1",
+-        "gopd": "^1.2.0",
+-        "has-symbols": "^1.1.0",
+-        "hasown": "^2.0.2",
+-        "math-intrinsics": "^1.1.0"
++        "has-proto": "^1.0.1",
++        "has-symbols": "^1.0.3",
++        "hasown": "^2.0.0"
+       },
+       "engines": {
+         "node": ">= 0.4"
+@@ -3233,20 +3182,6 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
+-    "node_modules/get-proto": {
+-      "version": "1.0.1",
+-      "resolved": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz",
+-      "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==",
+-      "dev": true,
+-      "license": "MIT",
+-      "dependencies": {
+-        "dunder-proto": "^1.0.1",
+-        "es-object-atoms": "^1.0.0"
+-      },
+-      "engines": {
+-        "node": ">= 0.4"
+-      }
+-    },
+     "node_modules/get-symbol-description": {
+       "version": "1.0.2",
+       "resolved": "https://registry.npmjs.org/get-symbol-description/-/get-symbol-description-1.0.2.tgz",
+@@ -3347,13 +3282,13 @@
+       }
+     },
+     "node_modules/gopd": {
+-      "version": "1.2.0",
+-      "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz",
+-      "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.0.1.tgz",
++      "integrity": "sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==",
+       "dev": true,
+       "license": "MIT",
+-      "engines": {
+-        "node": ">= 0.4"
++      "dependencies": {
++        "get-intrinsic": "^1.1.3"
+       },
+       "funding": {
+         "url": "https://github.com/sponsors/ljharb"
+@@ -3420,9 +3355,9 @@
+       }
+     },
+     "node_modules/has-symbols": {
+-      "version": "1.1.0",
+-      "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz",
+-      "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
++      "version": "1.0.3",
++      "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz",
++      "integrity": "sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==",
+       "dev": true,
+       "license": "MIT",
+       "engines": {
+@@ -4262,16 +4197,6 @@
+       "dev": true,
+       "license": "ISC"
+     },
+-    "node_modules/math-intrinsics": {
+-      "version": "1.1.0",
+-      "resolved": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz",
+-      "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
+-      "dev": true,
+-      "license": "MIT",
+-      "engines": {
+-        "node": ">= 0.4"
+-      }
+-    },
+     "node_modules/merge2": {
+       "version": "1.4.1",
+       "resolved": "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz",
+diff --git a/frontend/src/app/api/deleteName/[id]/route.js b/frontend/src/app/api/deleteName/[id]/route.js
+index e7a5b15..ddb8416 100644
+--- a/frontend/src/app/api/deleteName/[id]/route.js
++++ b/frontend/src/app/api/deleteName/[id]/route.js
+@@ -1,25 +1,27 @@
+-import { NextResponse } from 'next/server'
++// This is the correct syntax for the App Router in Next.js 13+
++import { NextResponse } from 'next/server';
++
++export async function DELETE(req, { params }) {
++    const id = params.id;  // No need to await 'params', just access 'params.id' directly
++
++    console.log(`Deleting noun with ID: ${id}`);
++
++    try {
++        const response = await fetch(`http://localhost:8080/noun/${id}`, {
++            method: 'DELETE',
++            headers: {
++                "Content-Type": "application/json",
++            },
++        });
+ 
+-export async function DELETE (req, { params }){
+-        const id = params.id;
+-   try {
+-        const response = await fetch(`http://localhost:3000/names/${id}`, {
+-          method: 'DELETE',
+-          headers: {
+-            "Content-Type": "application/json",
+-            "Accept": "application/json"
+-          }
+-        })      
+-        
+         if (!response.ok) {
+-          const errorData = await response.json();
+-          return NextResponse.json({ error: errorData.error || "Failed to delete" }, { status: response.status });
++            const errorData = await response.json();
++            return NextResponse.json({ error: errorData.error || "Failed to delete" }, { status: response.status });
+         }
+-    
++
+         return NextResponse.json({ message: "Deleted successfully" }, { status: 200 });
+-        
+-   } catch(error){
+-       
+-     return NextResponse.json({ error: "Server error" }, { status: 500 });
++    } catch (error) {
++        console.error("Error during DELETE request:", error);
++        return NextResponse.json({ error: "Server error" }, { status: 500 });
++    }
+ }
+-}
+\ No newline at end of file
+diff --git a/frontend/src/app/api/deleteNoun/[id]/route.js b/frontend/src/app/api/deleteNoun/[id]/route.js
+index ef31b9b..7592764 100644
+--- a/frontend/src/app/api/deleteNoun/[id]/route.js
++++ b/frontend/src/app/api/deleteNoun/[id]/route.js
+@@ -1,25 +1,22 @@
+-import { NextResponse } from 'next/server'
++import { NextResponse } from 'next/server';
++
++export async function DELETE(req, { params }) {
++    const id = params.id;
++    try {
++        const response = await fetch(`http://localhost:8080/noun/${id}`, {
++            method: 'DELETE',
++            headers: {
++                "Content-Type": "application/json",
++            },
++        });
+ 
+-export async function DELETE (req, { params }){
+-        const id = params.id;
+-   try {
+-        const response = await fetch(`http://localhost:8080/names/${id}`, {
+-          method: 'DELETE',
+-          headers: {
+-            "Content-Type": "application/json",
+-            "Accept": "application/json"
+-          }
+-        })      
+-        
+         if (!response.ok) {
+-          const errorData = await response.json();
+-          return NextResponse.json({ error: errorData.error || "Failed to delete" }, { status: response.status });
++            const errorData = await response.json();
++            return NextResponse.json({ error: errorData.error || "Failed to delete" }, { status: response.status });
+         }
+-    
++
+         return NextResponse.json({ message: "Deleted successfully" }, { status: 200 });
+-        
+-   } catch(error){
+-       
+-     return NextResponse.json({ error: "Server error" }, { status: 500 });
++    } catch (error) {
++        return NextResponse.json({ error: "Server error" }, { status: 500 });
++    }
+ }
+-}
+\ No newline at end of file
+diff --git a/frontend/src/app/api/deleteVerb/[id]/route.js b/frontend/src/app/api/deleteVerb/route.js
+similarity index 85%
+rename from frontend/src/app/api/deleteVerb/[id]/route.js
+rename to frontend/src/app/api/deleteVerb/route.js
+index 9252efe..97ccf36 100644
+--- a/frontend/src/app/api/deleteVerb/[id]/route.js
++++ b/frontend/src/app/api/deleteVerb/route.js
+@@ -5,8 +5,8 @@ export async function POST(request) {
+     const { word } = await request.json();
+     console.log("Deleting ID:", word);
+ 
+-    const response = await fetch(`http://localhost:8081/verb/delete/${id}`, {
+-      method: 'POST',
++    const response = await fetch('http://localhost:8081/verb/delete', {
++      method: 'DELETE',
+       headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+diff --git a/frontend/src/app/api/getAllNouns/route.js b/frontend/src/app/api/getAllNouns/route.js
+index 699a66a..c3eb2a4 100644
+--- a/frontend/src/app/api/getAllNouns/route.js
++++ b/frontend/src/app/api/getAllNouns/route.js
+@@ -5,12 +5,12 @@ export async function GET (){
+ 
+    try {
+ 
+-    const res = await fetch(`http://localhost:8080/names`)       
++    const res = await fetch(`http://localhost:8080//noun/all`)       
+ 
+     const data = await res.json()
+ 
+     
+-    return NextResponse.json({ noun })
++    return NextResponse.json({ data })
+ 
+    }catch(error){console.log(error)}
+-}
+\ No newline at end of file
++}
+diff --git a/frontend/src/app/api/getRandomNoun/route.js b/frontend/src/app/api/getRandomNoun/route.js
+index 79ed5e6..393b235 100644
+--- a/frontend/src/app/api/getRandomNoun/route.js
++++ b/frontend/src/app/api/getRandomNoun/route.js
+@@ -7,7 +7,7 @@ export async function GET (){
+ 
+    try {
+ 
+-    const res = await fetch(`http://localhost:8080/random`)       
++    const res = await fetch(`http://localhost:8080//noun/random`)       
+ 
+     const that = await res.json()
+     
+diff --git a/frontend/src/app/components/Doing/DoingFooter.js b/frontend/src/app/components/Doing/DoingFooter.js
+deleted file mode 100644
+index 52c15bc..0000000
+--- a/frontend/src/app/components/Doing/DoingFooter.js
++++ /dev/null
+@@ -1,9 +0,0 @@
+-const DoingFooter = () => {
+-    return (
+-        <div className='bg-yellow-700 p-4 max-h-24 w-full static'>
+-            <p className='text-yellow-400 text-right text-xs font-bold'>TSE-Coders 2025</p>
+-        </div>
+-    )
+-}
+-
+-export default DoingFooter
+\ No newline at end of file
+diff --git a/frontend/src/app/components/Doing/DoingForm.js b/frontend/src/app/components/Doing/DoingForm.js
+index 34c9f5c..ed00631 100644
+--- a/frontend/src/app/components/Doing/DoingForm.js
++++ b/frontend/src/app/components/Doing/DoingForm.js
+@@ -3,12 +3,10 @@
+ async function DoingPost(event){
+   
+   const doingVerb = {
+-    name: {
+-      name: event.target[0].value
+-    }
++      word: event.target[0].value
+   }
+-  
+-  console.log(`this is `, doingVerb)
++
++  const payload = JSON.stringify({doingVerb });
+ 
+   try {
+     const res = await fetch('/api/postVerb', {
+@@ -19,56 +17,51 @@ async function DoingPost(event){
+           body: JSON.stringify(doingVerb)
+     })
+     const data = await res.json()
++    console.log(data)
+   } catch (error) {
+     console.error(error)
+   }
+ }
+ 
+-async function DoingDelete(verb){
+-  //get the last element of the subjects array and delete it. 
+-  const lastElement = verb.length - 1
+-  const verbId = verb[lastElement].id
++async function DoingDelete(verb) {
++  const lastElement = verb.verb.length - 1;
++  const verbWord = verb.verb[lastElement].word;
++  console.log("Deleting verb:", verbWord);
+ 
++  const payload = JSON.stringify({ word: verbWord });
++
++  console.log("Sending DELETE with body:", payload); 
+   try {
+-    const res = await fetch(`/api/deleteVerb/${verbId}`, { method: "POST" });
+-    console.log(res)
++    const res = await fetch(`/api/deleteVerb`, {
++      method: "POST", 
++      headers: {
++        "Content-Type": "application/json",
++        "Accept": "application/json"
++      },
++      body: payload,
++    });
+ 
+-    if (!res.ok) {
+-      const data = await res.json();
+-      console.error("Error deleting:", data.error);
+-      return;
+-    }
+-    console.log("Deleted successfully");
+-    window.location.reload();
+-    // Update state AFTER successful delete
+-    //setNames((prevNames) => prevNames.filter((name) => name.id !== id));
++    const data = await res.json();
++    console.log("Delete response:", data);
+   } catch (error) {
+     console.error("Error deleting verb:", error);
+   }
+-
+ }
+ 
+ 
+-const DoingForm = ({verb}) => {
+-  const verbNum = verb.length
++const DoingForm = (verb) => {
+     return (
+-      <div className='h-full w-full border-b-4 border-yellow-600 m-0 p-0 '>
+-      <div className="flex justify-stretch flex-col w-full mb-6">
++      <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-yellow-600 m-0 p-0'>
++      <div className="flex justify-stretch flex-col w-full">
+         <form onSubmit={DoingPost} className="flex flex-col justify-stretch w-full mt-32 mb-0 p-0 ">
+         <label id="noun" className="flex items-center gap-8 p-0">
+-          <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-yellow-600" />
++          <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0" />
+         </label>
+-        {verbNum === 16 ?  
+-            <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-yellow-500 rounded-full cursor-not-allowed opacity-50" disabled>add a verb</button> :
+-            <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-yellow-500 rounded-full">add a verb</button>
+-        }
++        <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-yellow-500 rounded-full">add a verb</button>
+         </form>
+       </div>
+       <div className="flex flex-col justify-stretch w-full mb-24">
+-      {verbNum === 0 ?  
+-            <button className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full cursor-not-allowed opacity-50" disabled>remove a verb</button> :
+-            <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove a verb</button>
+-      }
++        <button onClick={() => DoingDelete(verb)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-yellow-500 rounded-full">remove the last verb</button>
+       </div>
+     </div>
+     )
+diff --git a/frontend/src/app/components/Doing/DoingHeader.js b/frontend/src/app/components/Doing/DoingHeader.js
+index c7c9d54..181c1ce 100644
+--- a/frontend/src/app/components/Doing/DoingHeader.js
++++ b/frontend/src/app/components/Doing/DoingHeader.js
+@@ -2,13 +2,14 @@ import Link from "next/link"
+ 
+ const DoingHeader = () => {
+     return (
+-        <div className='bg-yellow-700 flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
++        <div className='bg-yellow-700 flex flex-row m-4 ml-0 max-h-14 justify-stretch relative w-full'>
+             <div className='flex flex-row relative w-full'>
+             <Link href='/they'><p className='text-yellow-400 text-6xl hover:text-red-600'>They</p></Link>
+                 <p className='text-yellow-400 text-6xl font-semibold'>Doing</p>
+             <Link href='/that'><p className='text-yellow-400 text-6xl hover:text-sky-400'>That</p></Link>
+             <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
+-            <button className='text-yellow-400 text-l m-1 uppercase hover:text-black font-semibold'><Link href='/'>Home</Link></button>
++            <button className='text-yellow-400 text-l m-1 uppercase hover:text-black'><Link href='/'>Home</Link></button>
++                <button className='text-yellow-400 text-l m-2 uppercase hover:text-black'><Link href='/instructions'>Instructions</Link></button>
+             </div>
+             </div>
+         </div>
+diff --git a/frontend/src/app/components/Doing/DoingHome.js b/frontend/src/app/components/Doing/DoingHome.js
+index 75b7c2a..b993c30 100644
+--- a/frontend/src/app/components/Doing/DoingHome.js
++++ b/frontend/src/app/components/Doing/DoingHome.js
+@@ -6,11 +6,7 @@ const DoingHome = () => {
+   const [doing, setDoing] = useState([])
+   const [isLoading, setLoading] = useState(true)
+   const [check, setCheck] = useState(0)
+-
+-  //const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
+-  //const i = Math.floor(Math.random() * doingArray.length);
+-  //const randomDoing = doingArray[i]
+-
++  
+   async function fetchDoing() {
+ 
+       try {
+@@ -31,7 +27,7 @@ const DoingHome = () => {
+         }
+       } catch (error) {
+         console.error("Error fetching doing:", error);
+-        setDoing({ word: "no data available" });
++        setDoing({ word: "swim" });
+         setLoading(false);
+       }
+     }
+@@ -47,17 +43,17 @@ const DoingHome = () => {
+     },[check]) 
+ 
+     return (
+-        <div className="flex justify-center content-stretch bg-yellow-300 w-full hover:bg-yellow-400">
+-          <div className="m-auto mt-64 justify-items-center">
++        <div className="flex justify-center bg-yellow-200 w-full h-dvh hover:bg-yellow-300">
++          <div className="m-auto mt-64 justify-items-center pb-56">
+             <div className="pb-6">
+               <p className='text-6xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
+             </div>
+             <div className="justify-items-center">
+-            <Link href='/doing'><button className="btn btn-neutral border-0 bg-yellow-600 rounded-full">add a verb</button></Link>
++            <Link href='/doing'><button className="btn btn-neutral border-0 bg-yellow-500 rounded-full">add a verb</button></Link>
+             </div>
+               <div className='relative m-10 mt-44 justify-center'>
+                 <p className='text-center text-sm text-yellow-700'>Powered by:</p>
+-                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
++                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Python x SQLServer</p>
+             </div>
+           </div>
+         </div>
+diff --git a/frontend/src/app/components/Doing/DoingWordDisplay.js b/frontend/src/app/components/Doing/DoingWordDisplay.js
+index eaea70f..89a80f7 100644
+--- a/frontend/src/app/components/Doing/DoingWordDisplay.js
++++ b/frontend/src/app/components/Doing/DoingWordDisplay.js
+@@ -5,53 +5,49 @@ const DoingWordDisplay = () => {
+   const [doing, setDoing] = useState([])
+   const [isLoading, setLoading] = useState(true)
+   const [check, setCheck] = useState(0)
+-
+-  //const doingArray = [{word:"eat"}, {word:"walk"}, {word: "swim"}, {word: "write"}, {word: "code"}, {word:"drive"}, {word:"race"}, {word: "drink"}, {word: "watch"}, {word: "blink"}, {word:"think"}, {word:"run"}, {word: "stare"}, {word: "play"}, {word: "clean"}]
+-  //const i = Math.floor(Math.random() * doingArray.length);
+-  //const randomDoing = doingArray[i]
+   
+   async function fetchDoing() {
+ 
+-    try {
+-      const res = await fetch(`/api/getRandomVerb`);
+-      if (!res.ok) {
+-        throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+-      }
+-  
+-      const payload = await res.json();
+-      if (payload && payload.data) {
+-        setDoing(payload.data);
+-        setLoading(false);
+-      } else {
+-        setDoing({ word: "no data" });
++      try {
++        const res = await fetch(`/api/getRandomVerb`);
++        if (!res.ok) {
++          throw new Error(`HTTP error! status: ${res.status} API unreachable`);
++        }
++    
++        const payload = await res.json();
++        if (payload && payload.doing) {
++          setDoing(payload.doing);
++          setLoading(false);
++        } else {
++          setDoing({ word: "no data" });
++          setLoading(false);
++        }
++      } catch (error) {
++        console.error("Error fetching doing:", error);
++        setDoing({ word: "swim" });
+         setLoading(false);
+       }
+-    } catch (error) {
+-      console.error("Error fetching doing:", error);
+-      setDoing({ word: "no data available" });
+-      setLoading(false);
+     }
+-  }
+-  
+-
+- useEffect(() => {  
+     
+-  const id = setInterval(() => {
+-                fetchDoing()
+-                setCheck(check + 1)
+-              }, 3000);
+-  return () => clearInterval(id);            
+-  },[check]) 
++  
++   useEffect(() => {  
++      
++    const id = setInterval(() => {
++                  fetchDoing()
++                  setCheck(check + 1)
++                }, 3000);
++    return () => clearInterval(id);            
++    },[check]) 
+ 
+     return (
+-        <div className="bg-yellow-400 flex flex-col justify-center w-full border-r-4 border-yellow-600">
+-            <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
+-            <div className='relative mt-24 justify-center content-end'>
++        <div className="bg-yellow-400 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-yellow-600">
++            <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center p-36'>{isLoading ? `Loading...` : doing.word}</p>
++            <div className='relative m-10 mt-44 justify-center content-end'>
+                 <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
+-                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
++                <p className='text-center text-base font-bold text-yellow-700 uppercase'>JAVA x SQLServer</p>
+             </div>
+         </div>
+     )
+ }
+ 
+-export default DoingWordDisplay
+\ No newline at end of file
++export default DoingWordDisplay
+diff --git a/frontend/src/app/components/Doing/VerbList.js b/frontend/src/app/components/Doing/VerbList.js
+index c85ddbc..d86503b 100644
+--- a/frontend/src/app/components/Doing/VerbList.js
++++ b/frontend/src/app/components/Doing/VerbList.js
+@@ -1,10 +1,11 @@
+ 'use client'
+ const VerbList = ({verb}) => {
++    console.log("this is the verb list", verb)
+     return (
+-        <div className='h-full bg-yellow-400 m-4 ml-0 flex w-full'>
++<div className='bg-red-700 flex justify-stretch  place-items-stretch m-4 ml-0 flex relative w-full h-dvh'>
+             <div className="grid grid-cols-4 gap-4 relative w-full p-6">
+             {verb.map((verb) => (
+-                    <div key={verb.id} className='bg-yellow-600 border-yellow-700 border-4 rounded-full text-center content-center text-white uppercase font-bold'>{verb.word}</div>
++                    <div key={verb.id}className='bg-red-900 rounded-full border-red-950 border-4 text-center content-center text-white uppercase font-bold'>{verb.word}</div>
+                 ))}
+             </div>
+         </div>
+diff --git a/frontend/src/app/components/Footer.js b/frontend/src/app/components/Footer.js
+index 37074dd..1e90593 100644
+--- a/frontend/src/app/components/Footer.js
++++ b/frontend/src/app/components/Footer.js
+@@ -1,8 +1,8 @@
+ 
+ const Footer = () => {
+     return (
+-        <div className='bg-black static max-h-24 p-4 w-full'>
+-            <p className='text-white text-right text-xs font-semibold'>TSE-Coders 2025</p>
++        <div className='bg-black p-4 w-full'>
++            <p className='text-white text-right text-xs font-thin'>TSE-Coders 2025</p>
+         </div>
+     )
+ }
+diff --git a/frontend/src/app/components/Header.js b/frontend/src/app/components/Header.js
+index d4f0590..9f53d4f 100644
+--- a/frontend/src/app/components/Header.js
++++ b/frontend/src/app/components/Header.js
+@@ -2,11 +2,15 @@ import Link from "next/link"
+ 
+ const Header = () => {
+     return (
+-        <div className='bg-black flex flex-row m-4 max-h-14 justify-stretch static w-full'>
++        <div className='bg-black flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
+             <div className='flex flex-row relative w-full'>
+                 <p className='text-red-600 text-6xl'>They</p>
+-                <p className='text-yellow-300 text-6xl'>Doing</p>
++                <p className='text-yellow-200 text-6xl'>Doing</p>
+                 <p className='text-sky-400 text-6xl'>That</p>
++                <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
++                    <button className='text-white text-l m-1 uppercase hover:bg-slate-900'><Link href='/'>Home</Link></button>
++                    <button className='text-white text-l m-2 uppercase hover:bg-slate-900'><Link href='/instructions'>Instructions</Link></button>
++                </div>
+             </div>
+         </div>
+     )
+diff --git a/frontend/src/app/components/That/NounList.js b/frontend/src/app/components/That/NounList.js
+index 53e457a..690cfdd 100644
+--- a/frontend/src/app/components/That/NounList.js
++++ b/frontend/src/app/components/That/NounList.js
+@@ -1,12 +1,11 @@
+ 'use client'
+ 
+-const NounList = ({noun}) => {
+-    console.log(noun)
++const NounList = ({nouns}) => {
+     return (
+-        <div className='h-full bg-sky-600 m-4 ml-0 flex w-full'>
++        <div className='bg-red-700 flex justify-stretch  place-items-stretch m-4 ml-0 flex relative w-full h-dvh'>
+             <div className="grid grid-cols-4 gap-4 relative w-full p-6">
+-            {noun.map((noun) => (
+-                    <div key={noun.id} className='bg-sky-900 border-sky-950 border-4 rounded-full text-center content-center text-white uppercase font-bold'>{noun.word}</div>
++            {nouns.map((noun) => (
++                    <div key={noun.id}className='bg-red-900 rounded-full border-red-950 border-4 text-center content-center text-white uppercase font-bold'>{noun.word}</div>
+                 ))}
+             </div>
+         </div>
+@@ -14,4 +13,3 @@ const NounList = ({noun}) => {
+ }
+ 
+ export default NounList
+-
+diff --git a/frontend/src/app/components/That/ThatFooter.js b/frontend/src/app/components/That/ThatFooter.js
+deleted file mode 100644
+index 99b604f..0000000
+--- a/frontend/src/app/components/That/ThatFooter.js
++++ /dev/null
+@@ -1,9 +0,0 @@
+-const ThatFooter = () => {
+-    return (
+-        <div className='bg-sky-900 p-4 w-full'>
+-            <p className='text-sky-600 text-right text-xs font-bold'>TSE-Coders 2025</p>
+-        </div>
+-    )
+-}
+-
+-export default ThatFooter
+\ No newline at end of file
+diff --git a/frontend/src/app/components/That/ThatForm.js b/frontend/src/app/components/That/ThatForm.js
+index 4eef350..fb058a3 100644
+--- a/frontend/src/app/components/That/ThatForm.js
++++ b/frontend/src/app/components/That/ThatForm.js
+@@ -24,10 +24,11 @@ async function ThatPost(event){
+   }
+ }
+ 
+-async function ThatDelete(noun){
++async function ThatDelete(nouns){
++  console.log("this is the nouns", nouns)
+   //get the last element of the subjects array and delete it. 
+-  const lastElement = noun.length - 1
+-  const nounId = noun[lastElement].id
++  const lastElement = nouns.length - 1
++  const nounId = nouns[lastElement].id
+ 
+   try {
+     const res = await fetch(`/api/deleteNoun/${nounId}`, { method: "DELETE" });
+@@ -49,29 +50,22 @@ async function ThatDelete(noun){
+ }
+ 
+ 
+-const ThatForm = ({noun}) => {
+-  const nounNum = noun.length
++const ThatForm = ({nouns}) => {
+     return (
+-      <div className='h-full w-full border-b-4 border-sky-900 m-0 p-0'>
+-      <div className="flex justify-stretch flex-col w-full mb-6">
++      <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-sky-900 m-0 p-0'>
++      <div className="flex justify-stretch flex-col w-full">
+         <form onSubmit={ThatPost} className="flex flex-col justify-stretch w-full mt-32 mb-0 p-0 ">
+         <label id="noun" className="flex items-center gap-8 p-0">
+-          <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-sky-900" />
++          <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0" />
+         </label>
+-        {nounNum === 16 ?  
+-            <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-sky-700 rounded-full cursor-not-allowed opacity-50" disabled>add a noun</button> :
+-            <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-sky-700 rounded-full">add a noun</button>
+-        }
++        <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-sky-700 rounded-full">add a noun</button>
+         </form>
+       </div>
+       <div className="flex flex-col justify-stretch w-full mb-24">
+-      {nounNum === 0 ?  
+-            <button className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-sky-700 rounded-full cursor-not-allowed opacity-50" disabled>remove a noun</button> :
+-            <button onClick={() => ThatDelete(noun)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-sky-700 rounded-full">remove a noun</button>
+-      }
++        <button onClick={() => ThatDelete(nouns)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-sky-700 rounded-full">remove a noun</button>
+       </div>
+     </div>
+     )
+ }
+ 
+-export default ThatForm
+\ No newline at end of file
++export default ThatForm
+diff --git a/frontend/src/app/components/That/ThatHeader.js b/frontend/src/app/components/That/ThatHeader.js
+index d7e67ae..42ad253 100644
+--- a/frontend/src/app/components/That/ThatHeader.js
++++ b/frontend/src/app/components/That/ThatHeader.js
+@@ -2,13 +2,14 @@ import Link from "next/link"
+ 
+ const ThatHeader = () => {
+     return (
+-    <div className='bg-sky-900 flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
++    <div className='bg-sky-900 flex flex-row m-4 ml-0 max-h-14 justify-stretch relative w-full'>
+         <div className='flex flex-row relative w-full'>
+         <Link href='/they'><p className='text-sky-600 text-6xl hover:text-red-600'>They</p></Link>
+-        <Link href='/doing'><p className='text-sky-600 text-6xl hover:text-yellow-300'>Doing</p></Link>
++        <Link href='/doing'><p className='text-sky-600 text-6xl hover:text-yellow-200'>Doing</p></Link>
+             <p className='text-sky-600 text-6xl font-semibold'>That</p>
+         <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
+-        <button className='text-sky-600 text-l m-1 uppercase hover:text-black font-semibold'><Link href='/'>Home</Link></button>
++        <button className='text-sky-600 text-l m-1 uppercase hover:text-black'><Link href='/'>Home</Link></button>
++            <button className='text-sky-600 text-l m-2 uppercase hover:text-black'><Link href='/instructions'>Instructions</Link></button>
+         </div>
+         </div>
+     </div>
+diff --git a/frontend/src/app/components/That/ThatHome.js b/frontend/src/app/components/That/ThatHome.js
+index de2d145..4cdc3a4 100644
+--- a/frontend/src/app/components/That/ThatHome.js
++++ b/frontend/src/app/components/That/ThatHome.js
+@@ -8,10 +8,6 @@ const [that, setThat] = useState([])
+ const [isLoading, setLoading] = useState(true)
+ const [check, setCheck] = useState(0)
+ 
+-const thatArray = [{word:"highway"}, {word:"lake"}, {word: "restaurant"}, {word: "table"}, {word: "computer"}, {word:"book"}, {word:"shoebox"}, {word: "blanket"}, {word: "tv"}, {word: "hospital"}, {word:"car"}, {word:"cake"}, {word: "bus"}, {word: "house"}, {word: "vegetable"}]
+-const i = Math.floor(Math.random() * thatArray.length);
+-const randomThat = thatArray[i]
+-
+ //FETCH THAT 
+ async function fetchThat() {
+     try {
+@@ -30,7 +26,7 @@ async function fetchThat() {
+       }
+     } catch (error) {
+       console.error("Error fetching that:", error);
+-      setThat(randomThat);
++      setThat({ word: "highway" });
+       setLoading(false);
+     }
+   }
+@@ -46,13 +42,13 @@ async function fetchThat() {
+   },[check]) 
+ 
+     return (
+-        <div className="flex justify-stretch content-stretch bg-sky-400 w-full  hover:bg-sky-500">
+-          <div className="m-auto mt-64 justify-items-center ">
++        <div className="flex justify-center bg-sky-400 w-full h-dvh hover:bg-sky-500">
++          <div className="m-auto mt-64 justify-items-center pb-56">
+             <div className="pb-6">
+             <p className='text-6xl text-wrap font-black text-sky-800 uppercase text-center'>{isLoading ? `Loading...` : that.word}</p>
+             </div>
+             <div className="">
+-            <Link href='/that'><button className="btn btn-neutral border-0 bg-sky-700 rounded-full">add a noun</button></Link>
++            <Link href='/that'><button className="btn btn-neutral border-0 bg-sky-600 rounded-full">add a noun</button></Link>
+             </div>
+             <div className='relative m-10 mt-44 justify-center'>
+               <p className='text-center text-sm text-sky-800'>Powered by:</p>
+diff --git a/frontend/src/app/components/That/ThatWordDisplay.js b/frontend/src/app/components/That/ThatWordDisplay.js
+index ea34f9c..345bbe4 100644
+--- a/frontend/src/app/components/That/ThatWordDisplay.js
++++ b/frontend/src/app/components/That/ThatWordDisplay.js
+@@ -5,10 +5,6 @@ const ThatWordDisplay = () => {
+     const [that, setThat] = useState([])
+     const [isLoading, setLoading] = useState(true)
+     const [check, setCheck] = useState(0)
+-
+-    const thatArray = [{word:"highway"}, {word:"lake"}, {word: "restaurant"}, {word: "table"}, {word: "computer"}, {word:"book"}, {word:"shoebox"}, {word: "blanket"}, {word: "tv"}, {word: "hospital"}, {word:"car"}, {word:"cake"}, {word: "bus"}, {word: "house"}, {word: "vegetable"}]
+-    const i = Math.floor(Math.random() * thatArray.length);
+-    const randomThat = thatArray[i] 
+     
+       //FETCH RANDOM NAME
+       async function fetchName() {
+@@ -19,16 +15,16 @@ const ThatWordDisplay = () => {
+           }
+       
+           const payload = await res.json();
+-          if (payload && payload.that) {
+-            setThat(payload.that);
++          if (payload && payload.data) {
++            setThat(payload.data);
+             setLoading(false);
+           } else {
+             setThat({ word: "no data" });
+             setLoading(false);
+           }
+         } catch (error) {
+-          console.error("Error fetching that:", error);
+-          setThat(randomThat);
++          console.error("Error fetching name:", error);
++          setThat({ word: "highway" });
+           setLoading(false);
+         }
+       }
+@@ -42,9 +38,9 @@ const ThatWordDisplay = () => {
+       },[check]) 
+ 
+     return (
+-        <div className="bg-sky-600 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full border-r-4 border-sky-900">
+-            <p className='text-8xl text-wrap font-black text-sky-900 uppercase text-center'>{isLoading ? `Loading...` : that.word}</p>
+-            <div className='relative m-10 mt-24 justify-center content-end'>
++        <div className="bg-sky-600 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-sky-900">
++            <p className='text-8xl text-wrap font-black text-sky-900 uppercase text-center p-36'>{isLoading ? `Loading...` : that.word}</p>
++            <div className='relative m-10 mt-44 justify-center content-end'>
+                 <p className='text-center text-base text-sm text-sky-900'>Powered by:</p>
+                 <p className='text-center text-base font-bold text-sky-900 uppercase'>Go x MySQL</p>
+             </div>
+diff --git a/frontend/src/app/components/They/SubjectList.js b/frontend/src/app/components/They/SubjectList.js
+index e2e4a2c..30c65f2 100644
+--- a/frontend/src/app/components/They/SubjectList.js
++++ b/frontend/src/app/components/They/SubjectList.js
+@@ -3,7 +3,7 @@
+ const SubjectList = ({subjects}) => {
+ 
+     return (
+-        <div className='h-full bg-red-700 flex m-4 ml-0 w-full'>
++        <div className='bg-red-700 flex justify-stretch  place-items-stretch m-4 ml-0 flex relative w-full h-dvh'>
+             <div className="grid grid-cols-4 gap-4 relative w-full p-6">
+             {subjects.map((subject) => (
+                     <div key={subject.id}className='bg-red-900 rounded-full border-red-950 border-4 text-center content-center text-white uppercase font-bold'>{subject.name}</div>
+diff --git a/frontend/src/app/components/They/TheyFooter.js b/frontend/src/app/components/They/TheyFooter.js
+deleted file mode 100644
+index 6296e81..0000000
+--- a/frontend/src/app/components/They/TheyFooter.js
++++ /dev/null
+@@ -1,9 +0,0 @@
+-const TheyFooter = () => {
+-    return (
+-        <div className='bg-red-950 p-4 w-full'>
+-            <p className='text-red-700 text-right text-xs font-bold'>TSE-Coders 2025</p>
+-        </div>
+-    )
+-}
+-
+-export default TheyFooter
+\ No newline at end of file
+diff --git a/frontend/src/app/components/They/TheyForm.js b/frontend/src/app/components/They/TheyForm.js
+index fa68b5a..3b6fc04 100644
+--- a/frontend/src/app/components/They/TheyForm.js
++++ b/frontend/src/app/components/They/TheyForm.js
+@@ -53,27 +53,18 @@ async function TheyDelete(subjects){
+ 
+ 
+ const TheyForm = ({subjects}) => {
+-  const subjectNum = subjects.length
+     return (
+-        <div className='h-full w-full border-b-4 border-red-950 m-0 p-0'>
+-          <div className="flex justify-stretch flex-col w-full mb-6">
++        <div className='flex justify-stretch  flex-col w-full h-dvh border-b-4 border-red-950 m-0 p-0'>
++          <div className="flex justify-stretch flex-col w-full">
+             <form onSubmit={TheyPost} className="flex flex-col justify-stretch w-full mt-32 mb-0 p-0 ">
+             <label id="subject" className="flex items-center gap-8 p-0">
+-              <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0 border-4 border-red-950" />
++              <input type="text" placeholder="add word here" className="input input-bordered w-full ml-20 mr-20 mt-0 mb-0" />
+             </label>
+-            {subjectNum === 16 ?  
+-            <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-red-800 rounded-full cursor-not-allowed opacity-50" disabled>add a subject</button> :
+             <button type="submit" className="btn ml-36 mr-36 mt-4 mb-0 pb-0 border-0 bg-red-800 rounded-full">add a subject</button>
+-            }
+-            
+             </form>
+           </div>
+           <div className="flex flex-col justify-stretch w-full mb-24">
+-          {subjectNum === 0 ?  
+-            <button className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full cursor-not-allowed opacity-75" disabled>remove a subject</button> :
+-            <button onClick={() => TheyDelete(subjects)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove a subject</button>
+-            }
+-
++            <button onClick={() => TheyDelete(subjects)} className=" btn  ml-36 mr-36 mt-0 pt-0 border-0 bg-red-800 rounded-full">remove the last subject</button>
+           </div>
+         </div>
+     )
+diff --git a/frontend/src/app/components/They/TheyHeader.js b/frontend/src/app/components/They/TheyHeader.js
+index 47e3063..b8730e6 100644
+--- a/frontend/src/app/components/They/TheyHeader.js
++++ b/frontend/src/app/components/They/TheyHeader.js
+@@ -2,13 +2,14 @@ import Link from "next/link"
+ 
+ const TheyHeader = () => {
+     return (
+-        <div className='bg-red-950 flex flex-row m-4 max-h-14 justify-stretch relative w-full'>
++        <div className='bg-red-950 flex flex-row m-4 ml-0 max-h-14 justify-stretch relative w-full'>
+             <div className='flex flex-row relative w-full'>
+                 <p className='text-red-700 text-6xl font-semibold'>They</p>
+-                <Link href='/doing'><p className='text-red-700 text-6xl hover:text-yellow-300'>Doing</p></Link>
++                <Link href='/doing'><p className='text-red-700 text-6xl hover:text-yellow-200'>Doing</p></Link>
+                 <Link href='/that'><p className='text-red-700 text-6xl hover:text-sky-400'>That</p></Link>
+                 <div className='flex flex-row justify-end mr-8 relative w-full items-center'>
+-                    <button className='text-red-700 text-l m-1 uppercase hover:text-black font-semibold'><Link href='/'>Home</Link></button>
++                    <button className='text-red-700 text-l m-1 uppercase hover:text-black'><Link href='/'>Home</Link></button>
++                    <button className='text-red-700 text-l m-2 uppercase hover:text-black'><Link href='/instructions'>Instructions</Link></button>
+                  </div>
+             </div>
+         </div>
+diff --git a/frontend/src/app/components/They/TheyHome.js b/frontend/src/app/components/They/TheyHome.js
+index 0754be2..c30d346 100644
+--- a/frontend/src/app/components/They/TheyHome.js
++++ b/frontend/src/app/components/They/TheyHome.js
+@@ -41,13 +41,13 @@ const TheyHome = () => {
+   },[check]) 
+ 
+     return (
+-        <div className="flex justify-stretch content-stretch bg-red-600 w-full hover:bg-red-700">    
+-          <div className="m-auto mt-64 justify-items-center">
++        <div className="flex justify-center bg-red-600 w-full h-dvh hover:bg-red-700">    
++          <div className="m-auto mt-64 justify-items-center pb-56">
+             <div className="pb-6">
+               <p className='text-6xl text-wrap font-black text-red-950 uppercase text-center'>{isLoading ? `Loading...` : data.name}</p>
+             </div>
+             <div className="">
+-            <Link href='/they'><button className="btn btn-neutral border-0 bg-red-900 rounded-full">add a subject</button></Link>
++            <Link href='/they'><button className="btn btn-neutral border-0 bg-red-800 rounded-full">add a subject</button></Link>
+             </div>
+             <div className='relative m-10 mt-44 justify-center'>
+               <p className='text-center text-base text-sm text-red-950'>Powered by:</p>
+diff --git a/frontend/src/app/components/They/TheyWordDisplay.js b/frontend/src/app/components/They/TheyWordDisplay.js
+index 436a4e7..35f231c 100644
+--- a/frontend/src/app/components/They/TheyWordDisplay.js
++++ b/frontend/src/app/components/They/TheyWordDisplay.js
+@@ -1,6 +1,5 @@
+ 'use client'
+ import {  useState, useEffect } from 'react'
+-import { datadogLogs } from '@datadog/browser-logs';
+ 
+ const TheyWordDisplay = () => {
+     const [data, setData] = useState([])
+@@ -12,28 +11,15 @@ const TheyWordDisplay = () => {
+     try {
+       const res = await fetch(`/api/getRandomName`);
+       if (!res.ok) {
+-        datadogLogs.logger.error("Error Fetching name from backend", {
+-          contextKey: res.status,
+-        timestamp: Date.now()
+-        });
+         throw new Error(`HTTP error! status: ${res.status} API unreachable`);
+       }
+   
+       const payload = await res.json();
+       if (payload && payload.data) {
+-        datadogLogs.logger.info("Name Fetched successfully", {
+-          payload: payload
+-        ,
+-        timestamp: Date.now()
+-        });
+         setData(payload.data);
+         setLoading(false);
+       } else {
+         setData({ name: "no data available" });
+-        datadogLogs.logger.error("No data available in response", {
+-          payload: payload,
+-          timestamp: Date.now()
+-        });
+         setLoading(false);
+       }
+     } catch (error) {
+@@ -52,13 +38,13 @@ const TheyWordDisplay = () => {
+   },[check]) 
+ 
+     return (
+-        <div className="h-full bg-red-700 flex flex-col justify-center items-center  w-full border-r-4 border-red-950">
+-            <p className='text-8xl text-wrap font-black text-red-950 uppercase text-center'>{isLoading ? `Loading...` : data.name}</p>
+-            <div className='relative m-10 mt-24 justify-center content-end'>
++        <div className="bg-red-700 flex flex-col justify-center items-center  place-items-stretch m-0 flex relative w-full h-dvh border-r-4 border-red-950">
++            <p className='text-8xl text-wrap font-black text-red-950 uppercase text-center p-36'>{isLoading ? `Loading...` : data.name}</p>
++            <div className='relative m-10 mt-44 justify-center content-end'>
+                 <p className='text-center text-base text-sm text-red-950'>Powered by:</p>
+                 <p className='text-center text-base font-bold text-red-950 uppercase'>Ruby x Postgres</p>
+             </div>
+         </div>
+     )
+ }
+-export default TheyWordDisplay
++export default TheyWordDisplay
+\ No newline at end of file
+diff --git a/frontend/src/app/components/datadog-init.js b/frontend/src/app/components/datadog-init.js
+index bc07533..85951d4 100644
+--- a/frontend/src/app/components/datadog-init.js
++++ b/frontend/src/app/components/datadog-init.js
+@@ -1,10 +1,7 @@
++   // Necessary if using App Router to ensure this file runs on the client
+    "use client";
+     
+     import { datadogRum } from "@datadog/browser-rum";
+-    import { datadogLogs } from '@datadog/browser-logs';
+-
+-    datadogLogs.logger.setHandler("http"); // or "console" for local debugging
+-    datadogLogs.logger.setLevel("info");   // You can adjust this to debug, warn, error, etc.
+     
+     datadogRum.init({
+       applicationId: "96a16c07-262b-45de-9785-fee4549fad0c",
+@@ -15,22 +12,15 @@
+       // Specify a version number to identify the deployed version of your application in Datadog
+       // version: '1.0.0',
+       sessionSampleRate: 100,
+-      sessionReplaySampleRate: 100,
++      sessionReplaySampleRate: 20,
+       trackUserInteractions: true,
+       trackResources: true,
+       trackLongTasks: true,
+       defaultPrivacyLevel: "mask-user-input",
+-      allowedTracingUrls: [(url) => url.startsWith("http://localhost:3001/")],
+-    });
+-
+-    datadogLogs.init({
+-      clientToken: "pub6a0a7c0d0afc72660183c1ca15f9926a",
+-      site: 'datadoghq.com',
+-      forwardErrorsToLogs: true,
+-      sampleRate: 100,
+-      service: 'frontend',
+-      env: 'tdt',
+-      tags: ['source:browser', 'team:frontend']
++      // Specify URLs to propagate trace headers for connection between RUM and backend trace
++      allowedTracingUrls: [
++        { match: "https://example.com/api/", propagatorTypes: ["tracecontext"] },
++      ],
+     });
+     
+     export default function DatadogInit() {
+diff --git a/frontend/src/app/doing/page.js b/frontend/src/app/doing/page.js
+index a2478dd..63db3e7 100644
+--- a/frontend/src/app/doing/page.js
++++ b/frontend/src/app/doing/page.js
+@@ -5,12 +5,10 @@ import DoingHeader from '../components/Doing/DoingHeader';
+ import VerbList from '../components/Doing/VerbList';
+ import DoingWordDisplay from '../components/Doing/DoingWordDisplay';
+ import DoingForm from '../components/Doing/DoingForm';
+-import DoingFooter from '../components/Doing/DoingFooter';
+ 
+ 
+ export default function DoingPage() {
+     const [verb, setVerb] = useState([]);
+-    const doingArray = [{word:"eat", id: 1}, {word:"walk", id: 2}, {word: "swim", id: 3}, {word: "write", id: 4}, {word: "code", id: 5}, {word:"drive", id: 6}, {word:"race", id: 7}, {word: "drink", id: 8}, {word: "watch", id: 9}, {word: "blink", id: 10}, {word:"think", id: 11}, {word:"run", id: 12}, {word: "stare", id: 13}, {word: "play", id: 14}, {word: "clean", id: 15}]
+         
+             useEffect(() => {
+                 async function fetchAllVerbs() {
+@@ -24,27 +22,26 @@ export default function DoingPage() {
+                       if (payload && payload.data) {
+                         setVerb(payload.data);
+                       } else {
+-                        setVerb(doingArray);
++                        setVerb({ word: "no data available" });
+                       }
+                     } catch (error) {
+                       console.error("Error fetching name:", error);
+-                      setVerb(doingArray);
++                      setVerb({ word: "no data available" });
+                     }
+                   }
+                   fetchAllVerbs()
+             }, [])
+ 
+     return (
+-    <main className='h-screen bg-yellow-700 flex flex-col w-full'>
+-      <DoingHeader />
+-        <div className='h-full flex w-full'>
++    <main className='bg-yellow-700 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
++        <DoingHeader />
++        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+         <DoingWordDisplay />
+-            <div className="h-full bg-yellow-400 flex flex-col w-full">
++            <div className="bg-yellow-400 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+                 <DoingForm verb={verb} />
+                 <VerbList verb={verb} />
+             </div>
+         </div>
+-        <DoingFooter/>
+     </main>
+     )
+ }
+\ No newline at end of file
+diff --git a/frontend/src/app/page.js b/frontend/src/app/page.js
+index 4ec60ca..511a3ea 100644
+--- a/frontend/src/app/page.js
++++ b/frontend/src/app/page.js
+@@ -8,17 +8,14 @@ import Footer from './components/Footer';
+ 
+ export default function HomePage() {
+   return (
+-    <main className='bg-black relative h-screen w-full'>
+-      <div className='flex flex-col relative h-screen w-full'>
++    <main className='bg-black flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+       <Header />
+-      <div className="flex h-full justify-stretch w-full">
++      <div className="flex justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+         <TheyHome />
+         <DoingHome />
+         <ThatHome />
+       </div>
+       <Footer />
+-      </div>
+-      
+     </main>
+   );
+ }
+diff --git a/frontend/src/app/that/page.js b/frontend/src/app/that/page.js
+index 12adc6e..54ff380 100644
+--- a/frontend/src/app/that/page.js
++++ b/frontend/src/app/that/page.js
+@@ -5,11 +5,9 @@ import ThatHeader from '../components/That/ThatHeader';
+ import NounList from '../components/That/NounList';
+ import ThatWordDisplay from '../components/That/ThatWordDisplay';
+ import ThatForm from '../components/That/ThatForm';
+-import ThatFooter from '../components/That/ThatFooter';
+ 
+ export default function ThatPage() {
+-    const [noun, setNoun] = useState([]);
+-    const thatArray = [{word:"highway", id: 1}, {word:"lake", id: 2}, {word: "restaurant", id: 3}, {word: "table", id: 4}, {word: "computer", id: 5 }, {word:"book", id: 6}, {word:"shoebox", id: 7}, {word: "blanket", id: 8}, {word: "tv", id: 9}, {word: "hospital", id: 10}, {word:"car", id: 11}, {word:"cake", id: 12}, {word: "bus", id: 13}, {word: "house", id: 14}, {word: "vegetable", id: 15}]
++    const [nouns, setNoun] = useState([]);
+     
+         useEffect(() => {
+             async function fetchAllNouns() {
+@@ -20,14 +18,15 @@ export default function ThatPage() {
+                   }
+               
+                   const payload = await res.json();
++
+                   if (payload && payload.data) {
+                     setNoun(payload.data);
+                   } else {
+-                    setNoun(thatArray);
++                    setNoun({ word: "no data available" });
+                   }
+                 } catch (error) {
+                   console.error("Error fetching name:", error);
+-                  setNoun(thatArray);
++                  setNoun({ word: "no data available" });
+                 }
+               }
+               fetchAllNouns()
+@@ -35,16 +34,15 @@ export default function ThatPage() {
+     
+ 
+     return (
+-    <main className='h-screen bg-sky-900 flex flex-col w-full '>
++    <main className='bg-sky-900 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+         <ThatHeader />
+-        <div className='h-screen flex w-full'>
+-            <ThatWordDisplay/>
+-            <div className="h-full bg-sky-600 flex flex-col w-full">
+-            <ThatForm noun={noun}/>
+-            <NounList noun={noun}/>
++        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
++            <ThatWordDisplay />
++            <div className="bg-sky-600 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
++            <ThatForm nouns={nouns}/>
++            <NounList nouns={nouns}/>
+             </div>
+         </div>
+-        <ThatFooter/>
+     </main>
+     )
+-}
+\ No newline at end of file
++}
+diff --git a/frontend/src/app/they/page.js b/frontend/src/app/they/page.js
+index a039046..db3c63b 100644
+--- a/frontend/src/app/they/page.js
++++ b/frontend/src/app/they/page.js
+@@ -5,7 +5,6 @@ import TheyHeader from '../components/They/TheyHeader';
+ import TheyWordDisplay from '../components/They/TheyWordDisplay';
+ import SubjectList from '../components/They/SubjectList';
+ import TheyForm from '../components/They/TheyForm';
+-import TheyFooter from '../components/They/TheyFooter';
+ 
+ export default function TheyPage() {
+     const [subjects, setSubject] = useState([]);
+@@ -20,7 +19,6 @@ export default function TheyPage() {
+           
+               const payload = await res.json();
+               if (payload && payload.data) {
+-                console.log(payload.data)
+                 setSubject(payload.data);
+               } else {
+                 setSubject({ name: "no data available" });
+@@ -34,16 +32,15 @@ export default function TheyPage() {
+     }, [])
+ 
+     return (
+-    <main className='h-screen bg-red-950 flex flex-col w-full'>
++    <main className='bg-red-950 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
+         <TheyHeader />
+-        <div className='h-screen flex w-full'>
++        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
+             <TheyWordDisplay />
+-            <div className="h-full bg-red-700 flex flex-col w-full">
++            <div className="bg-red-700 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
+             <TheyForm subjects={subjects}/>
+             <SubjectList subjects={subjects}/>
+             </div>
+         </div>
+-        <TheyFooter/>
+     </main>
+     )
+ }
+\ No newline at end of file

@@ -5,6 +5,7 @@ import DoingHeader from '../components/Doing/DoingHeader';
 import VerbList from '../components/Doing/VerbList';
 import DoingWordDisplay from '../components/Doing/DoingWordDisplay';
 import DoingForm from '../components/Doing/DoingForm';
+import DoingFooter from '../components/Doing/DoingFooter';
 
 
 export default function DoingPage() {
@@ -32,16 +33,17 @@ export default function DoingPage() {
                   fetchAllVerbs()
             }, [])
 
-    return (
-    <main className='bg-yellow-700 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
-        <DoingHeader />
-        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
-        <DoingWordDisplay />
-            <div className="bg-yellow-400 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
-                <DoingForm verb={verb} />
-                <VerbList verb={verb} />
-            </div>
-        </div>
-    </main>
-    )
+            return (
+              <main className='h-screen bg-yellow-700 flex flex-col w-full'>
+                <DoingHeader />
+                  <div className='h-full flex w-full'>
+                  <DoingWordDisplay />
+                      <div className="h-full bg-yellow-400 flex flex-col w-full">
+                          <DoingForm verb={verb} />
+                          <VerbList verb={verb} />
+                      </div>
+                  </div>
+                  <DoingFooter/>
+              </main>
+              )
 }

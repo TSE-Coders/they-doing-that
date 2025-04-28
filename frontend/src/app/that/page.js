@@ -5,6 +5,7 @@ import ThatHeader from '../components/That/ThatHeader';
 import NounList from '../components/That/NounList';
 import ThatWordDisplay from '../components/That/ThatWordDisplay';
 import ThatForm from '../components/That/ThatForm';
+import ThatFooter from '../components/That/ThatFooter';
 
 export default function ThatPage() {
     const [nouns, setNoun] = useState([]);
@@ -33,16 +34,17 @@ export default function ThatPage() {
         }, [])
     
 
-    return (
-    <main className='bg-sky-900 flex flex-col m-0 justify-stretch relative w-full h-dvh'>
-        <ThatHeader />
-        <div className='flex flex-row m-0 justify-stretch relative w-full h-dvh'>
-            <ThatWordDisplay />
-            <div className="bg-sky-600 flex flex-col justify-stretch  place-items-stretch m-0 flex relative w-full h-dvh">
-            <ThatForm nouns={nouns}/>
-            <NounList nouns={nouns}/>
-            </div>
-        </div>
-    </main>
-    )
+        return (
+          <main className='h-screen bg-sky-900 flex flex-col w-full '>
+              <ThatHeader />
+              <div className='h-screen flex w-full'>
+                  <ThatWordDisplay/>
+                  <div className="h-full bg-sky-600 flex flex-col w-full">
+                  <ThatForm noun={nouns}/>
+                  <NounList noun={nouns}/>
+                  </div>
+              </div>
+              <ThatFooter/>
+          </main>
+          )
 }
