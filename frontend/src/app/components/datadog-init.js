@@ -12,7 +12,8 @@
       clientToken: 'pub20b10fbf688df2e2bfb5270f1ded1306',
       site: "datadoghq.com",
       service: "tdt-frontend",
-      env: "development",
+      env: "tdt",
+      silentMultipleInit: true,
       // Specify a version number to identify the deployed version of your application in Datadog
       // version: '1.0.0',
       sessionSampleRate: 100,
@@ -23,7 +24,7 @@
       defaultPrivacyLevel: "mask-user-input",
       // Specify URLs to propagate trace headers for connection between RUM and backend trace
       allowedTracingUrls: [
-        { match: "https://example.com/api/", propagatorTypes: ["tracecontext"] },
+        { match: "*", propagatorTypes: ["tracecontext"] },
       ],
     });
 
@@ -31,8 +32,9 @@
       clientToken: 'pub20b10fbf688df2e2bfb5270f1ded1306',
       site: 'datadoghq.com',
       forwardErrorsToLogs: true,
+      silentMultipleInit: true,
       sampleRate: 100,
-      service: 'frontend',
+      service: 'tdt-frontend',
       env: 'tdt',
       tags: ['source:browser', 'team:frontend']
     });

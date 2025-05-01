@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": " NODE_OPTIONS='--require dd-trace/init' DD_SERVICE=tdt-frontend DD_TRACE_AGENT_PORT=8136 DD_ENV=tdt next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

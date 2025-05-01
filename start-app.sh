@@ -128,8 +128,8 @@ if is_port_in_use 8081; then
 else
     echo "Starting Java Verb-service..."
     nohup java -javaagent:./java-sqlserver/dd-java-agent.jar \
-      -Ddd.service=verb-API \
-      -Ddd.env=prod \
+      -Ddd.service=verb-api \
+      -Ddd.env=tdt \
       -Ddd.version=1.0.0 \
       -Ddd.logs.injection=true \
       -Ddd.trace.sample.rate=1 \

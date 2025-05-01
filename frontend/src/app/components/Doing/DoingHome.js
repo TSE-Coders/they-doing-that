@@ -17,7 +17,6 @@ const DoingHome = () => {
     
         const payload = await res.json();
 
-        console.log(payload)
         if (payload && payload.data) {
           setDoing(payload.data);
           setLoading(false);
