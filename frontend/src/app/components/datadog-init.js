@@ -8,8 +8,8 @@
    datadogLogs.logger.setLevel("info");   // You can adjust this to debug, warn, error, etc.
     
     datadogRum.init({
-      applicationId: "<YOUR_APPLICATION_ID>",
-      clientToken: "<YOUR_CLIENT_TOKEN>",
+      applicationId: '38cb2d97-a73c-43b5-b833-23d2a496f1fb',
+      clientToken: 'pub20b10fbf688df2e2bfb5270f1ded1306',
       site: "datadoghq.com",
       service: "tdt-frontend",
       env: "development",
@@ -28,7 +28,7 @@
     });
 
     datadogLogs.init({
-      clientToken: "<YOUR_CLIENT_TOKEN>",
+      clientToken: 'pub20b10fbf688df2e2bfb5270f1ded1306',
       site: 'datadoghq.com',
       forwardErrorsToLogs: true,
       sampleRate: 100,

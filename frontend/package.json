@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@datadog/browser-logs": "^6.6.3",
-    "@datadog/browser-rum": "^6.6.3",
+    "@datadog/browser-rum": "^6.6.4",
     "dd-trace": "^5.27.1",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
