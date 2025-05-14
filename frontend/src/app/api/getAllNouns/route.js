@@ -5,7 +5,7 @@ export async function GET (){
 
    try {
 
-    const res = await fetch(`http://localhost:8080//noun/all`)       
+    const res = await fetch(`http://localhost:8080/noun/all`)       
 
     const data = await res.json()
 

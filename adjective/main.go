@@ -55,7 +55,7 @@ func initDB() {
 
 func seedDatabase() {
 	// Predetermined list of strings
-	words := []string{"happy", "all the time", "often", "no more", "every day"}
+	words := []string{"happy", "often", "more", "always", "great", "today"}
 
 	log.Println("Seeding database with predetermined words...")
 

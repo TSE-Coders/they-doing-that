@@ -40,13 +40,13 @@ const DoingWordDisplay = () => {
     },[check]) 
 
     return (
-      <div className="bg-yellow-400 flex flex-col justify-center w-full border-r-4 border-yellow-600">
-          <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
-          <div className='relative mt-24 justify-center content-end'>
-              <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
-              <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
-          </div>
-      </div>
+       <div className="bg-yellow-400 flex flex-col justify-center w-full border-r-4 border-yellow-600">
+            <p className='text-8xl text-wrap font-black text-yellow-700 uppercase text-center'>{isLoading ? `Loading...` : doing.word}</p>
+            <div className='relative mt-24 justify-center content-end'>
+                <p className='text-center text-base text-sm text-yellow-700'>Powered by:</p>
+                <p className='text-center text-base font-bold text-yellow-700 uppercase'>Java x SQLServer</p>
+            </div>
+        </div>
   )
 }
 
